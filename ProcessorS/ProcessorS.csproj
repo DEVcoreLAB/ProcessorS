@@ -10,4 +10,8 @@
     <StartupObject>ProcessorS.App</StartupObject>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Globals\Globals.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,3 +1,4 @@
-The file contains two overridden methods.   
+The file contains this methods.   
 - OnStartup   
-- OnExit
+- OnExit   
+- SetLoggerFilesPath

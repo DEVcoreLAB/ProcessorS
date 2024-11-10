@@ -1,0 +1,2 @@
+L4N.cs - Static class with static ILog? L4NDefault property. Use this L4NDefault obj to log data.   
+L4NDefaultConfig.cs - A configuration file setting properties for the log file. The file name is the current date, with a .txt extension. The file path is provided by the method’s constructor. The logger information format is: "%date    [%thread]    %-5level    %class    %method     %logger - %message%newline"

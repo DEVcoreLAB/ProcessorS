@@ -1,0 +1,1 @@
+SettingFilePath.settings - Contains file paths as strings to the configuration file located in the system folder "Users."

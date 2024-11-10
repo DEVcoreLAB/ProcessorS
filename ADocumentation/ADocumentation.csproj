@@ -10,7 +10,8 @@
 
   <ItemGroup>
     <Folder Include="NuGetPackages\" />
-    <Folder Include="Projects\Globals\" />
+    <Folder Include="Projects\Globals\Logger\Log4N\Config\" />
+    <Folder Include="Projects\Globals\SettingFiles\" />
   </ItemGroup>
 
 </Project>
