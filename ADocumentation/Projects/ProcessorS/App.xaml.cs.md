@@ -1,1 +1,3 @@
-The file contains a single overridden `OnStartup` method.
+The file contains two overridden methods.   
+- OnStartup   
+- OnExit
