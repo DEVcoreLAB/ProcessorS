@@ -1,0 +1,1 @@
+The `StartupUri` has been removed from the standard file.
