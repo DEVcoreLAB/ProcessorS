@@ -1,6 +1,6 @@
 ﻿using Globals.Logger.Log4N;
 using Globals.SettingFiles;
-using ProcessorS.Settings;
+using Globals.SettingFiles.Base;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;

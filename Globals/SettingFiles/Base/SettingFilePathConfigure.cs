@@ -1,5 +1,4 @@
-﻿using Globals.SettingFiles;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
 
-namespace ProcessorS.Settings
+namespace Globals.SettingFiles.Base
 {
     public class SettingFilePathConfigure : IConfigureFile
     {
@@ -33,7 +32,7 @@ namespace ProcessorS.Settings
             }
 
             // Checking if settingFile contains the property nameOfSetting
-            Type type = settingFile.GetType(); 
+            Type type = settingFile.GetType();
             PropertyInfo property = type.GetProperty(nameOfSetting);
             if (property == null)
             {
@@ -50,7 +49,7 @@ namespace ProcessorS.Settings
 
             if (gotSomeProblem)
             {
-                MessageBox.Show($@"The class named {callerClassName} contains a call to this object {this.GetType().Name}. ""\n"" {callerClassName} has initialization errors in the constructor. ""\n"" One or more parameters are null.");
+                MessageBox.Show($@"The class named {callerClassName} contains a call to this object {GetType().Name}. ""\n"" {callerClassName} has initialization errors in the constructor. ""\n"" One or more parameters are null.");
                 Application.Current.Shutdown();
             }
 
