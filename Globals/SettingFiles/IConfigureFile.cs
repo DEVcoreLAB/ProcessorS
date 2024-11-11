@@ -8,6 +8,6 @@ namespace Globals.SettingFiles
 {
     public interface IConfigureFile
     {
-        public void Configure<T>(T settingFile, object value) where T : System.Configuration.ApplicationSettingsBase;
+        public void Configure<T>(T settingFile,string nameOfSetting, object value) where T : System.Configuration.ApplicationSettingsBase;
     }
 }
