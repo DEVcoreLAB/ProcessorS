@@ -1,4 +1,6 @@
 ﻿using Globals.Logger.Log4N;
+using Globals.SettingFiles;
+using ProcessorS.Settings;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
@@ -11,18 +13,15 @@ namespace ProcessorS
     /// </summary>
     public partial class App : Application
     {
-        //string criticalErrorMessage = 
-
-        private Action<string> action = new ((ex) => 
-        {
-            MessageBox.Show($"No access to the AppData/Local folder.\n Unable to create the configuration file.\n The program will now close. {ex}");
-            Application.Current.Shutdown();
-        });
-
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            SetLoggerFilesPath();
+
+            SettingFileConfigurator settingFileConfigurator = new SettingFileConfigurator(new SettingFilePathConfigure());
+            settingFileConfigurator.ConfigureFile.Configure(SettingFilePath.Default, $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\ProcessorS");
+
+            set(SettingFilePath.Default);
+
             L4N.L4NDefault.Info("Program started");
         }
 
@@ -31,17 +30,9 @@ namespace ProcessorS
             base.OnExit(e);
         }
 
-        private void SetLoggerFilesPath()
+        private void set(ApplicationSettingsBase asd)
         {
-            try
-            {
-                Globals.SettingFiles.SettingFilePath.Default.SystemPath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\ProcessorS";
-                Globals.SettingFiles.SettingFilePath.Default.Save();
-            }
-            catch (Exception ex)
-            {
-                action(ex.Message);
-            }
+            
         }
     }
 
