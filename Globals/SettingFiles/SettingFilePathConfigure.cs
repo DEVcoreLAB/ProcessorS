@@ -12,24 +12,24 @@ using System.Windows.Documents;
 
 namespace ProcessorS.Settings
 {
-    internal class SettingFilePathConfigure : IConfigureFile
+    public class SettingFilePathConfigure : IConfigureFile
     {
         public void Configure<T>(T settingFile, string nameOfSetting, object value) where T : ApplicationSettingsBase
         {
+            string callerClassName = GetCallerClassName();
+            bool gotSomeProblem = false;
+
             if (settingFile == null)
             {
-                MessageBox.Show("settings = null");
-                return;
+                gotSomeProblem = true;
             }
             if (nameOfSetting == null)
             {
-                MessageBox.Show("nameOfSetting = null");
-                return;
+                gotSomeProblem = true;
             }
             if (value == null)
             {
-                MessageBox.Show("value = null");
-                return;
+                gotSomeProblem = true;
             }
 
             // Checking if settingFile contains the property nameOfSetting
@@ -38,14 +38,20 @@ namespace ProcessorS.Settings
             if (property == null)
             {
                 MessageBox.Show(@$"{settingFile.GetType().Name} does not contain property {nameOfSetting}");
-                return;
+                gotSomeProblem = true;
             }
 
             // Checking if nameOfSetting and value are of the same type
             if (!property.PropertyType.IsAssignableFrom(value.GetType()))
             {
                 MessageBox.Show($"Type mismatch between property '{nameOfSetting}' and the value.");
-                return;
+                gotSomeProblem = true;
+            }
+
+            if (gotSomeProblem)
+            {
+                MessageBox.Show($@"The class named {callerClassName} contains a call to this object {this.GetType().Name}. ""\n"" {callerClassName} has initialization errors in the constructor. ""\n"" One or more parameters are null.");
+                Application.Current.Shutdown();
             }
 
             try
@@ -58,6 +64,26 @@ namespace ProcessorS.Settings
                 MessageBox.Show($"An error occurred while setting the value of property '{nameOfSetting}' in {typeof(T).Name}: {ex.Message}");
                 Application.Current.Shutdown();
             }
+        }
+
+        private string GetCallerClassName()
+        {
+            StackTrace stackTrace = new StackTrace();
+            // Indeks 2: 0 - current method, 1 - helper method, 2 - caller method
+            StackFrame frame = stackTrace.GetFrame(2);
+            if (frame != null)
+            {
+                var method = frame.GetMethod();
+                if (method != null)
+                {
+                    var DeclaringType = method.DeclaringType;
+                    if (DeclaringType != null)
+                    {
+                        return DeclaringType.FullName;
+                    }
+                }
+            }
+            return null;
         }
     }
 }
