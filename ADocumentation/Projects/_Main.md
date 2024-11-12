@@ -4,6 +4,7 @@ A project containing `.md` files with descriptions of individual project section
 <br>
 ### Globals
 Contains shared resources   
+[Globals](Globals/_Main.md)
 <br>
 ### ProcessorS
 A startup project. It has two responsibilities: to initialize the settings necessary for the application to function and to launch the appropriate code variant depending on whether it is the first launch or not.   
