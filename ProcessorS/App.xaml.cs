@@ -17,7 +17,7 @@ namespace ProcessorS
         {
             base.OnStartup(e);
 
-            SettingFileConfigurator settingFileConfigurator = new SettingFileConfigurator(new SettingFilePathConfigure());
+            SettingFileConfigurator settingFileConfigurator = new SettingFileConfigurator(new SaveSettings());
             settingFileConfigurator.ConfigureFile.Configure(SettingFilePath.Default, 
                   nameof(SettingFilePath.Default.SystemPath), 
                   $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\ProcessorS");

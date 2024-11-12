@@ -11,7 +11,7 @@ using System.Windows.Documents;
 
 namespace Globals.SettingFiles.Base
 {
-    public class SettingFilePathConfigure : IConfigureFile
+    public class SaveSettings : IConfigureFile
     {
         public void Configure<T>(T settingFile, string nameOfSetting, object value) where T : ApplicationSettingsBase
         {
