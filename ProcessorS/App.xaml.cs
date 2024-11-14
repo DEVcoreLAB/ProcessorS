@@ -1,6 +1,7 @@
 ﻿using Globals.Logger.Log4N;
 using Globals.SettingFiles;
 using Globals.SettingFiles.Base;
+using ProcessorS.Model;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
@@ -16,11 +17,9 @@ namespace ProcessorS
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            new ConfigureSettingsFiles();
 
-            SettingFileConfigurator settingFileConfigurator = new SettingFileConfigurator(new SaveSettings());
-            settingFileConfigurator.ConfigureFile.Configure(SettingFilePath.Default,
-                  nameof(SettingFilePath.Default.SystemPath),
-                  $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\ProcessorS");
+            
 
             L4N.L4NDefault.Info("Program started");
         }

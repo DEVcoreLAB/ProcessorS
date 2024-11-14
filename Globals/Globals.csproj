@@ -13,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="SettingFiles\SettingCurrentLanguage.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SettingCurrentLanguage.settings</DependentUpon>
+    </Compile>
     <Compile Update="SettingFiles\SettingFilePath.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -21,6 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="SettingFiles\SettingCurrentLanguage.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SettingCurrentLanguage.Designer.cs</LastGenOutput>
+    </None>
     <None Update="SettingFiles\SettingFilePath.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>SettingFilePath.Designer.cs</LastGenOutput>
