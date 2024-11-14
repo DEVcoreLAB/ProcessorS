@@ -1,0 +1,1 @@
+Uris.cs - Contains simple uris for grapfic files.

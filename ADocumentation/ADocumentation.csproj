@@ -10,7 +10,9 @@
 
   <ItemGroup>
     <Folder Include="NuGetPackages\" />
+    <Folder Include="Projects\Globals\Graphics\" />
     <Folder Include="Projects\Globals\Logger\Log4N\Config\" />
+    <Folder Include="Projects\Globals\MyDialogsAndWindows\" />
     <Folder Include="Projects\ProcessorS\Model\" />
   </ItemGroup>
 

@@ -9,7 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Graphics\GraphicFiles\messageboxbackground.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="log4net" Version="3.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Graphics\GraphicFiles\messageboxbackground.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +42,10 @@
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>SettingFilePath.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MyDialogsAndWindows\" />
   </ItemGroup>
 
 </Project>
