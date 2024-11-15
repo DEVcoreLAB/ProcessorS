@@ -12,7 +12,8 @@
     <Folder Include="NuGetPackages\" />
     <Folder Include="Projects\Globals\Graphics\" />
     <Folder Include="Projects\Globals\Logger\Log4N\Config\" />
-    <Folder Include="Projects\Globals\MyDialogsAndWindows\" />
+    <Folder Include="Projects\Globals\MyDialogsAndWindows\MyMessagebox\Basic\" />
+    <Folder Include="Projects\Globals\MyDialogsAndWindows\MyMessagebox\" />
     <Folder Include="Projects\ProcessorS\Model\" />
   </ItemGroup>
 
