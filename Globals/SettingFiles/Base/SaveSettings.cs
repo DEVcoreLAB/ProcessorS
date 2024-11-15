@@ -1,4 +1,5 @@
 ﻿using Globals.Logger.Log4N;
+using Globals.MyDialogsAndWindows.MyMessagebox;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -61,7 +62,7 @@ namespace Globals.SettingFiles.Base
             catch (Exception ex)
             {
                 L4N.L4NDefault.Error(ex.Message + $"Caller class {callerClassName}");
-                MessageBox.Show(errorMessageboxMessage + $"{ex.Message}" + $" Caller class {callerClassName}");
+                MessageBoxX.Show(errorMessageboxMessage + $"{ex.Message}" + $" Caller class {callerClassName}");
                 Application.Current.Shutdown();
             }
         }

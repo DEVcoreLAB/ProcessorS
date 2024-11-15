@@ -1,4 +1,6 @@
-﻿using Globals.Logger.Log4N;
+﻿
+using Globals.Logger.Log4N;
+using Globals.MyDialogsAndWindows.MyMessagebox;
 using Globals.SettingFiles;
 using Globals.SettingFiles.Base;
 using ProcessorS.Model;
@@ -19,8 +21,6 @@ namespace ProcessorS
             base.OnStartup(e);
             new ConfigureSettingsFiles();
             L4N.L4NDefault.Info("Program started");
-
-            
         }
 
         protected override void OnExit(ExitEventArgs e)
