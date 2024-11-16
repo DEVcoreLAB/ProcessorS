@@ -19,8 +19,11 @@ namespace ProcessorS
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
             new ConfigureSettingsFiles();
-            L4N.L4NDefault.Info("Program started");
+            new ConfigureControls();
+
+            L4N.L4NDefault.Info("Program started"); 
         }
 
         protected override void OnExit(ExitEventArgs e)
