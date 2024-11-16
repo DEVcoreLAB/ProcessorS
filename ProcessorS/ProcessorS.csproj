@@ -12,6 +12,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Globals\Globals.csproj" />
+    <ProjectReference Include="..\WindoRegularStart\WindowRegularStart.csproj" />
+    <ProjectReference Include="..\WindowFirstStart\WindowFirstStart.csproj" />
   </ItemGroup>
 
 </Project>

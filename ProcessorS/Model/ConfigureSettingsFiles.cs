@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Globalization;
 using Globals.MyControlsSchemas;
 using System.Windows;
+using Globals.Logger.Log4N;
 
 namespace ProcessorS.Model
 {
@@ -35,6 +36,8 @@ namespace ProcessorS.Model
                     $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\ProcessorS");
 
             }
+
+            L4N.L4NDefault.Info("Program started");
         }
 
         private void SetCurrentLanguage()
@@ -55,7 +58,5 @@ namespace ProcessorS.Model
                 SystemFonts.MessageFontSize
                 );
         }
-
-        
     }
 }
