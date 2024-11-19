@@ -23,6 +23,9 @@ namespace ProcessorS
             new ConfigureSettingsFiles();
             new ConfigureControls();
 
+            new WindowRegularStart.View.MainWindow.MainWindow();
+            new WindowFirstStart.View.FirsStartWindow();
+
         }
 
         protected override void OnExit(ExitEventArgs e)

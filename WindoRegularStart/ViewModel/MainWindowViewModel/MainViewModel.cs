@@ -1,4 +1,6 @@
-﻿using System;
+﻿using WindowRegularStart.Model.MainWindowModel;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -9,5 +11,11 @@ namespace WindowRegularStart.ViewModel.MainWindowViewModel
 {
     internal partial class MainViewModel
     {
+        MainModel MainModel { get; }
+
+        public MainViewModel()
+        {
+            MainModel = new MainModel(this);
+        }
     }
 }
