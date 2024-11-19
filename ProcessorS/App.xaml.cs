@@ -1,9 +1,12 @@
-﻿
+﻿using WindowFirstStart.View;
+using ProcessorS.Model;
+
 using Globals.Logger.Log4N;
 using Globals.MyDialogsAndWindows.MyMessagebox;
 using Globals.SettingFiles;
-using Globals.SettingFiles.Base;
 using ProcessorS.Model;
+
+using Globals.SettingFiles.Base;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
@@ -22,10 +25,7 @@ namespace ProcessorS
 
             new ConfigureSettingsFiles();
             new ConfigureControls();
-
-            new WindowRegularStart.View.MainWindow.MainWindow();
-            new WindowFirstStart.View.FirsStartWindow();
-
+            new ShowProperWidow();
         }
 
         protected override void OnExit(ExitEventArgs e)
