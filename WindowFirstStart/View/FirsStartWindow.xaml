@@ -36,6 +36,32 @@
 
                 <Grid 
                     Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid
+                        Grid.Row="0"
+                        >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label
+                            Grid.Column="0"
+                            d:Content="Select font size"
+                            Background="LightGray"
+                            HorizontalContentAlignment="Center"
+                            />
+                        <ComboBox
+                            Grid.Column="1"
+                            >
+                        </ComboBox>
+                    </Grid>
+
                 </Grid>
 
                 <Border
