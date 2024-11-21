@@ -9,7 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Graphics\GraphicFiles\Britain.png" />
     <None Remove="Graphics\GraphicFiles\messageboxbackground.png" />
+    <None Remove="Graphics\GraphicFiles\poland.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,7 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Graphics\GraphicFiles\Britain.png" />
     <Resource Include="Graphics\GraphicFiles\messageboxbackground.png" />
+    <Resource Include="Graphics\GraphicFiles\poland.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -14,8 +14,8 @@ namespace ProcessorS.Model
 
         public ShowProperWidow()
         {
-            firsStartWindow = new();
             mainWindow = new();
+            firsStartWindow = new(mainWindow);
             Show();
         }
 

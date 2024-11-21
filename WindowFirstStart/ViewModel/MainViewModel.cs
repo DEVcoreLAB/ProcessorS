@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowFirstStart.Model;
+using WindowRegularStart.View.MainWindow;
 
 namespace WindowFirstStart.ViewModel
 {
@@ -15,5 +16,7 @@ namespace WindowFirstStart.ViewModel
         {
             MainModel = new MainModel(this);
         }
+
+        public MainWindow WindowRegularStartInstance { get; set; }
     }
 }
