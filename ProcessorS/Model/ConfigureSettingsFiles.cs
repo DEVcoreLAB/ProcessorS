@@ -34,7 +34,6 @@ namespace ProcessorS.Model
                     SettingFilePath.Default,
                     nameof(SettingFilePath.Default.SystemPath),
                     $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\ProcessorS");
-
             }
 
             L4N.L4NDefault.Info("Program started");
@@ -42,18 +41,21 @@ namespace ProcessorS.Model
 
         private void SetCurrentLanguage()
         {
+            string currentCulture = CultureInfo.CurrentCulture.Name == "pl-PL" ? "pl-PL" : "en-US";
+
             if (string.IsNullOrEmpty(Globals.SettingFiles.SettingCurrentLanguage.Default.CurrentLanguageCode))
             {
                 configurator.ConfigureFile.Configure(
                     SettingCurrentLanguage.Default, 
-                    nameof(SettingCurrentLanguage.Default.CurrentLanguageCode), 
-                    CultureInfo.CurrentCulture.Name);
+                    nameof(SettingCurrentLanguage.Default.CurrentLanguageCode),
+                    currentCulture);
             }
         }
 
         private void SetFontSize()
         {
-            configurator.ConfigureFile.Configure(SettingFontProperties.Default,
+            configurator.ConfigureFile.Configure(
+                SettingFontProperties.Default,
                 nameof(SettingFontProperties.Default.FontSize),
                 SystemFonts.MessageFontSize
                 );
