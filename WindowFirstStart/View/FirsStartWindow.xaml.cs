@@ -28,14 +28,13 @@ namespace WindowFirstStart.View
             InitializeComponent();
             mainViewModel = new MainViewModel();
             this.DataContext = mainViewModel;
-            mainViewModel.WindowRegularStartInstance = mainWindow;
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.F1)
             {
-                mainViewModel.WindowRegularStartInstance.Show();
+
             }
         }
     }

@@ -58,7 +58,15 @@
                             />
                         <ComboBox
                             Grid.Column="1"
+                            d:SelectedIndex="0"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            ItemsSource="{Binding ListOfFontSize}"
+                            SelectedValue="{Binding FontSizeSelectedValue}"
                             >
+                            <d:ComboBoxItem>
+                                12
+                            </d:ComboBoxItem>
                         </ComboBox>
                     </Grid>
 

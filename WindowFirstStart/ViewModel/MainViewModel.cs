@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Globals.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ using WindowRegularStart.View.MainWindow;
 
 namespace WindowFirstStart.ViewModel
 {
-    internal partial class MainViewModel
+    internal partial class MainViewModel : BaseViewModel
     {
         MainModel MainModel { get; }
 
@@ -16,7 +17,5 @@ namespace WindowFirstStart.ViewModel
         {
             MainModel = new MainModel(this);
         }
-
-        public MainWindow WindowRegularStartInstance { get; set; }
     }
 }
