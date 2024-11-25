@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowFirstStart.Langs;
 using WindowFirstStart.Model.SetInitialWindowValues.FontSizes;
 using WindowFirstStart.ViewModel;
 
@@ -18,6 +19,8 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
                 (
                     Globals.SettingFiles.SettingFontProperties.Default.FontSize
                 );
+
+            mainViewModel.FontSizeLabel = Lang.fontSizeLabel;
         }
     }
 }

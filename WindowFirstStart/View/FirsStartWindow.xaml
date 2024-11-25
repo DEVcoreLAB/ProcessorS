@@ -53,6 +53,7 @@
                         <Label
                             Grid.Column="0"
                             d:Content="Select font size"
+                            Content="{Binding FontSizeLabel}"
                             Background="LightGray"
                             HorizontalContentAlignment="Center"
                             />

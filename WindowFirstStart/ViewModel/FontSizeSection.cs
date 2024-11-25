@@ -34,5 +34,18 @@ namespace WindowFirstStart.ViewModel
             }
         }
 
+        private string fontSizeLabel;
+        public string FontSizeLabel
+        {
+            get { return fontSizeLabel; }
+            set 
+            { 
+                fontSizeLabel = value;
+                OnPropertyChanged(nameof(FontSizeLabel));
+            }
+        }
+
+
+
     }
 }
