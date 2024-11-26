@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using WindowFirstStart.Langs;
 using WindowFirstStart.Model.SetInitialWindowValues.FontSizes;
+using WindowFirstStart.Model.SetInitialWindowValues.Languages;
 using WindowFirstStart.ViewModel;
 
 namespace WindowFirstStart.Model.SetInitialWindowValues
@@ -26,6 +28,9 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
 
             // language section
             mainViewModel.LanguageSelectLabel = Lang.programLanguage;
+
+            SetLangsCollection setLangsCollection = new SetLangsCollection();
+            mainViewModel.LanguagesCombobox = setLangsCollection.Set().ToList();
         }
     }
 }

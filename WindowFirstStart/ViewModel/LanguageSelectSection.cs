@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using WindowFirstStart.Model.SetInitialWindowValues.Languages;
 
 namespace WindowFirstStart.ViewModel
 {
@@ -19,6 +21,18 @@ namespace WindowFirstStart.ViewModel
 				OnPropertyChanged(nameof(LanguageSelectLabel));
 			}
 		}
+
+		private List<ComboboxItemBaseClass> languagesCombobox;
+		public List<ComboboxItemBaseClass> LanguagesCombobox
+        {
+			get { return languagesCombobox; }
+			set 
+			{ 
+				languagesCombobox = value;
+				OnPropertyChanged(nameof(LanguagesCombobox));
+			}
+		}
+
 
 	}
 }

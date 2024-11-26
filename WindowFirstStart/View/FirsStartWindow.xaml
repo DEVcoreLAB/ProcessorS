@@ -75,7 +75,8 @@
                     </Grid>
                     <!--Language section-->
                     <Grid 
-                        Grid.Row="1">
+                        Grid.Row="1"
+                        Margin="0,5,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -91,7 +92,25 @@
                             />
                         <ComboBox
                             Grid.Column="1"
-                            />
+                            ItemsSource="{Binding LanguagesCombobox}" 
+                            HorizontalContentAlignment="Center"
+                            >
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel
+                                        Orientation="Horizontal">
+                                        <Image
+                                            Source="{Binding CountryFlague}"
+                                            Width="25"
+                                            Height="25"
+                                            Margin="0,0,10,0" />
+                                        <TextBlock
+                                            FontSize="16"
+                                            Text="{Binding CountryName}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </Grid>
 
                 </Grid>

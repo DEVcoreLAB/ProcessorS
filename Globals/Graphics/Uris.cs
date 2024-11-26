@@ -13,3 +13,4 @@ namespace ADocumentation.Projects.Globals.Graphics
         public static Uri BritainFlague { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/Britain.png");
     }
 }
+    
