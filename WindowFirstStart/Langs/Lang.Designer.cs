@@ -68,5 +68,14 @@ namespace WindowFirstStart.Langs {
                 return ResourceManager.GetString("fontSizeLabel", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Język programu.
+        /// </summary>
+        internal static string programLanguage {
+            get {
+                return ResourceManager.GetString("programLanguage", resourceCulture);
+            }
+        }
     }
 }

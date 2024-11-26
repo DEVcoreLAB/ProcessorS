@@ -13,6 +13,7 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
     {
         public void Set(MainViewModel mainViewModel)
         {
+            // font size section
             SetListOfFontsBySize setListOfFontsBySize = new SetListOfFontsBySize();
             mainViewModel.ListOfFontSize =
                 setListOfFontsBySize.Set
@@ -22,6 +23,9 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
             mainViewModel.FontSizeSelectedValue = mainViewModel.ListOfFontSize.FirstOrDefault(x => x.Equals(Globals.SettingFiles.SettingFontProperties.Default.FontSize));
 
             mainViewModel.FontSizeLabel = Lang.fontSizeLabel;
+
+            // language section
+            mainViewModel.LanguageSelectLabel = Lang.programLanguage;
         }
     }
 }

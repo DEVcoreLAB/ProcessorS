@@ -120,4 +120,7 @@
   <data name="fontSizeLabel" xml:space="preserve">
     <value>Font size</value>
   </data>
+  <data name="programLanguage" xml:space="preserve">
+    <value>Program language</value>
+  </data>
 </root>
