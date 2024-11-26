@@ -19,6 +19,7 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
                 (
                     Globals.SettingFiles.SettingFontProperties.Default.FontSize
                 );
+            mainViewModel.FontSizeSelectedValue = mainViewModel.ListOfFontSize.FirstOrDefault(x => x.Equals(Globals.SettingFiles.SettingFontProperties.Default.FontSize));
 
             mainViewModel.FontSizeLabel = Lang.fontSizeLabel;
         }
