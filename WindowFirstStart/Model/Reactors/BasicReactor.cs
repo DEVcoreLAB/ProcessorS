@@ -10,6 +10,7 @@ using Globals.Model.Observer;
 using Globals.Model.Observer.Components;
 using Globals.ViewModel;
 using WindowFirstStart.Model.Reactors.Behaviours.FontSizesVM;
+using WindowFirstStart.Model.Reactors.Behaviours.LanguageSelectVM;
 using WindowFirstStart.ViewModel;
 
 namespace WindowFirstStart.Model.Reactors
@@ -25,6 +26,11 @@ namespace WindowFirstStart.Model.Reactors
             {
                 connector = new Connector(new FontSizeSelectedValueBehave());
             }
+            if (newValue.Name == nameof(mainViewModel.SelectedLanguage))
+            {
+                connector = new Connector(new LanguageChangedBehave());
+            }
+
             if (connector != null)
             {
                 InvokeActionByDispatcher(connector.Behaviour.GetAction(mainViewModel));

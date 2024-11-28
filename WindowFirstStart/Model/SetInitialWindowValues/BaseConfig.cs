@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using WindowFirstStart.Langs;
 using WindowFirstStart.Model.SetInitialWindowValues.FontSizes;
 using WindowFirstStart.Model.SetInitialWindowValues.Languages;
+using WindowFirstStart.Model.WindowIsDisplayed.Langchanged;
 using WindowFirstStart.ViewModel;
 
 namespace WindowFirstStart.Model.SetInitialWindowValues
@@ -24,10 +25,8 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
                 );
             mainViewModel.FontSizeSelectedValue = mainViewModel.ListOfFontSize.FirstOrDefault(x => x.Equals(Globals.SettingFiles.SettingFontProperties.Default.FontSize));
 
-            mainViewModel.FontSizeLabel = Lang.fontSizeLabel;
-
-            // language section
-            mainViewModel.LanguageSelectLabel = Lang.programLanguage;
+            ChangeVisibleTexts changeVisibleTexts = new ChangeVisibleTexts();
+            changeVisibleTexts.Change(mainViewModel);
 
             SetLangsCollection setLangsCollection = new SetLangsCollection();
             mainViewModel.LanguagesCombobox = setLangsCollection.Set().ToList();
