@@ -93,6 +93,7 @@
                         <ComboBox
                             Grid.Column="1"
                             ItemsSource="{Binding LanguagesCombobox}" 
+                            SelectedItem="{Binding SelectedLanguage}"
                             HorizontalContentAlignment="Center"
                             >
                             <ComboBox.ItemTemplate>

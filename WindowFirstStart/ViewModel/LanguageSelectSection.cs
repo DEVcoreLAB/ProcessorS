@@ -33,6 +33,16 @@ namespace WindowFirstStart.ViewModel
 			}
 		}
 
+		private ComboboxItemBaseClass selectedLanguage;
+		public ComboboxItemBaseClass SelectedLanguage
+		{
+			get { return selectedLanguage; }
+			set 
+			{ 
+				selectedLanguage = value;
+				OnPropertyChanged(nameof(SelectedLanguage));
+			}
+		}
 
 	}
 }

@@ -31,6 +31,9 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
 
             SetLangsCollection setLangsCollection = new SetLangsCollection();
             mainViewModel.LanguagesCombobox = setLangsCollection.Set().ToList();
+
+            LanguageSelectedItem languageSelectedItem = new LanguageSelectedItem();
+            languageSelectedItem.Select(mainViewModel);
         }
     }
 }
