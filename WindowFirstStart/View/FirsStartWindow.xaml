@@ -41,9 +41,11 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
 
-                    <!--Font section-->
+                    <!--Font section - row 0-->
                     <Grid
                         Grid.Row="0"
                         >
@@ -73,7 +75,7 @@
                             </d:ComboBoxItem>
                         </ComboBox>
                     </Grid>
-                    <!--Language section-->
+                    <!--Language section - row 1-->
                     <Grid 
                         Grid.Row="1"
                         Margin="0,5,0,0">
@@ -116,7 +118,42 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </Grid>
+                    <!--Visual separator - row 2-->
+                    <Border
+                        Grid.Row="2"
+                        Height="2"
+                        Margin="5"
+                        Background="LightGray"
+                        />
+                    <!--Connection string section - row 3-->
+                    <Grid Grid.Row="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" x:Name="connStringROW"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
 
+                        <TextBox
+                            x:Name="connStringTEXTBOX"
+                            Grid.Row="0"
+                            d:Text="Place for connection string"
+                            MaxLines="1"
+                            TextWrapping="NoWrap"
+                            VerticalContentAlignment="Center"
+                            Padding="5"
+                            />
+                        <Button
+                            BorderThickness="0"
+                            Grid.Row="2" 
+                            Background="Transparent"
+                            Height="{Binding ElementName=connStringTEXTBOX, Path=ActualHeight}"
+                            IsEnabled="{Binding ConnStringButtonIsEnabled}"
+                            >
+                            <Image 
+                                Source="{Binding CheckConnectioStringButtonBackground, 
+                                FallbackValue='pack://application:,,,/Globals;component/Graphics/GraphicFiles/CheckConnectionToDB.png'}"/>
+                        </Button>
+                    </Grid>
                 </Grid>
 
                 <Border

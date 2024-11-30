@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ADocumentation.Projects.Globals.Graphics;
+using Globals.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +35,9 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
 
             LanguageSelectedItem languageSelectedItem = new LanguageSelectedItem();
             languageSelectedItem.Select(mainViewModel);
+
+            mainViewModel.CheckConnectioStringButtonBackground = SetProperButtonBackground.Set(false,Uris.CheckConnectionToDBEnabled,Uris.CheckConnectionToDBDisabled);
+            mainViewModel.ConnStringButtonIsEnabled = false;
         }
     }
 }
