@@ -91,6 +91,7 @@
                             VerticalContentAlignment="Center"
                             />
                         <ComboBox
+                            x:Name="languageCOMBOBOX"
                             Grid.Column="1"
                             ItemsSource="{Binding LanguagesCombobox}" 
                             SelectedItem="{Binding SelectedLanguage}"
@@ -102,10 +103,11 @@
                                         Orientation="Horizontal">
                                         <Image
                                             Source="{Binding CountryFlague}"
-                                            Width="25"
-                                            Height="25"
+                                            VerticalAlignment="Center"
+                                            Height="{Binding ElementName=fontSizeTEXTBLOCK, Path=ActualHeight}"
                                             Margin="0,0,10,0" />
                                         <TextBlock
+                                            x:Name="fontSizeTEXTBLOCK"
                                             TextAlignment="Center"
                                             VerticalAlignment="Center"
                                             Text="{Binding CountryName}" />
