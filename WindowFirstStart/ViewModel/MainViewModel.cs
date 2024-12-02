@@ -21,7 +21,7 @@ namespace WindowFirstStart.ViewModel
             MainModel = new MainModel(this);
 
             CheckConnectionStringAction checkConnectionStringAction = new (this);
-            CheckConnectionStringPredict checkConnectionStringPredict = new ();
+            CheckConnectionStringPredict checkConnectionStringPredict = new (this);
 
             ConnStringButtonCheckCommand = new(checkConnectionStringAction.Check, checkConnectionStringPredict.Check);
         }

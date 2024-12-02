@@ -8,9 +8,16 @@ namespace WindowFirstStart.ViewModel.Commands.ConnStringButton
 {
     internal class CheckConnectionStringPredict
     {
+        MainViewModel MainViewModel { get; }
+
+        public CheckConnectionStringPredict(MainViewModel mainViewModel)
+        {
+            MainViewModel = mainViewModel;
+        }
+
         public bool Check()
         {
-            return true;
+            return MainViewModel.ConnStringButtonIsEnabled;
         }
     }
 }

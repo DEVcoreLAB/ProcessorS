@@ -9,6 +9,7 @@ using System.Windows.Threading;
 using Globals.Model.Observer;
 using Globals.Model.Observer.Components;
 using Globals.ViewModel;
+using WindowFirstStart.Model.Reactors.Behaviours.ConnectionStringVM;
 using WindowFirstStart.Model.Reactors.Behaviours.FontSizesVM;
 using WindowFirstStart.Model.Reactors.Behaviours.LanguageSelectVM;
 using WindowFirstStart.ViewModel;
@@ -29,6 +30,10 @@ namespace WindowFirstStart.Model.Reactors
             if (newValue.Name == nameof(mainViewModel.SelectedLanguage))
             {
                 connector = new Connector(new LanguageChangedBehave());
+            }
+            if (newValue.Name == nameof(mainViewModel.ConnectionStringTextboxText))
+            {
+                connector = new Connector(new ConnectionStringTextboxTextBehave());
             }
 
             if (connector != null)
