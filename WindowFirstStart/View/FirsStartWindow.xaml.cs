@@ -34,7 +34,7 @@ namespace WindowFirstStart.View
         {
             if (e.Key == Key.F1)
             {
-                MessageBox.Show(mainViewModel.SelectedLanguage.CountryName);
+                MessageBox.Show(mainViewModel.ConnectionStringTextboxText);
             }
         }
     }

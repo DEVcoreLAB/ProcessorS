@@ -141,6 +141,7 @@
                             TextWrapping="NoWrap"
                             VerticalContentAlignment="Center"
                             Padding="5"
+                            Text="{Binding ConnectionStringTextboxText, UpdateSourceTrigger=PropertyChanged}"
                             />
                         <Button
                             BorderThickness="0"
@@ -148,6 +149,7 @@
                             Background="Transparent"
                             Height="{Binding ElementName=connStringTEXTBOX, Path=ActualHeight}"
                             IsEnabled="{Binding ConnStringButtonIsEnabled}"
+                            Command="{Binding ConnStringButtonCheckCommand}"
                             >
                             <Image 
                                 Source="{Binding CheckConnectioStringButtonBackground, 
