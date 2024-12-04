@@ -19,11 +19,9 @@ namespace WindowFirstStart.ViewModel
         public MainViewModel()
         {
             MainModel = new MainModel(this);
-
-            CheckConnectionStringAction checkConnectionStringAction = new (this);
-            CheckConnectionStringPredict checkConnectionStringPredict = new (this);
-
-            ConnStringButtonCheckCommand = new(checkConnectionStringAction.Check, checkConnectionStringPredict.Check);
+            ConnStringButtonCheckCommand = new RelayCommand
+                (new CheckConnectionStringAction(this).Check,
+                new CheckConnectionStringPredict(this).Check);
         }
     }
 }

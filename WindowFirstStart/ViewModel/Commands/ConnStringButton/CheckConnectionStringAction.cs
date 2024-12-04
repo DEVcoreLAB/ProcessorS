@@ -1,4 +1,6 @@
-﻿using Globals.MyDialogsAndWindows.MyMessagebox;
+﻿using Globals.Logger.Log4N;
+using Globals.MyDialogsAndWindows.MyMessagebox;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +21,34 @@ namespace WindowFirstStart.ViewModel.Commands.ConnStringButton
 
         public void Check()
         {
-            MessageBoxX.Show("test");
+           
+            //return new Action(() =>
+            //{
+                bool connectionTestResult = false;
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(MainViewModel.ConnectionStringTextboxText))
+                    {
+                        connection.Open();
+                        MessageBoxX.Show("OK");
+                        connectionTestResult = true;
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBoxX.Show("SqlException " + ex.Message + "\n" + ex.Number);
+                    L4N.L4NDefault.Error(ex);
+                    connectionTestResult = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBoxX.Show("Exception " + ex.Message);
+                    L4N.L4NDefault.Error(ex);
+                    connectionTestResult = false;
+                }
+
+            //});
         }
     }
 }
