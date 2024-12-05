@@ -61,6 +61,15 @@ namespace WindowFirstStart.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Połączenie z bazą danych przebiegło pomyślnie..
+        /// </summary>
+        internal static string connectionStringTest {
+            get {
+                return ResourceManager.GetString("connectionStringTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Rozmiar czcionki.
         /// </summary>
         internal static string fontSizeLabel {

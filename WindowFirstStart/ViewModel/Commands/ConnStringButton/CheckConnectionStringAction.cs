@@ -21,34 +21,24 @@ namespace WindowFirstStart.ViewModel.Commands.ConnStringButton
 
         public void Check()
         {
-           
-            //return new Action(() =>
-            //{
-                bool connectionTestResult = false;
-
                 try
                 {
                     using (SqlConnection connection = new SqlConnection(MainViewModel.ConnectionStringTextboxText))
                     {
                         connection.Open();
-                        MessageBoxX.Show("OK");
-                        connectionTestResult = true;
+                        MessageBoxX.Show(Langs.Lang.connectionStringTest);
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBoxX.Show("SqlException " + ex.Message + "\n" + ex.Number);
-                    L4N.L4NDefault.Error(ex);
-                    connectionTestResult = false;
+                    L4N.L4NDefault.Error("SqlException " + ex.Message + "\n" + ex.Number);
                 }
                 catch (Exception ex)
                 {
                     MessageBoxX.Show("Exception " + ex.Message);
-                    L4N.L4NDefault.Error(ex);
-                    connectionTestResult = false;
+                    L4N.L4NDefault.Error("Exception " + ex.Message);
                 }
-
-            //});
         }
     }
 }
