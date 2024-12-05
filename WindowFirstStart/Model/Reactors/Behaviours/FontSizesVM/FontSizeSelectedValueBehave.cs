@@ -3,6 +3,7 @@ using Globals.MyControlsSchemas;
 using Globals.MyControlsSchemas.Controls.MyButton;
 using Globals.MyControlsSchemas.Controls.MyCombobox;
 using Globals.MyControlsSchemas.Controls.MyLabel;
+using Globals.MyControlsSchemas.Controls.MyTextBox;
 using Globals.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,11 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.FontSizesVM
                 Style labelStyle = setCustmLabelControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
                 Application.Current.Resources.Remove(typeof(System.Windows.Controls.Label));
                 Application.Current.Resources.Add(typeof(System.Windows.Controls.Label), labelStyle);
+
+                SetCustmControl setCustmTextBoxControl = new SetCustmControl(new TextBoxBasic());
+                Style textBoxStyle = setCustmTextBoxControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
+                Application.Current.Resources.Remove(typeof(System.Windows.Controls.TextBox));
+                Application.Current.Resources.Add(typeof(System.Windows.Controls.TextBox), textBoxStyle);
             });
         }
     }
