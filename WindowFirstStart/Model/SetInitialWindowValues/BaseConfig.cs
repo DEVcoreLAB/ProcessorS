@@ -38,6 +38,9 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
 
             mainViewModel.CheckConnectioStringButtonBackground = SetProperButtonBackground.Set(false,Uris.CheckConnectionToDBEnabled,Uris.CheckConnectionToDBDisabled);
             mainViewModel.ConnStringButtonIsEnabled = false;
+
+            mainViewModel.PasswordOriginBackground = SetProperButtonBackground.SetSimple(Uris.ShowDataIcon);
+            mainViewModel.PasswordConfirmBackgound = SetProperButtonBackground.SetSimple(Uris.ShowDataIcon);
         }
     }
 }

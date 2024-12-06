@@ -26,6 +26,7 @@ namespace WindowFirstStart.Model
 
             BasicReactor reactor = new BasicReactor();
             new TObserver<MainViewModel, BasicReactor>(mainViewModel, reactor);
+
         }
     }
 }

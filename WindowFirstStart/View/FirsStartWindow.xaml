@@ -188,7 +188,11 @@
                             <Label
                                 Width="{Binding ElementName=languageCOMBOBOX, Path=ActualHeight}"
                                 Margin="5,0,0,0"
-                                />
+                                >
+                                <Image 
+                                    Source="{Binding PasswordOriginBackground, 
+                                    FallbackValue='pack://application:,,,/Globals;component/Graphics/GraphicFiles/showData.png'}"/>
+                            </Label>
                         </StackPanel>
 
                         <StackPanel 
@@ -207,7 +211,11 @@
                             <Label
                                 Width="{Binding ElementName=languageCOMBOBOX, Path=ActualHeight}"
                                 Margin="5,0,0,0"
-                                />
+                                >
+                                <Image 
+                                    Source="{Binding PasswordConfirmBackgound, 
+                                    FallbackValue='pack://application:,,,/Globals;component/Graphics/GraphicFiles/showData.png'}"/>
+                            </Label>
                         </StackPanel>
                     </Grid>
                 </Grid>

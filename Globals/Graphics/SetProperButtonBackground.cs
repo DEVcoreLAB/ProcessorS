@@ -29,5 +29,17 @@ namespace Globals.Graphics
             }
             return tempImage;
         }
+
+        public static BitmapImage SetSimple(Uri uri)
+        {
+            BitmapImage? tempImage = null;
+
+            tempImage = new BitmapImage();
+            tempImage.BeginInit();
+            tempImage.UriSource = uri;
+            tempImage.EndInit();
+
+            return tempImage;
+        }
     }
 }

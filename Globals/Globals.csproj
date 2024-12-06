@@ -14,6 +14,7 @@
     <None Remove="Graphics\GraphicFiles\CheckConnectionToDBDisabled.png" />
     <None Remove="Graphics\GraphicFiles\messageboxbackground.png" />
     <None Remove="Graphics\GraphicFiles\poland.png" />
+    <None Remove="Graphics\GraphicFiles\showData.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +27,7 @@
     <Resource Include="Graphics\GraphicFiles\CheckConnectionToDBDisabled.png" />
     <Resource Include="Graphics\GraphicFiles\messageboxbackground.png" />
     <Resource Include="Graphics\GraphicFiles\poland.png" />
+    <Resource Include="Graphics\GraphicFiles\showData.png" />
   </ItemGroup>
 
   <ItemGroup>
