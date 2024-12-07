@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowFirstStart.View"
+        xmlns:PassBox="clr-namespace:Globals.Security.PasswordBoxControlHelper;assembly=Globals"
         mc:Ignorable="d"
         KeyDown="Window_KeyDown"
         Title="FirsStartWindow" 
@@ -184,6 +185,9 @@
                                 d:Password="123"
                                 VerticalContentAlignment="Center"
                                 Padding="5,0,0,0"
+                                PassBox:SecurePasswordHelper.SecurePassword="{Binding PasswordBase,
+                                            Mode=TwoWay,
+                                            UpdateSourceTrigger=PropertyChanged}"
                                 />
                             <Label
                                 Width="{Binding ElementName=languageCOMBOBOX, Path=ActualHeight}"
@@ -207,6 +211,9 @@
                                 d:Password="123"
                                 VerticalContentAlignment="Center"
                                 Padding="5,0,0,0"
+                                PassBox:SecurePasswordHelper.SecurePassword="{Binding PasswordConfirm,
+                                    Mode=TwoWay,
+                                    UpdateSourceTrigger=PropertyChanged}"
                                 />
                             <Label
                                 Width="{Binding ElementName=languageCOMBOBOX, Path=ActualHeight}"

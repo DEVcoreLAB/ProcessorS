@@ -34,7 +34,13 @@ namespace WindowFirstStart.View
         {
             if (e.Key == Key.F1)
             {
-                MessageBox.Show(mainViewModel.ConnectionStringTextboxText);
+                StringBuilder sb = new StringBuilder();
+                sb.Append($@"pass1: {Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordBase)}");
+                sb.Append("\n");
+                sb.Append($@"pass2: {Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordConfirm)}");
+                sb.Append("\n");
+
+                MessageBox.Show(sb.ToString());
             }
         }
     }

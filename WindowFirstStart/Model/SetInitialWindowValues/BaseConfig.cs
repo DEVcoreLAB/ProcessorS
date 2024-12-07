@@ -3,6 +3,7 @@ using Globals.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
@@ -41,6 +42,9 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
 
             mainViewModel.PasswordOriginBackground = SetProperButtonBackground.SetSimple(Uris.ShowDataIcon);
             mainViewModel.PasswordConfirmBackgound = SetProperButtonBackground.SetSimple(Uris.ShowDataIcon);
+
+            mainViewModel.PasswordBase = new SecureString();
+            mainViewModel.PasswordConfirm = new SecureString();
         }
     }
 }
