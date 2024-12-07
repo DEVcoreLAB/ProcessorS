@@ -214,6 +214,7 @@
                                 PassBox:SecurePasswordHelper.SecurePassword="{Binding PasswordConfirm,
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"
+                                IsEnabled="{Binding IsPasswordBoxConfirmEnabled}"
                                 />
                             <Label
                                 Width="{Binding ElementName=languageCOMBOBOX, Path=ActualHeight}"

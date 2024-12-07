@@ -12,6 +12,7 @@ using Globals.ViewModel;
 using WindowFirstStart.Model.Reactors.Behaviours.ConnectionStringVM;
 using WindowFirstStart.Model.Reactors.Behaviours.FontSizesVM;
 using WindowFirstStart.Model.Reactors.Behaviours.LanguageSelectVM;
+using WindowFirstStart.Model.Reactors.Behaviours.PasswordSectionVM;
 using WindowFirstStart.ViewModel;
 
 namespace WindowFirstStart.Model.Reactors
@@ -34,6 +35,10 @@ namespace WindowFirstStart.Model.Reactors
             if (newValue.Name == nameof(mainViewModel.ConnectionStringTextboxText))
             {
                 connector = new Connector(new ConnectionStringTextboxTextBehave());
+            }
+            if (newValue.Name == nameof(mainViewModel.PasswordBase))
+            {
+                connector = new Connector(new PasswordBaseBehave());
             }
 
             if (connector != null)

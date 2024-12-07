@@ -45,6 +45,8 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
 
             mainViewModel.PasswordBase = new SecureString();
             mainViewModel.PasswordConfirm = new SecureString();
+
+            mainViewModel.IsPasswordBoxConfirmEnabled = false;
         }
     }
 }

@@ -55,5 +55,16 @@ namespace WindowFirstStart.ViewModel
 			}
 		}
 
+		private bool isPasswordBoxConfirmEnabled;
+		public bool IsPasswordBoxConfirmEnabled
+		{
+			get { return isPasswordBoxConfirmEnabled; }
+			set 
+			{ 
+				isPasswordBoxConfirmEnabled = value; 
+				OnPropertyChanged(nameof(IsPasswordBoxConfirmEnabled));
+			}
+		}
+
 	}
 }
