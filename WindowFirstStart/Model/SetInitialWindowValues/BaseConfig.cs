@@ -7,6 +7,7 @@ using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 using WindowFirstStart.Langs;
 using WindowFirstStart.Model.SetInitialWindowValues.FontSizes;
 using WindowFirstStart.Model.SetInitialWindowValues.Languages;
@@ -47,6 +48,8 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
             mainViewModel.PasswordConfirm = new SecureString();
 
             mainViewModel.IsPasswordBoxConfirmEnabled = false;
+
+            mainViewModel.PasswordBoxConfirmForeground = new System.Windows.Media.SolidColorBrush(Colors.Red);
         }
     }
 }

@@ -215,6 +215,7 @@
                                     Mode=TwoWay,
                                     UpdateSourceTrigger=PropertyChanged}"
                                 IsEnabled="{Binding IsPasswordBoxConfirmEnabled}"
+                                Foreground="{Binding PasswordBoxConfirmForeground}"
                                 />
                             <Label
                                 Width="{Binding ElementName=languageCOMBOBOX, Path=ActualHeight}"

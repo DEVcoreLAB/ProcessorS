@@ -40,6 +40,10 @@ namespace WindowFirstStart.Model.Reactors
             {
                 connector = new Connector(new PasswordBaseBehave());
             }
+            if (newValue.Name == nameof(mainViewModel.PasswordConfirm))
+            {
+                connector = new Connector(new PasswordConfirmBehave());
+            }
 
             if (connector != null)
             {

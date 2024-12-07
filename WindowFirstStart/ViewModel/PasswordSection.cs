@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace WindowFirstStart.ViewModel
@@ -65,6 +66,18 @@ namespace WindowFirstStart.ViewModel
 				OnPropertyChanged(nameof(IsPasswordBoxConfirmEnabled));
 			}
 		}
+
+		private SolidColorBrush passwordBoxConfirmForeground;
+		public SolidColorBrush PasswordBoxConfirmForeground
+		{
+			get { return passwordBoxConfirmForeground; }
+			set 
+			{ 
+				passwordBoxConfirmForeground = value;
+				OnPropertyChanged(nameof(PasswordBoxConfirmForeground));
+			}
+		}
+
 
 	}
 }
