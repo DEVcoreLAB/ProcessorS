@@ -43,5 +43,29 @@ namespace WindowFirstStart.View
                 MessageBox.Show(sb.ToString());
             }
         }
+
+        private void PasswordBaseLabel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Label label = sender as Label;
+            label.ToolTip = Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordBase);
+        }
+
+        private void PasswordBaseLabel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Label label = sender as Label;
+            label.ToolTip = null;
+        }
+
+        private void PasswordConfirmLABEL_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Label label = sender as Label;
+            label.ToolTip = Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordConfirm);
+        }
+
+        private void PasswordConfirmLABEL_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Label label = sender as Label;
+            label.ToolTip = null;
+        }
     }
 }
