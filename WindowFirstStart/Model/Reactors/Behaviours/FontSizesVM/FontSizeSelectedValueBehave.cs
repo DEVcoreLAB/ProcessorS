@@ -4,6 +4,7 @@ using Globals.MyControlsSchemas.Controls.MyButton;
 using Globals.MyControlsSchemas.Controls.MyCombobox;
 using Globals.MyControlsSchemas.Controls.MyLabel;
 using Globals.MyControlsSchemas.Controls.MyTextBox;
+using Globals.MyControlsSchemas.Controls.MyToolTip;
 using Globals.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,11 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.FontSizesVM
                 Style textBoxStyle = setCustmTextBoxControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
                 Application.Current.Resources.Remove(typeof(System.Windows.Controls.TextBox));
                 Application.Current.Resources.Add(typeof(System.Windows.Controls.TextBox), textBoxStyle);
+
+                SetCustmControl setCustomTooltipControl = new SetCustmControl(new ToolTipBasic());
+                Style toolTipStyle = setCustomTooltipControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
+                Application.Current.Resources.Remove(typeof(System.Windows.Controls.ToolTip));
+                Application.Current.Resources.Add(typeof(System.Windows.Controls.ToolTip), toolTipStyle);
             });
         }
     }
