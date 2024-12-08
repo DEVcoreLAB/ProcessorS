@@ -17,6 +17,9 @@ namespace ADocumentation.Projects.Globals.Graphics
         public static Uri CheckConnectionToDBDisabled { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/CheckConnectionToDBDisabled.png");
 
         public static Uri ShowDataIcon { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/showData.png");
+
+        public static Uri SaveSettingsEnabled { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/SaveIconEnabled.png");
+        public static Uri SaveSettingsDisabled { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/SaveIconDisabled.png");
     }
 }
     

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowFirstStart.Model;
 using WindowFirstStart.ViewModel.Commands.ConnStringButton;
+using WindowFirstStart.ViewModel.Commands.SaveSettinsButton;
 using WindowRegularStart.View.MainWindow;
 
 namespace WindowFirstStart.ViewModel
@@ -15,6 +16,7 @@ namespace WindowFirstStart.ViewModel
         MainModel MainModel { get; }
 
         public RelayCommand ConnStringButtonCheckCommand { get; }
+        public RelayCommand CheckPropsToSave {  get; }
 
         public MainViewModel()
         {
@@ -22,6 +24,9 @@ namespace WindowFirstStart.ViewModel
             ConnStringButtonCheckCommand = new RelayCommand
                 (new CheckConnectionStringAction(this).Check,
                 new CheckConnectionStringPredict(this).Check);
+            CheckPropsToSave = new RelayCommand
+                (new CheckSettingsToSaveAction(this).Check,
+                new CheckSettingsToSavePredict(this).Check);
         }
     }
 }

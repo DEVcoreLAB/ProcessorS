@@ -21,7 +21,7 @@
         x:Name="MainBORDER"  
         Background="White"
         BorderBrush="Orange"
-        BorderThickness="2"
+        BorderThickness="4"
         CornerRadius="10"
         >
             <ScrollViewer 
@@ -39,6 +39,8 @@
                 <Grid 
                     Grid.Column="0">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
@@ -125,8 +127,8 @@
                     <Border
                         Grid.Row="2"
                         Height="2"
-                        Margin="5"
-                        Background="LightGray"
+                        Margin="5,20,5,20"
+                        Background="Orange"
                         />
                     <!--Connection string section - row 3-->
                     <Grid Grid.Row="3">
@@ -147,8 +149,8 @@
                             Text="{Binding ConnectionStringTextboxText, UpdateSourceTrigger=PropertyChanged}"
                             />
                         <Button
-                            BorderThickness="0"
                             Grid.Row="2" 
+                            BorderThickness="0"
                             Background="Transparent"
                             Height="{Binding ElementName=connStringTEXTBOX, Path=ActualHeight}"
                             IsEnabled="{Binding ConnStringButtonIsEnabled}"
@@ -163,8 +165,8 @@
                     <Border
                         Grid.Row="4"
                         Height="2"
-                        Margin="5"
-                        Background="LightGray"
+                        Margin="5,20,5,20"
+                        Background="Orange"
                         />
                     <!--password section - row 5-->
                     <Grid 
@@ -233,13 +235,35 @@
                             </Label>
                         </StackPanel>
                     </Grid>
+
+                    <!--Visual separator - row 6-->
+                    <Border
+                        Grid.Row="6"
+                        Height="2"
+                        Margin="5,20,5,20"
+                        Background="Orange"
+                        />
+                    
+                    <!--Save button section - row 7-->
+                    <Button
+                        Grid.Row="7"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Height="{Binding ElementName=connStringTEXTBOX, Path=ActualHeight}"
+                        IsEnabled="{Binding IsEnabledSaveButton}"
+                        Command="{Binding CheckPropsToSave}"
+                        >
+                        <Image 
+                            Source="{Binding SaveSettingsButtonBackground, 
+                            FallbackValue='pack://application:,,,/Globals;component/Graphics/GraphicFiles/SaveIconEnabled.png'}"/>
+                    </Button>
                 </Grid>
 
                 <Border
                     Grid.Column="1"
                     Width="2"
                     Margin="5"
-                    Background="LightGray"
+                    Background="Orange"
                     />
 
                 <Grid 

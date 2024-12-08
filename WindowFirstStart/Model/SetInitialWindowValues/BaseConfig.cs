@@ -50,6 +50,9 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
             mainViewModel.IsPasswordBoxConfirmEnabled = false;
 
             mainViewModel.PasswordBoxConfirmForeground = new System.Windows.Media.SolidColorBrush(Colors.Red);
+
+            mainViewModel.SaveSettingsButtonBackground = SetProperButtonBackground.Set(false,Uris.SaveSettingsEnabled,Uris.SaveSettingsDisabled);
+            mainViewModel.IsEnabledSaveButton = false;
         }
     }
 }
