@@ -147,6 +147,7 @@
                             VerticalContentAlignment="Center"
                             Padding="5"
                             Text="{Binding ConnectionStringTextboxText, UpdateSourceTrigger=PropertyChanged}"
+                            Foreground="{Binding ConnStrinngTextBoxForeground}"
                             />
                         <Button
                             Grid.Row="2" 

@@ -53,6 +53,8 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
 
             mainViewModel.SaveSettingsButtonBackground = SetProperButtonBackground.Set(false,Uris.SaveSettingsEnabled,Uris.SaveSettingsDisabled);
             mainViewModel.IsEnabledSaveButton = false;
+
+            mainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Black);
         }
     }
 }

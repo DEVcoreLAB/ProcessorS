@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using WindowRegularStart.View.MainWindow;
 
 namespace WindowFirstStart.ViewModel.Commands.ConnStringButton
@@ -27,17 +28,21 @@ namespace WindowFirstStart.ViewModel.Commands.ConnStringButton
                     {
                         connection.Open();
                         MessageBoxX.Show(Langs.Lang.connectionStringTest);
+                        MainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Green);
                     }
                 }
                 catch (SqlException ex)
                 {
                     MessageBoxX.Show("SqlException " + ex.Message + "\n" + ex.Number);
                     L4N.L4NDefault.Error("SqlException " + ex.Message + "\n" + ex.Number);
+                    MainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Red);
+
                 }
                 catch (Exception ex)
                 {
                     MessageBoxX.Show("Exception " + ex.Message);
                     L4N.L4NDefault.Error("Exception " + ex.Message);
+                    MainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Red);
                 }
         }
     }

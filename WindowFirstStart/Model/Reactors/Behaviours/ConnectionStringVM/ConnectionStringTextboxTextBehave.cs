@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using WindowFirstStart.ViewModel;
 
 namespace WindowFirstStart.Model.Reactors.Behaviours.ConnectionStringVM
@@ -18,10 +19,12 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.ConnectionStringVM
             MainViewModel mainViewModel = viewModel as MainViewModel;
 
             return new Action(() => 
-            { 
+            {
+
                 if (!string.IsNullOrEmpty(mainViewModel.ConnectionStringTextboxText))
                 {
                     mainViewModel.ConnStringButtonIsEnabled = true;
+                    mainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Red);
                 }
                 else
                 {
