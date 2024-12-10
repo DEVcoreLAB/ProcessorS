@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowFirstStart.Model.Reactors.Behaviours.SaveSettingsSectionVM;
 using WindowFirstStart.ViewModel;
 
 namespace WindowFirstStart.Model.Reactors.Behaviours.PasswordSectionVM
@@ -26,6 +27,8 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.PasswordSectionVM
                 {
                     mainViewModel.IsPasswordBoxConfirmEnabled = false;
                 }
+                mainViewModel.IsEnabledSaveButton = CheckSaveButtonStatus.Check(mainViewModel.ConnStrinngTextBoxForeground, mainViewModel.PasswordBase, mainViewModel.PasswordConfirm);
+
             });
         }
     }

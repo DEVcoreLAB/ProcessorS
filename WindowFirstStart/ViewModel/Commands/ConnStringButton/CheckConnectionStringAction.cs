@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using WindowFirstStart.Model.Reactors.Behaviours.SaveSettingsSectionVM;
 using WindowRegularStart.View.MainWindow;
 
 namespace WindowFirstStart.ViewModel.Commands.ConnStringButton
@@ -44,6 +45,8 @@ namespace WindowFirstStart.ViewModel.Commands.ConnStringButton
                     L4N.L4NDefault.Error("Exception " + ex.Message);
                     MainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Red);
                 }
+
+            MainViewModel.IsEnabledSaveButton = CheckSaveButtonStatus.Check(MainViewModel.ConnStrinngTextBoxForeground,MainViewModel.PasswordBase,MainViewModel.PasswordConfirm);
         }
     }
 }

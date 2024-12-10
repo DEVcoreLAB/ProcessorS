@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using WindowFirstStart.Model.Reactors.Behaviours.SaveSettingsSectionVM;
 using WindowFirstStart.ViewModel;
 
 namespace WindowFirstStart.Model.Reactors.Behaviours.PasswordSectionVM
@@ -34,6 +35,9 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.PasswordSectionVM
                 { 
                     mainViewModel.PasswordBoxConfirmForeground = new SolidColorBrush(Colors.Red);
                 }
+
+                mainViewModel.IsEnabledSaveButton = CheckSaveButtonStatus.Check(mainViewModel.ConnStrinngTextBoxForeground, mainViewModel.PasswordBase, mainViewModel.PasswordConfirm);
+
             });
         }
     }

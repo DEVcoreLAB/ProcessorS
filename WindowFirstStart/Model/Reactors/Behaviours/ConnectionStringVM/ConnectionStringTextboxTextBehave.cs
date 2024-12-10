@@ -25,10 +25,13 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.ConnectionStringVM
                 {
                     mainViewModel.ConnStringButtonIsEnabled = true;
                     mainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Red);
+                    mainViewModel.IsEnabledSaveButton = false;
                 }
                 else
                 {
                     mainViewModel.ConnStringButtonIsEnabled = false;
+                    mainViewModel.IsEnabledSaveButton = false;
+
                 }
                 mainViewModel.CheckConnectioStringButtonBackground = SetProperButtonBackground.Set(mainViewModel.ConnStringButtonIsEnabled,Uris.CheckConnectionToDBEnabled,Uris.CheckConnectionToDBDisabled);
             });
