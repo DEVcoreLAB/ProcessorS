@@ -21,7 +21,7 @@ namespace WindowFirstStart.ViewModel.Commands.ConnStringButton
             MainViewModel = mainViewModel;
         }
 
-        public void Check()
+        public void Check(object parameter)
         {
                 try
                 {

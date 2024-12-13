@@ -16,9 +16,13 @@ namespace WindowFirstStart.ViewModel.Commands.SaveSettinsButton
             MainViewModel = mainViewModel;
         }
 
-        public void Check()
+        public void Check(object parameter)
         {
-            MessageBox.Show("test");
+            WindowRegularStart.View.MainWindow.MainWindow mainWindow = new WindowRegularStart.View.MainWindow.MainWindow();
+            mainWindow.Show();
+
+            Window window = parameter as Window;
+            window.Close();
         }
     }
 }

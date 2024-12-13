@@ -253,6 +253,7 @@
                         Height="{Binding ElementName=connStringTEXTBOX, Path=ActualHeight}"
                         IsEnabled="{Binding IsEnabledSaveButton}"
                         Command="{Binding CheckPropsToSave}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                         >
                         <Image 
                             Source="{Binding SaveSettingsButtonBackground, 
