@@ -40,6 +40,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ConnString.settings</DependentUpon>
     </Compile>
+    <Compile Update="SettingFiles\PassKey.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PassKey.settings</DependentUpon>
+    </Compile>
     <Compile Update="SettingFiles\SettingCurrentLanguage.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -61,6 +66,10 @@
     <None Update="SettingFiles\ConnString.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>ConnString.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="SettingFiles\PassKey.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>PassKey.Designer.cs</LastGenOutput>
     </None>
     <None Update="SettingFiles\SettingCurrentLanguage.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
