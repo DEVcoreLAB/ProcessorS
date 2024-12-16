@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Globals.SettingFiles;
+using Globals.SettingFiles.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +20,9 @@ namespace WindowFirstStart.ViewModel.Commands.SaveSettinsButton
 
         public void Check(object parameter)
         {
+            SettingFileConfigurator settingFileConfigurator = new SettingFileConfigurator(new SaveSettings());
+            settingFileConfigurator.ConfigureFile.Configure(SettingFontProperties.Default,nameof(SettingFontProperties.FontSize),MainViewModel.FontSizeSelectedValue);
+
             WindowRegularStart.View.MainWindow.MainWindow mainWindow = new WindowRegularStart.View.MainWindow.MainWindow();
             mainWindow.Show();
 
