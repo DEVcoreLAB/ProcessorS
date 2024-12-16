@@ -1,7 +1,9 @@
 ﻿
+using Globals.Security.PasswordBoxControlHelper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -44,6 +46,20 @@ namespace WindowFirstStart.View
 
 
                 //MessageBox.Show(Globals.Security.PasswordBoxControlHelper.SaveToFileStringToSecuredString.Convert(mainViewModel.PasswordConfirm));
+
+                ////// manual test for encodimg...
+                //string unsecureString = ConvertToUnsecureString.Convert(mainViewModel.PasswordConfirm);
+                //string coded = SaveToFileStringToSecuredString.ConvertString(unsecureString);
+                //string uncodedString = ReadFromFileSecuredStringToString.UnprotectString(coded);
+                //SecureString secureString = new SecureString();
+                //foreach (var item in uncodedString)
+                //{
+                //    secureString.AppendChar(item);
+                //}
+                //string seconduncodedString = ConvertToUnsecureString.Convert(secureString);
+                //StringBuilder sb = new StringBuilder();
+                //MessageBox.Show(coded);
+
 
             }
         }
