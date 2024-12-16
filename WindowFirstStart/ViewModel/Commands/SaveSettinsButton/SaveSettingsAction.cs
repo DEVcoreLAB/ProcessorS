@@ -7,11 +7,11 @@ using System.Windows;
 
 namespace WindowFirstStart.ViewModel.Commands.SaveSettinsButton
 {
-    internal class CheckSettingsToSaveAction
+    internal class SaveSettingsAction
     {
         MainViewModel MainViewModel { get; }
 
-        public CheckSettingsToSaveAction(MainViewModel mainViewModel)
+        public SaveSettingsAction(MainViewModel mainViewModel)
         {
             MainViewModel = mainViewModel;
         }

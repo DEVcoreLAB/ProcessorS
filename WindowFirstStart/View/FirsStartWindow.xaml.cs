@@ -34,13 +34,17 @@ namespace WindowFirstStart.View
         {
             if (e.Key == Key.F1)
             {
-                StringBuilder sb = new StringBuilder();
-                sb.Append($@"pass1: {Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordBase)}");
-                sb.Append("\n");
-                sb.Append($@"pass2: {Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordConfirm)}");
-                sb.Append("\n");
+                //StringBuilder sb = new StringBuilder();
+                //sb.Append($@"pass1: {Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordBase)}");
+                //sb.Append("\n");
+                //sb.Append($@"pass2: {Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordConfirm)}");
+                //sb.Append("\n");
 
-                MessageBox.Show(sb.ToString());
+                //MessageBox.Show(sb.ToString());
+
+
+                //MessageBox.Show(Globals.Security.PasswordBoxControlHelper.SaveToFileStringToSecuredString.Convert(mainViewModel.PasswordConfirm));
+
             }
         }
 

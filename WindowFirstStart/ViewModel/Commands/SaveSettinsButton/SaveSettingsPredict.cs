@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace WindowFirstStart.ViewModel.Commands.SaveSettinsButton
 {
-    internal class CheckSettingsToSavePredict
+    internal class SaveSettingsPredict
     {
         MainViewModel MainViewModel { get; }
 
-        public CheckSettingsToSavePredict(MainViewModel mainViewModel)
+        public SaveSettingsPredict(MainViewModel mainViewModel)
         {
             MainViewModel = mainViewModel;
         }
