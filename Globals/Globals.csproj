@@ -68,7 +68,7 @@
       <LastGenOutput>ConnString.Designer.cs</LastGenOutput>
     </None>
     <None Update="SettingFiles\PassKey.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>PassKey.Designer.cs</LastGenOutput>
     </None>
     <None Update="SettingFiles\SettingCurrentLanguage.settings">

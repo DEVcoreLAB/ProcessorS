@@ -25,7 +25,7 @@ namespace WindowFirstStart.ViewModel
                 (new CheckConnectionStringAction(this).Check,
                 new CheckConnectionStringPredict(this).Check);
             CheckPropsToSave = new RelayCommand
-                (new SaveSettingsAction(this).Check,
+                (new SaveSettingsAction(this).Save,
                 new SaveSettingsPredict(this).Check);
         }
     }
