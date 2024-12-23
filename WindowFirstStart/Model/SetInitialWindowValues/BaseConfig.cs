@@ -13,6 +13,9 @@ using WindowFirstStart.Model.SetInitialWindowValues.FontSizes;
 using WindowFirstStart.Model.SetInitialWindowValues.Languages;
 using WindowFirstStart.Model.WindowIsDisplayed.Langchanged;
 using WindowFirstStart.ViewModel;
+using Globals.Documents.FlowDocumentinXAML.FlowDocumentExtractor;
+using WindowFirstStart.Model.HelpSectionXamlDocument;
+using System.Windows.Documents;
 
 namespace WindowFirstStart.Model.SetInitialWindowValues
 {
@@ -55,6 +58,11 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
             mainViewModel.IsEnabledSaveButton = false;
 
             mainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Black);
+
+            IExtractor extractor = new BasicFlowDocumentExtractor();
+            //FlowDocument flowDocument = extractor.Extract(new HelpDocument());
+            
+            mainViewModel.HelpFlowDocument = extractor.Extract(new HelpDocument());
         }
     }
 }
