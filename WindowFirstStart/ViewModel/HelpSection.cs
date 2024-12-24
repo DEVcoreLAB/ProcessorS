@@ -10,16 +10,15 @@ namespace WindowFirstStart.ViewModel
 {
     internal partial class MainViewModel : BaseViewModel
     {
-		private UserControl helpDocument;
-		public UserControl HelpDocument
+		private ContentControl helpDocument;
+		public ContentControl HelpDocument
 		{
 			get { return helpDocument; }
 			set 
 			{ 
 				helpDocument = value; 
-				OnPropertyChanged(nameof(helpDocument));
+				OnPropertyChanged(nameof(HelpDocument));
 			}
 		}
-
 	}
 }

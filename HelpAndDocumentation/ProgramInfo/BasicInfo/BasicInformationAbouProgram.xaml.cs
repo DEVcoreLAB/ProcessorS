@@ -1,7 +1,9 @@
 ﻿using HelpAndDocumentation.ProgramInfo.BasicInfo.Langs;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,15 +28,19 @@ namespace HelpAndDocumentation.ProgramInfo.BasicInfo
             InitializeComponent();
             this.DataContext = this;
 
-            FontSize = Globals.SettingFiles.SettingFontProperties.Default.FontSize;
+
             MainDescription = Lang.mainDescriptioText;
         }
+    
 
         private double fontSize;
         public double FontSize
         {
             get { return fontSize; }
-            set { fontSize = value; }
+            set 
+            { 
+                fontSize = value;
+            }
         }
 
         private string mainDescription;

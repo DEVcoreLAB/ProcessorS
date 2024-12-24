@@ -27,6 +27,9 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.LanguageSelectVM
 
                 ChangeVisibleTexts changeVisibleTexts = new ChangeVisibleTexts();
                 changeVisibleTexts.Change(mainViewModel);
+
+                mainViewModel.HelpDocument = null;
+                mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram();
             });
         }
     }

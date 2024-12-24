@@ -280,8 +280,9 @@
                     <Grid 
                         Grid.Row="0"
                         >
-                        <UserControl
-                            Content="{Binding HelpDocument}"
+                        <ContentControl
+                            Content="{Binding HelpDocument}"  
+                            FontSize="{Binding FontSizeSelectedValue}"
                             />
                     </Grid>
                     
