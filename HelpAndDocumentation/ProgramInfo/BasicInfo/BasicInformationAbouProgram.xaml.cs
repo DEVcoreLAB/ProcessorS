@@ -28,19 +28,7 @@ namespace HelpAndDocumentation.ProgramInfo.BasicInfo
             InitializeComponent();
             this.DataContext = this;
 
-
             MainDescription = Lang.mainDescriptioText;
-        }
-    
-
-        private double fontSize;
-        public double FontSize
-        {
-            get { return fontSize; }
-            set 
-            { 
-                fontSize = value;
-            }
         }
 
         private string mainDescription;

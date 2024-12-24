@@ -282,7 +282,6 @@
                         >
                         <ContentControl
                             Content="{Binding HelpDocument}"  
-                            FontSize="{Binding FontSizeSelectedValue}"
                             />
                     </Grid>
                     

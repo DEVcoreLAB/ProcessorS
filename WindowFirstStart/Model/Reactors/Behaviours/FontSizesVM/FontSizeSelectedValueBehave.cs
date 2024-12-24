@@ -1,5 +1,6 @@
 ﻿using Globals.Model.Observer.Components;
 using Globals.MyControlsSchemas;
+using Globals.MyControlsSchemas.Controls;
 using Globals.MyControlsSchemas.Controls.MyButton;
 using Globals.MyControlsSchemas.Controls.MyCombobox;
 using Globals.MyControlsSchemas.Controls.MyLabel;
@@ -27,36 +28,7 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.FontSizesVM
 
             return new Action(() =>
             {
-                SetCustmControl setCustmButtonControl = new SetCustmControl(new ButtonBasic());
-                Style buttonStyle = setCustmButtonControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
-                Application.Current.Resources.Remove(typeof(System.Windows.Controls.Button));
-                Application.Current.Resources.Add(typeof(System.Windows.Controls.Button), buttonStyle);
-
-                SetCustmControl setCustmComboboxControl = new SetCustmControl(new ComboboxBasic());
-                Style comboboxStyle = setCustmComboboxControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
-                Application.Current.Resources.Remove(typeof(System.Windows.Controls.ComboBox));
-                Application.Current.Resources.Add(typeof(System.Windows.Controls.ComboBox), comboboxStyle);
-
-                SetCustmControl setCustmLabelControl = new SetCustmControl(new LabelBasic());
-                Style labelStyle = setCustmLabelControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
-                Application.Current.Resources.Remove(typeof(System.Windows.Controls.Label));
-                Application.Current.Resources.Add(typeof(System.Windows.Controls.Label), labelStyle);
-
-                SetCustmControl setCustmTextBoxControl = new SetCustmControl(new TextBoxBasic());
-                Style textBoxStyle = setCustmTextBoxControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
-                Application.Current.Resources.Remove(typeof(System.Windows.Controls.TextBox));
-                Application.Current.Resources.Add(typeof(System.Windows.Controls.TextBox), textBoxStyle);
-
-                SetCustmControl setCustomTooltipControl = new SetCustmControl(new ToolTipBasic());
-                Style toolTipStyle = setCustomTooltipControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
-                Application.Current.Resources.Remove(typeof(System.Windows.Controls.ToolTip));
-                Application.Current.Resources.Add(typeof(System.Windows.Controls.ToolTip), toolTipStyle);
-
-                SetCustmControl setCustomTextBlockControl = new SetCustmControl(new TextBlockBasic());
-                Style textBlockStyle = setCustomTextBlockControl.setControl.SetControlProperties(mainViewModel.FontSizeSelectedValue);
-                Application.Current.Resources.Remove(typeof(System.Windows.Controls.TextBlock));
-                Application.Current.Resources.Add(typeof(System.Windows.Controls.TextBlock), textBlockStyle);
-
+                SetResources.Set(mainViewModel.FontSizeSelectedValue);
             });
         }
     }
