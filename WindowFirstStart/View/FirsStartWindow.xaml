@@ -280,10 +280,9 @@
                     <Grid 
                         Grid.Row="0"
                         >
-                        <FlowDocumentReader
-                            Document="{Binding HelpFlowDocument}"
-                            >
-                        </FlowDocumentReader>
+                        <UserControl
+                            Content="{Binding HelpDocument}"
+                            />
                     </Grid>
                     
                     <!--Visual separator-->
@@ -298,10 +297,7 @@
                     <Grid 
                         Grid.Row="2"
                         >
-                        <FlowDocumentReader
-                            Document="{Binding LicenseFlowDocument}"
-                            >
-                        </FlowDocumentReader>
+                      
                     </Grid>
 
                 </Grid>

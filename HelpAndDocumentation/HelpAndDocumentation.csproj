@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
@@ -9,17 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <Folder Include="HelpForWindows\FirstStartWindow\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Globals\Globals.csproj" />
-    <ProjectReference Include="..\HelpAndDocumentation\HelpAndDocumentation.csproj" />
-    <ProjectReference Include="..\WindoRegularStart\WindowRegularStart.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Langs\Lang.Designer.cs">
+    <Compile Update="ProgramInfo\BasicInfo\Langs\Lang.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Lang.resx</DependentUpon>
@@ -27,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Langs\Lang.resx">
+    <EmbeddedResource Update="ProgramInfo\BasicInfo\Langs\Lang.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>

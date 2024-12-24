@@ -4,20 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Documents;
+using System.Windows.Controls;
 
 namespace WindowFirstStart.ViewModel
 {
     internal partial class MainViewModel : BaseViewModel
     {
-		private FlowDocument helpFlowDocument;
-		public FlowDocument HelpFlowDocument
+		private UserControl helpDocument;
+		public UserControl HelpDocument
 		{
-			get { return helpFlowDocument; }
+			get { return helpDocument; }
 			set 
 			{ 
-				helpFlowDocument = value;
-				OnPropertyChanged(nameof(HelpFlowDocument));
+				helpDocument = value; 
+				OnPropertyChanged(nameof(helpDocument));
 			}
 		}
 
