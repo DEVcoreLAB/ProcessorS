@@ -11,6 +11,7 @@ using Globals.Model.Observer.Components;
 using Globals.ViewModel;
 using WindowFirstStart.Model.Reactors.Behaviours.ConnectionStringVM;
 using WindowFirstStart.Model.Reactors.Behaviours.FontSizesVM;
+using WindowFirstStart.Model.Reactors.Behaviours.HelpControlMouseEnter;
 using WindowFirstStart.Model.Reactors.Behaviours.LanguageSelectVM;
 using WindowFirstStart.Model.Reactors.Behaviours.PasswordSectionVM;
 using WindowFirstStart.ViewModel;
@@ -43,6 +44,10 @@ namespace WindowFirstStart.Model.Reactors
             if (newValue.Name == nameof(mainViewModel.PasswordConfirm))
             {
                 connector = new Connector(new PasswordConfirmBehave());
+            }
+            if (newValue.Name == nameof(mainViewModel.ControlName))
+            {
+                connector = new Connector(new ControlMouseEnterBehave());
             }
 
             if (connector != null)

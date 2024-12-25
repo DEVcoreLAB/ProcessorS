@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="HelpForWindows\FirstStartWindow\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Globals\Globals.csproj" />
   </ItemGroup>
 

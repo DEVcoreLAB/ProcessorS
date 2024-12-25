@@ -87,5 +87,17 @@ namespace WindowFirstStart.View
             Label label = sender as Label;
             label.ToolTip = null;
         }
+
+        private void connStringTEXTBOX_MouseEnter(object sender, MouseEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            mainViewModel.ControlName = textBox.Name;
+        }
+
+        private void connectionStringButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Button button = sender as Button;
+            mainViewModel.ControlName = button.Name;
+        }
     }
 }

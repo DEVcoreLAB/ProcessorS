@@ -131,7 +131,9 @@
                         Background="Orange"
                         />
                     <!--Connection string section - row 3-->
-                    <Grid Grid.Row="3">
+                    <Grid 
+                        Grid.Row="3"
+                        >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" x:Name="connStringROW"/>
                             <RowDefinition Height="5"/>
@@ -148,14 +150,17 @@
                             Padding="5"
                             Text="{Binding ConnectionStringTextboxText, UpdateSourceTrigger=PropertyChanged}"
                             Foreground="{Binding ConnStrinngTextBoxForeground}"
+                            MouseEnter="connStringTEXTBOX_MouseEnter"
                             />
                         <Button
+                            x:Name="connectionStringButton"
                             Grid.Row="2" 
                             BorderThickness="0"
                             Background="Transparent"
                             Height="{Binding ElementName=connStringTEXTBOX, Path=ActualHeight}"
                             IsEnabled="{Binding ConnStringButtonIsEnabled}"
                             Command="{Binding ConnStringButtonCheckCommand}"
+                            MouseEnter="connectionStringButton_MouseEnter"
                             >
                             <Image 
                                 Source="{Binding CheckConnectioStringButtonBackground, 

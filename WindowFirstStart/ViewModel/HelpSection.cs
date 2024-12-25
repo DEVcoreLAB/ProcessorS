@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WindowFirstStart.ViewModel
@@ -20,5 +21,18 @@ namespace WindowFirstStart.ViewModel
 				OnPropertyChanged(nameof(HelpDocument));
 			}
 		}
+
+		private string controlName;
+		public string ControlName
+		{
+			get { return controlName; }
+			set 
+			{ 
+				if (controlName == value) return;
+				controlName = value; 
+				OnPropertyChanged(nameof(ControlName));
+			}
+		}
+
 	}
 }
