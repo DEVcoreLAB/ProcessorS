@@ -10,7 +10,7 @@ using WindowFirstStart.ViewModel;
 
 namespace WindowFirstStart.Model.Reactors.Behaviours.HelpControlMouseEnter
 {
-    internal class ControlMouseEnterBehave : IBehaviour
+    internal class ControlNameBehave : IBehaviour
     {
         public Action GetAction<T>(T viewModel) where T : BaseViewModel
         {

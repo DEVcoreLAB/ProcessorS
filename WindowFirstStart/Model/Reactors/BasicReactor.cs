@@ -47,7 +47,7 @@ namespace WindowFirstStart.Model.Reactors
             }
             if (newValue.Name == nameof(mainViewModel.ControlName))
             {
-                connector = new Connector(new ControlMouseEnterBehave());
+                connector = new Connector(new ControlNameBehave());
             }
 
             if (connector != null)
