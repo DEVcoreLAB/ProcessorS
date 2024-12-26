@@ -103,6 +103,7 @@
                             ItemsSource="{Binding LanguagesCombobox}" 
                             SelectedItem="{Binding SelectedLanguage}"
                             HorizontalContentAlignment="Center"
+                            MouseEnter="languageCOMBOBOX_MouseEnter"
                             >
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>

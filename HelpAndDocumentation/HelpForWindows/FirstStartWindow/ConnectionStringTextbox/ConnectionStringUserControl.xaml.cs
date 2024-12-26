@@ -23,6 +23,16 @@ namespace HelpAndDocumentation.HelpForWindows.FirstStartWindow.ConnectionStringT
         public ConnectionStringUserControl()
         {
             InitializeComponent();
+            this.DataContext = this;
+            MainDescription = Langs.LangConnectionStringTextbox.mainDescription;
         }
+
+        private string mainDescription;
+        public string MainDescription
+        {
+            get { return mainDescription; }
+            set { mainDescription = value; }
+        }
+
     }
 }

@@ -26,6 +26,10 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.HelpControlMouseEnter
                 {
                     mainViewModel.HelpDocument = new HelpAndDocumentation.HelpForWindows.FirstStartWindow.ConnectionStringButton.ConnectionStringButtonUserControl();
                 }
+                if (mainViewModel.ControlName == "languageCOMBOBOX")
+                {
+                    mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram();
+                }
             });
         }
     }

@@ -10,9 +10,12 @@
              Background="White"
              >
     <ScrollViewer>
-        <TextBlock
-            Padding="10"
-            Text="Connection string section"
-            />
+        <Grid Background="White">
+            <TextBlock
+              Padding="10"
+              Text="{Binding MainDescription}"
+              TextWrapping="Wrap"
+              />
+        </Grid>
     </ScrollViewer>
 </UserControl>

@@ -60,7 +60,7 @@ namespace WindowFirstStart.View
                 //StringBuilder sb = new StringBuilder();
                 //MessageBox.Show(coded);
 
-
+                MessageBox.Show(mainViewModel.HelpDocument.ToString());
             }
         }
 
@@ -88,6 +88,9 @@ namespace WindowFirstStart.View
             label.ToolTip = null;
         }
 
+        ////////////////////////////////////////////////////////////////////////
+
+
         private void connStringTEXTBOX_MouseEnter(object sender, MouseEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -98,6 +101,12 @@ namespace WindowFirstStart.View
         {
             Button button = sender as Button;
             mainViewModel.ControlName = button.Name;
+        }
+
+        private void languageCOMBOBOX_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            mainViewModel.ControlName = comboBox.Name;
         }
     }
 }
