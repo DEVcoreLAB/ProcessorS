@@ -15,6 +15,7 @@ using WindowFirstStart.Model.WindowIsDisplayed.Langchanged;
 using WindowFirstStart.ViewModel;
 using System.Windows.Documents;
 using HelpAndDocumentation;
+using Globals.Documents.FlowDocuments;
 
 namespace WindowFirstStart.Model.SetInitialWindowValues
 {
@@ -59,6 +60,9 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
             mainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Black);
 
             mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram();
+
+
+            mainViewModel.LicenseDocument = new HelpAndDocumentation.License.BasicLicense.LicensePL();
         }
     }
 }

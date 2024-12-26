@@ -305,7 +305,9 @@
                     <Grid 
                         Grid.Row="2"
                         >
-                      
+                        <ContentControl
+                                Content="{Binding LicenseDocument}"
+                                />
                     </Grid>
 
                 </Grid>

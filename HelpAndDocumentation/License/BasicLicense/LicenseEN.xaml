@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="HelpAndDocumentation.License.BasicLicense.LicenseEN"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HelpAndDocumentation.License.BasicLicense"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" 
+             d:DesignWidth="960"
+             Background="White">
+    <Border BorderBrush="Black" BorderThickness="0.3">
+        <FlowDocumentScrollViewer>
+            <FlowDocument x:Name="ProgramLicenseEN" PagePadding="40">
+                <Paragraph FontSize="30">
+                    License for program Local Data Collector 1.0.0
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="1. Usage:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        The user has the right to use the software for free, both for personal 
+                     and commercial purposes.
+                    </Run>
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="2. Modification Prohibition:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        The user is prohibited from modifying, decompiling,
+                     disassembling, or otherwise reverse engineering the 
+                     software's source code.
+                    </Run>
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="3. Copying Prohibition:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        The user is prohibited from copying the software or any
+                     part of it, except for creating backup copies for personal 
+                     use only.
+                    </Run>
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="4. Copyright:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        All copyrights to the software are owned by Krzysztof Par. 
+                     The user does not acquire any ownership rights to the software.
+                    </Run>
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="5. Limitation of Liability:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        5.1. The software is provided "as is" without any warranties, 
+                     express or  implied, including, but not limited to, implied
+                     warranties of merchantability and fitness for a particular purpose.
+                    </Run>
+                    <LineBreak>
+                    </LineBreak>
+                    <Run>
+                        5.2. The software creator informs that the software is not 
+                     extensively tested and may contain errors. The user uses the 
+                     software at their own risk.
+                    </Run>
+                    <LineBreak>
+                    </LineBreak>
+                    <Run>
+                        5.3. The software creator is not liable for any damages 
+                     resulting from the use of the software, including, but not 
+                     limited to, data loss, business interruptions, personal injury, 
+                     or other financial losses resulting from the use or inability 
+                     to use the software.
+                    </Run>
+                    <LineBreak>
+                    </LineBreak>
+                    <Run>
+                        5.4. The software creator is not liable for any malfunction 
+                     of the software despite all efforts made to ensure its proper 
+                     operation.
+                    </Run>
+                </Paragraph>
+
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Border>
+</UserControl>

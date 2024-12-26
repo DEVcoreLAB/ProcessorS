@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="HelpAndDocumentation.License.BasicLicense.LicensePL"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HelpAndDocumentation.License.BasicLicense"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" 
+             d:DesignWidth="960"
+             Background="White">
+    <Border BorderBrush="Black" BorderThickness="0.3">
+        <FlowDocumentScrollViewer >
+            <FlowDocument x:Name="ProgramLicensePL" PagePadding="40">
+                <Paragraph FontSize="30">
+                    Licencja programu Local Data Collector 1.0.0
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="1. Użytkowanie:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        Użytkownik ma prawo do darmowego korzystania z oprogramowania 
+                     zarówno do celów osobistych, jak i komercyjnych.
+                    </Run>
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="2. Zakaz modyfikacji:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        Użytkownikowi zabrania się modyfikowania, dekompilowania, 
+                     dezasemblacji, ani w inny sposób odtwarzania kodu źródłowego 
+                     oprogramowania.
+                    </Run>
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="3. Zakaz kopiowania:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        Użytkownikowi zabrania się kopiowania oprogramowania lub jego 
+                     części, poza wykonywaniem kopii zapasowej wyłącznie do 
+                     własnego użytku.
+                    </Run>
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="4. Prawa autorskie:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        Wszelkie prawa autorskie do oprogramowania są własnością 
+                     Krzysztof Par. Użytkownikowi nie przysługuje żadne prawo 
+                     własności do oprogramowania.
+                    </Run>
+                </Paragraph>
+
+                <Paragraph FontSize="20">
+                    <Run Text="5. Ograniczenie odpowiedzialności:"/>
+                </Paragraph>
+                <Paragraph Padding="30,0,0,0" FontSize="20">
+                    <Run>
+                        5.1. Oprogramowanie jest dostarczane "tak jak jest" bez jakiejkolwiek 
+                     gwarancji, wyraźnej lub dorozumianej, w tym, ale nie wyłącznie, 
+                     domniemanych gwarancji przydatności handlowej i przydatności do określonego 
+                     celu.
+                    </Run>
+                    <LineBreak>
+                    </LineBreak>
+                    <Run>
+                        5.2. Twórca oprogramowania informuje, że oprogramowanie nie jest szeroko 
+                     testowane i może zawierać błędy. Użytkownik korzysta z oprogramowania na 
+                     własne ryzyko.
+                    </Run>
+                    <LineBreak>
+                    </LineBreak>
+                    <Run>
+                        5.3. Twórca oprogramowania nie ponosi odpowiedzialności za jakiekolwiek 
+                     szkody wynikające z użytkowania oprogramowania, w tym, ale nie wyłącznie,
+                     za utratę danych, przerwy w działalności gospodarczej, szkody osobiste lub 
+                     inne straty finansowe wynikające z użycia lub niemożności użycia 
+                     oprogramowania.
+                    </Run>
+                    <LineBreak>
+                    </LineBreak>
+                    <Run>
+                        5.4. Twórca oprogramowania nie ponosi odpowiedzialności za jakiekolwiek 
+                     nieprawidłowe działanie oprogramowania, pomimo dołożenia wszelkich starań w 
+                     celu zapewnienia jego prawidłowego działania.
+                    </Run>
+                </Paragraph>
+
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Border>
+</UserControl>
