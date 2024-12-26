@@ -13,6 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="HelpForWindows\FirstStartWindow\ConnectionStringButton\Langs\LangConnectionButton.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LangConnectionButton.resx</DependentUpon>
+    </Compile>
     <Compile Update="ProgramInfo\BasicInfo\Langs\Lang.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -21,6 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="HelpForWindows\FirstStartWindow\ConnectionStringButton\Langs\LangConnectionButton.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LangConnectionButton.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="ProgramInfo\BasicInfo\Langs\Lang.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>

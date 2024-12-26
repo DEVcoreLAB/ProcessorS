@@ -10,9 +10,12 @@
              Background="White"
              >
     <ScrollViewer>
-        <TextBlock
-            Padding="10"
-            Text="This is a description for how to this button working"
-            />
+        <Grid Background="White">
+            <TextBlock
+                Padding="10"
+                Text="{Binding MainDescription}"
+                TextWrapping="Wrap"
+                />
+        </Grid>
     </ScrollViewer>
 </UserControl>
