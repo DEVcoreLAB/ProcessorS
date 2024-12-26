@@ -62,7 +62,7 @@ namespace HelpAndDocumentation.HelpForWindows.FirstStartWindow.FirstPasswordBox.
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pole hasła zabezpieczającego program. Wpisz hasło zawierające minimum osiem znaków. .
+        ///   Looks up a localized string similar to Pole hasła zabezpieczającego program. Wpisz hasło zawierające minimum osiem znaków. W polu poniżej wpisz tą samą wartość dla potwierdzenia poprawności danych..
         /// </summary>
         internal static string mainDescription {
             get {
