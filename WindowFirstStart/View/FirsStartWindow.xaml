@@ -189,6 +189,7 @@
                             HorizontalAlignment="Center"
                             >
                             <PasswordBox
+                                x:Name="passwordBoxBase"
                                 Width="300"
                                 Height="{Binding ElementName=languageCOMBOBOX, Path=ActualHeight}"
                                 d:Password="123"
@@ -197,6 +198,7 @@
                                 PassBox:SecurePasswordHelper.SecurePassword="{Binding PasswordBase,
                                             Mode=TwoWay,
                                             UpdateSourceTrigger=PropertyChanged}"
+                                MouseEnter="passwordBoxBase_MouseEnter"
                                 />
                             <Label
                                 x:Name="PasswordBaseLABEL"

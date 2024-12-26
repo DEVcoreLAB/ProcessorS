@@ -23,6 +23,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>LangConnectionStringTextbox.resx</DependentUpon>
     </Compile>
+    <Compile Update="HelpForWindows\FirstStartWindow\FirstPasswordBox\Langs\LangFirstPasswordBox.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LangFirstPasswordBox.resx</DependentUpon>
+    </Compile>
     <Compile Update="ProgramInfo\BasicInfo\Langs\Lang.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -38,6 +43,10 @@
     <EmbeddedResource Update="HelpForWindows\FirstStartWindow\ConnectionStringTextbox\Langs\LangConnectionStringTextbox.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LangConnectionStringTextbox.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="HelpForWindows\FirstStartWindow\FirstPasswordBox\Langs\LangFirstPasswordBox.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LangFirstPasswordBox.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="ProgramInfo\BasicInfo\Langs\Lang.resx">
       <Generator>ResXFileCodeGenerator</Generator>

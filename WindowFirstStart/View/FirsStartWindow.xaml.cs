@@ -108,5 +108,11 @@ namespace WindowFirstStart.View
             ComboBox comboBox = sender as ComboBox;
             mainViewModel.ControlName = comboBox.Name;
         }
+
+        private void passwordBoxBase_MouseEnter(object sender, MouseEventArgs e)
+        {
+            PasswordBox passwordBox = sender as PasswordBox;
+            mainViewModel.ControlName = passwordBox.Name;
+        }
     }
 }

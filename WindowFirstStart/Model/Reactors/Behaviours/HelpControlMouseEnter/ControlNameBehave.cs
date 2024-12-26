@@ -30,6 +30,10 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.HelpControlMouseEnter
                 {
                     mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram();
                 }
+                if (mainViewModel.ControlName == "passwordBoxBase")
+                {
+                    mainViewModel.HelpDocument = new HelpAndDocumentation.HelpForWindows.FirstStartWindow.FirstPasswordBox.FirstPasswordBoxControl();
+                }
             });
         }
     }
