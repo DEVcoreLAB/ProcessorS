@@ -61,8 +61,14 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
 
             mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram();
 
-
-            mainViewModel.LicenseDocument = new HelpAndDocumentation.License.BasicLicense.LicensePL();
+            if (Thread.CurrentThread.CurrentCulture.Name == "pl-PL")
+            {
+                mainViewModel.LicenseDocument = new HelpAndDocumentation.License.BasicLicense.LicensePL();
+            }
+            else if (Thread.CurrentThread.CurrentCulture.Name == "en-US")
+            {
+                mainViewModel.LicenseDocument = new HelpAndDocumentation.License.BasicLicense.LicenseEN();
+            }
         }
     }
 }

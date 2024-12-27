@@ -30,6 +30,16 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.LanguageSelectVM
 
                 mainViewModel.HelpDocument = null;
                 mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram();
+
+                mainViewModel.LicenseDocument = null;
+                if (mainViewModel.SelectedLanguage.CultureCode == "pl-PL")
+                {
+                    mainViewModel.LicenseDocument = new HelpAndDocumentation.License.BasicLicense.LicensePL();
+                }
+                else if (mainViewModel.SelectedLanguage.CultureCode == "en-US")
+                {
+                    mainViewModel.LicenseDocument = new HelpAndDocumentation.License.BasicLicense.LicenseEN();
+                }
             });
         }
     }

@@ -14,7 +14,11 @@ namespace WindowFirstStart.ViewModel
 		public ContentControl LicenseDocument
 		{
 			get { return licenseDocument; }
-			set { licenseDocument = value; }
+			set 
+			{
+				licenseDocument = value;
+				OnPropertyChanged(nameof(LicenseDocument));
+			}
 		}
 
 	}
