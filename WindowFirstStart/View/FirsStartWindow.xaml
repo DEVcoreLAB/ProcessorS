@@ -301,7 +301,6 @@
                     Grid.Column="2"
                     >
                     <ContentControl
-                            MaxHeight="{Binding ElementName=helpCONTENTCONTROL, Path=ActualHeight}"
                             Content="{Binding LicenseDocument}"
                             />
                 </Grid>

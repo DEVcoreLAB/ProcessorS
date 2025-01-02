@@ -12,7 +12,7 @@
         <FlowDocumentScrollViewer>
             <FlowDocument x:Name="ProgramLicenseEN" PagePadding="40">
                 <Paragraph FontSize="30">
-                    License for program Local Data Collector 1.0.0
+                    License for program ProcessorS
                 </Paragraph>
 
                 <Paragraph FontSize="20">
