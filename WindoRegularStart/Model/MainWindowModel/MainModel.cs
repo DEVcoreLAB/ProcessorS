@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WindowRegularStart.Model.MainWindowModel.Reactors;
+using Globals.Model.Observer;
 
 namespace WindowRegularStart.Model.MainWindowModel
 {
@@ -16,6 +18,9 @@ namespace WindowRegularStart.Model.MainWindowModel
         public MainModel(MainViewModel mainViewModel)
         {
             MainViewModel = mainViewModel;
+
+            BasicRegularWindowReactor basicRegularWindowReactor = new BasicRegularWindowReactor();
+            new TObserver<MainViewModel, BasicRegularWindowReactor>(mainViewModel, basicRegularWindowReactor);
         }
     }
 }

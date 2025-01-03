@@ -6,12 +6,32 @@
         xmlns:local="clr-namespace:WindowRegularStart.View.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow"
-        d:Height="1080" 
-        d:Width="1920"
+        ResizeMode="NoResize"
+        WindowStyle="None" 
         WindowState="Maximized"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent"
+        d:Width="1920"
+        d:Height="1080"
         KeyDown="Window_KeyDown"
         >
-    <Grid>
-        
-    </Grid>
+    <Border
+      x:Name="MainBORDER"  
+      Background="White"
+      BorderBrush="Orange"
+      BorderThickness="4"
+      CornerRadius="10"
+      >
+        <Grid>
+            <ComboBox
+                Height="50"
+                ItemsSource="{Binding TestProperty}"
+                SelectedValue="{Binding TestSelectedValue}"
+                HorizontalContentAlignment="Center"
+                FontSize="25"
+                >
+            </ComboBox>
+        </Grid>
+    </Border>
 </Window>
