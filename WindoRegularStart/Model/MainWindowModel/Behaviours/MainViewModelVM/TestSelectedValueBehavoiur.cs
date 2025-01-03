@@ -19,7 +19,7 @@ namespace WindowRegularStart.Model.MainWindowModel.Behaviours.MainViewModelVM
             {
                 if (mainViewModel.TestSelectedValue == 40)
                 {
-                    mainViewModel.TestSelectedValue = 10000;
+                    mainViewModel.TestSelectedValue = 10;
                 }
             });
         }
