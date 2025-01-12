@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowRegularStart", "Windo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpAndDocumentation", "HelpAndDocumentation\HelpAndDocumentation.csproj", "{EB65A704-42E5-433C-9EDF-FF235353816B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlProgramStart", "ControlProgramStart\ControlProgramStart.csproj", "{729498F2-62F3-4944-8432-C35FE77E2FE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{EB65A704-42E5-433C-9EDF-FF235353816B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB65A704-42E5-433C-9EDF-FF235353816B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB65A704-42E5-433C-9EDF-FF235353816B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{729498F2-62F3-4944-8432-C35FE77E2FE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729498F2-62F3-4944-8432-C35FE77E2FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729498F2-62F3-4944-8432-C35FE77E2FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729498F2-62F3-4944-8432-C35FE77E2FE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

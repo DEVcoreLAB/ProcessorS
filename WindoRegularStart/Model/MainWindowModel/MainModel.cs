@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using WindowRegularStart.Model.MainWindowModel.Reactors;
 using Globals.Model.Observer;
+using WindowRegularStart.Model.MainWindowModel.StartUpSettings;
 
 namespace WindowRegularStart.Model.MainWindowModel
 {
@@ -21,6 +22,9 @@ namespace WindowRegularStart.Model.MainWindowModel
 
             BasicRegularWindowReactor basicRegularWindowReactor = new BasicRegularWindowReactor();
             new TObserver<MainViewModel, BasicRegularWindowReactor>(mainViewModel, basicRegularWindowReactor);
+
+            BasicSettings basicSettings = new BasicSettings(MainViewModel);
+            basicSettings.SetMainUserControl();
         }
     }
 }

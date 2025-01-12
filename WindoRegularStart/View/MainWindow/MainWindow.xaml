@@ -16,15 +16,71 @@
         d:Height="1080"
         KeyDown="Window_KeyDown"
         >
-    <Border
-      x:Name="MainBORDER"  
-      Background="White"
-      BorderBrush="Orange"
-      BorderThickness="4"
-      CornerRadius="10"
-      >
+    <Border 
+        x:Name="MainBORDER"  
+        Background="White"
+        BorderBrush="Orange"
+        BorderThickness="0,4,4,4"
+        CornerRadius="0,0,10,0"
+        >
         <Grid>
-          
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0"/>
+            </Grid.RowDefinitions>
+
+            <Grid
+                Grid.Row="1"
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <!--Collapsible panel-->
+                <Grid
+                    Grid.Column="0"
+                    Panel.ZIndex="1"
+                    Width="150"
+                    >
+                    <DockPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="140"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid
+                                Grid.Column="0"
+                                >
+                                <Button
+                                    x:Name="CollapsibleBUTTON"
+                                    Click="CollapsibleBUTTON_Click"
+                                    >
+                                    <Image
+                                        Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/CollapsibleButtonBackgroung.png"
+                                        Stretch="UniformToFill"
+                                        />
+                                </Button>
+                            </Grid>
+
+                            <Grid
+                                Grid.Column="1"
+                                Background="#DDAAAAAA"
+                                >
+                            </Grid>
+
+                        </Grid>
+                    </DockPanel>
+                </Grid>
+
+                <UserControl
+                    Grid.Column="1"
+                    Content="{Binding MainUserControl}"
+                    />
+
+            </Grid>
         </Grid>
     </Border>
 </Window>

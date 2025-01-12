@@ -12,6 +12,8 @@
     <None Remove="Graphics\GraphicFiles\Britain.png" />
     <None Remove="Graphics\GraphicFiles\CheckConnectionToDB.png" />
     <None Remove="Graphics\GraphicFiles\CheckConnectionToDBDisabled.png" />
+    <None Remove="Graphics\GraphicFiles\CollapsibleButtonBackgroung.png" />
+    <None Remove="Graphics\GraphicFiles\logo.png" />
     <None Remove="Graphics\GraphicFiles\messageboxbackground.png" />
     <None Remove="Graphics\GraphicFiles\poland.png" />
     <None Remove="Graphics\GraphicFiles\SaveIconDisabled.png" />
@@ -27,6 +29,8 @@
     <Resource Include="Graphics\GraphicFiles\Britain.png" />
     <Resource Include="Graphics\GraphicFiles\CheckConnectionToDB.png" />
     <Resource Include="Graphics\GraphicFiles\CheckConnectionToDBDisabled.png" />
+    <Resource Include="Graphics\GraphicFiles\CollapsibleButtonBackgroung.png" />
+    <Resource Include="Graphics\GraphicFiles\logo.png" />
     <Resource Include="Graphics\GraphicFiles\messageboxbackground.png" />
     <Resource Include="Graphics\GraphicFiles\poland.png" />
     <Resource Include="Graphics\GraphicFiles\SaveIconDisabled.png" />

@@ -9,12 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ControlProgramStart\ControlProgramStart.csproj" />
     <ProjectReference Include="..\Globals\Globals.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Model\MainWindowModel\Behaviours\" />
   </ItemGroup>
 
 </Project>

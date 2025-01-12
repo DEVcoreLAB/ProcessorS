@@ -17,9 +17,7 @@ namespace WindowRegularStart.ViewModel.MainWindowViewModel
 
         public MainViewModel()
         {
-
+            MainModel = new MainModel(this);
         }
-
-
     }
 }

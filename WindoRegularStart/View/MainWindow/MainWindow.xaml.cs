@@ -35,8 +35,13 @@ namespace WindowRegularStart.View.MainWindow
         {
             if (e.Key == Key.F1)
             {
-
+                Console.WriteLine(mainViewModel.MainUserControl.Uid);
             }
+        }
+
+        private void CollapsibleBUTTON_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
