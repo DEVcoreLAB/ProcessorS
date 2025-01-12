@@ -17,30 +17,7 @@ namespace WindowRegularStart.ViewModel.MainWindowViewModel
 
         public MainViewModel()
         {
-            MainModel = new MainModel(this);
-            TestProperty = [10, 20, 30, 40];
-        }
 
-        private int[] testProperty;
-        public int[] TestProperty
-        {
-            get { return testProperty; }
-            set 
-            {
-                testProperty = value;
-                OnPropertyChanged(nameof(TestProperty));
-            }
-        }
-
-        private int testSelectedValue;
-        public int TestSelectedValue
-        {
-            get { return testSelectedValue; }
-            set 
-            { 
-                testSelectedValue = value;
-                OnPropertyChanged(nameof(TestSelectedValue));
-            }
         }
 
 

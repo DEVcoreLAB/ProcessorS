@@ -24,14 +24,7 @@
       CornerRadius="10"
       >
         <Grid>
-            <ComboBox
-                Height="50"
-                ItemsSource="{Binding TestProperty}"
-                SelectedValue="{Binding TestSelectedValue}"
-                HorizontalContentAlignment="Center"
-                FontSize="25"
-                >
-            </ComboBox>
+          
         </Grid>
     </Border>
 </Window>

@@ -35,16 +35,7 @@ namespace WindowRegularStart.View.MainWindow
         {
             if (e.Key == Key.F1)
             {
-                //// manual test saved seetings
-                //StringBuilder sb = new StringBuilder();
-                //sb.Append(Globals.SettingFiles.SettingFontProperties.Default.FontSize + "\n");
-                //sb.Append(Globals.SettingFiles.SettingCurrentLanguage.Default.CurrentLanguageCode + "\n");
-                //sb.Append(Globals.Security.PasswordBoxControlHelper.ReadFromFileSecuredStringToString.UnprotectString(Globals.SettingFiles.ConnString.Default.ConnectionString) + "\n");
-                //sb.Append(Globals.Security.PasswordBoxControlHelper.ReadFromFileSecuredStringToString.UnprotectString(Globals.SettingFiles.PassKey.Default.MyPassKey) + "\n");
 
-                //MessageBox.Show(sb.ToString());
-
-                MessageBox.Show(mainViewModel.TestSelectedValue.ToString());
             }
         }
     }

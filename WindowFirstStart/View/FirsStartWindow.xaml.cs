@@ -36,31 +36,7 @@ namespace WindowFirstStart.View
         {
             if (e.Key == Key.F1)
             {
-                //StringBuilder sb = new StringBuilder();
-                //sb.Append($@"pass1: {Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordBase)}");
-                //sb.Append("\n");
-                //sb.Append($@"pass2: {Globals.Security.PasswordBoxControlHelper.ConvertToUnsecureString.Convert(mainViewModel.PasswordConfirm)}");
-                //sb.Append("\n");
 
-                //MessageBox.Show(sb.ToString());
-
-
-                //MessageBox.Show(Globals.Security.PasswordBoxControlHelper.SaveToFileStringToSecuredString.Convert(mainViewModel.PasswordConfirm));
-
-                ////// manual test for encodimg...
-                //string unsecureString = ConvertToUnsecureString.Convert(mainViewModel.PasswordConfirm);
-                //string coded = SaveToFileStringToSecuredString.ConvertString(unsecureString);
-                //string uncodedString = ReadFromFileSecuredStringToString.UnprotectString(coded);
-                //SecureString secureString = new SecureString();
-                //foreach (var item in uncodedString)
-                //{
-                //    secureString.AppendChar(item);
-                //}
-                //string seconduncodedString = ConvertToUnsecureString.Convert(secureString);
-                //StringBuilder sb = new StringBuilder();
-                //MessageBox.Show(coded);
-
-                MessageBox.Show(mainViewModel.HelpDocument.ToString());
             }
         }
 

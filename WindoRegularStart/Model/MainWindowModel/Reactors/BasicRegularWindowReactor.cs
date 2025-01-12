@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using WindowRegularStart.Model.MainWindowModel.Behaviours.MainViewModelVM;
+
 using WindowRegularStart.ViewModel.MainWindowViewModel;
 
 namespace WindowRegularStart.Model.MainWindowModel.Reactors
@@ -21,10 +21,6 @@ namespace WindowRegularStart.Model.MainWindowModel.Reactors
             Connector connector = null;
 
 
-            if (newValue.Name == nameof(mainViewModel.TestSelectedValue))
-            {
-                connector = new Connector(new TestSelectedValueBehavoiur());
-            }
 
             if (connector != null)
             {

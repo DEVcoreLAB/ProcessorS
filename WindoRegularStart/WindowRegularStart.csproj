@@ -12,4 +12,8 @@
     <ProjectReference Include="..\Globals\Globals.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Model\MainWindowModel\Behaviours\" />
+  </ItemGroup>
+
 </Project>
