@@ -38,10 +38,5 @@ namespace WindowRegularStart.View.MainWindow
                 Console.WriteLine(mainViewModel.MainUserControl.Uid);
             }
         }
-
-        private void CollapsibleBUTTON_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

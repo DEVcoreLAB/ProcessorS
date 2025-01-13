@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WindowRegularStart.ViewModel.Command.CollapsibleButtonCommand;
 
 namespace WindowRegularStart.ViewModel.MainWindowViewModel
 {
@@ -18,6 +19,12 @@ namespace WindowRegularStart.ViewModel.MainWindowViewModel
         public MainViewModel()
         {
             MainModel = new MainModel(this);
+
+            CollapsibleButtonClickCommand = new RelayCommand
+            (
+                new CollapsibleButtonAction(this).Execute,
+                new CollapsibleButtonPredict(this).Check
+                );
         }
     }
 }

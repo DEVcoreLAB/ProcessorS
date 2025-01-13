@@ -56,7 +56,8 @@
                                 >
                                 <Button
                                     x:Name="CollapsibleBUTTON"
-                                    Click="CollapsibleBUTTON_Click"
+                                    Command="{Binding CollapsibleButtonClickCommand}"
+                                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                                     >
                                     <Image
                                         Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/CollapsibleButtonBackgroung.png"
@@ -66,6 +67,7 @@
                             </Grid>
 
                             <Grid
+                                x:Name="CollapsiblePanelRight"
                                 Grid.Column="1"
                                 Background="#DDAAAAAA"
                                 >
