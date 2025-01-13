@@ -16,14 +16,22 @@ namespace WindowRegularStart.ViewModel.Command.CollapsibleButtonCommand
 
         public CollapsibleButtonAction(MainViewModel mainViewModel)
         {
-            MainViewModel = mainViewModel;
+            MainViewModel = mainViewModel; 
         }
 
         public void Execute(object parameter)
         {
             if (parameter is MainWindow window)
             {
-                
+                if (window.CollapsiblePanelRight.Visibility == Visibility.Visible)
+                {
+                    window.CollapsiblePanelRight.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    window.CollapsiblePanelRight.Visibility = Visibility.Visible;
+                }
+
             }
            
         }

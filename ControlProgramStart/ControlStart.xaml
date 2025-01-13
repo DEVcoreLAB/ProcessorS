@@ -13,7 +13,7 @@
     </UserControl.Background>
 
     <Grid>
-        <TextBlock
+        <TextBox
             FontSize="40"
             Text="awdawd awdaw daw daw d awdsdffgsef sf sed fsefsedf sfedsfsdfsdfr gsdrgs aersaderf ga ewrgsdarg sdrgsd rfg"
             />
