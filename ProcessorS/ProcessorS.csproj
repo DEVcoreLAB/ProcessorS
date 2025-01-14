@@ -8,7 +8,12 @@
     <UseWPF>true</UseWPF>
     <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
     <StartupObject>ProcessorS.App</StartupObject>
+    <ApplicationIcon>ProgramIcon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ProgramIcon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Globals\Globals.csproj" />
