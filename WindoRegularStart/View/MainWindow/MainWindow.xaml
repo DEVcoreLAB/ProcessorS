@@ -36,7 +36,7 @@
                 <!--Collapsible panel-->
                 <Grid
                     Panel.ZIndex="1"
-                    Width="150" 
+                    Width="auto" 
                     HorizontalAlignment="Left"
                     >
                     <DockPanel>
@@ -44,9 +44,10 @@
                             >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="10"/>
-                                <ColumnDefinition Width="140"/>
+                                <ColumnDefinition Width="auto"/>
                             </Grid.ColumnDefinitions>
 
+                            <!--Collapsible panel - button-->
                             <Grid
                                 Grid.Column="0"
                                 >
@@ -62,17 +63,40 @@
                                 </Button>
                             </Grid>
 
+                            <!--Collapsible panel - panel-->
                             <Grid
                                 x:Name="CollapsiblePanelRight"
                                 Grid.Column="1"
                                 Background="#DDAAAAAA"
                                 >
-                            </Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
 
+                                <StackPanel
+                                    Grid.Row="2"
+                                    Background="Transparent"
+                                    >
+                                    <Button
+                                        Margin="10,0,10,10"
+                                        Height="50"
+                                        Width="50"
+                                        Background="Transparent"
+                                        >
+                                        <Image
+                                            Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/ProgramExit.png"
+                                            Stretch="UniformToFill"
+                                            />
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
                         </Grid>
                     </DockPanel>
                 </Grid>
 
+                <!--Main user control-->
                 <UserControl
                     Margin="10,0,0,0"
                     Grid.Column="1"

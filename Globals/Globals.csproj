@@ -16,6 +16,7 @@
     <None Remove="Graphics\GraphicFiles\logo.png" />
     <None Remove="Graphics\GraphicFiles\messageboxbackground.png" />
     <None Remove="Graphics\GraphicFiles\poland.png" />
+    <None Remove="Graphics\GraphicFiles\ProgramExit.png" />
     <None Remove="Graphics\GraphicFiles\ProgramIcon.ico" />
     <None Remove="Graphics\GraphicFiles\SaveIconDisabled.png" />
     <None Remove="Graphics\GraphicFiles\SaveIconEnabled.png" />
@@ -34,6 +35,7 @@
     <Resource Include="Graphics\GraphicFiles\logo.png" />
     <Resource Include="Graphics\GraphicFiles\messageboxbackground.png" />
     <Resource Include="Graphics\GraphicFiles\poland.png" />
+    <Resource Include="Graphics\GraphicFiles\ProgramExit.png" />
     <Resource Include="Graphics\GraphicFiles\ProgramIcon.ico" />
     <Resource Include="Graphics\GraphicFiles\SaveIconDisabled.png" />
     <Resource Include="Graphics\GraphicFiles\SaveIconEnabled.png" />
