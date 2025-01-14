@@ -75,6 +75,7 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
 
+                                <!--Exit Button-->
                                 <StackPanel
                                     Grid.Row="2"
                                     Background="Transparent"
