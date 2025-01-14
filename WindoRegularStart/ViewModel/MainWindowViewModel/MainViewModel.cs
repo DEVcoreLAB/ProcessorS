@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using WindowRegularStart.ViewModel.Command.CollapsibleButtonCommand;
+using WindowRegularStart.ViewModel.Command.ExitButtonCommand;
 
 namespace WindowRegularStart.ViewModel.MainWindowViewModel
 {
@@ -24,6 +25,12 @@ namespace WindowRegularStart.ViewModel.MainWindowViewModel
             (
                 new CollapsibleButtonAction(this).Execute,
                 new CollapsibleButtonPredict(this).Check
+                );
+
+            ExitButtonClickCommand = new RelayCommand
+            (
+                new ExitButtonAction(this).Execute, 
+                new ExitButtonPredict(this).Check
                 );
         }
     }

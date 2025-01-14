@@ -13,7 +13,7 @@ namespace WindowRegularStart.ViewModel.MainWindowViewModel
     internal partial class MainViewModel : BaseViewModel
     {
         public RelayCommand CollapsibleButtonClickCommand { get; }
-           
+        public RelayCommand ExitButtonClickCommand { get; }   
       
     }
 }

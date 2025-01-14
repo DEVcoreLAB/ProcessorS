@@ -85,7 +85,13 @@
                                         Height="50"
                                         Width="50"
                                         Background="Transparent"
+                                        Command="{Binding ExitButtonClickCommand}"
                                         >
+                                        <Button.Effect>
+                                            <DropShadowEffect  
+                                                ShadowDepth="3" 
+                                                BlurRadius="10"/>
+                                        </Button.Effect>
                                         <Image
                                             Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/ProgramExit.png"
                                             Stretch="UniformToFill"
