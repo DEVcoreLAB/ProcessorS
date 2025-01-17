@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Globals.MyDialogsAndWindows.MyDialogBox;
+using Globals.MyDialogsAndWindows.MyDialogBox.Basic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +13,7 @@ namespace WindowRegularStart.ViewModel.Command.ExitButtonCommand
     internal class ExitButtonAction
     {
         MainViewModel MainViewModel { get; }
+        Action action = new Action(() => { Application.Current.Shutdown(); });
 
         public ExitButtonAction(MainViewModel mainViewModel)
         {
@@ -19,7 +22,7 @@ namespace WindowRegularStart.ViewModel.Command.ExitButtonCommand
 
         public void Execute(object parameter)
         {
-            Application.Current.Shutdown();
+            DialogBoxX.Show(Langs.Lang.closeAp_p, action);
         }
     }
 }
