@@ -13,7 +13,7 @@ namespace Globals.MyDialogsAndWindows.MyMessagebox
             MyMessageboxX messageBoxBasic = new(message);
             messageBoxBasic.Topmost = true;
             //messageBoxBasic.Owner = window;
-            messageBoxBasic.Show();
+            messageBoxBasic.ShowDialog();
         }
     }
 }

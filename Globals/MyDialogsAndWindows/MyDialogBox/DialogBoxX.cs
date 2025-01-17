@@ -12,7 +12,7 @@ namespace Globals.MyDialogsAndWindows.MyDialogBox
         public static void Show(string message,Action action)
         {
             MyDialogBoxX myDialogBoxX = new MyDialogBoxX(message,action);
-            myDialogBoxX.Show();
+            myDialogBoxX.ShowDialog();
         }
     }
 }
