@@ -19,7 +19,7 @@ namespace WindowRegularStart.ViewModel.Command.ExitButtonCommand
 
         public void Execute(object parameter)
         {
-            MessageBox.Show("test");
+            Application.Current.Shutdown();
         }
     }
 }
