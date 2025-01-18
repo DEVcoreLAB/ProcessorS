@@ -11,7 +11,9 @@
         AllowsTransparency="True"
         Background="Transparent"
         WindowStyle="None"
-        MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        WindowStartupLocation="CenterScreen"
+        >
     <Window.Clip>
         <PathGeometry>
             <PathFigure
@@ -126,37 +128,41 @@
                     <Button
                         x:Name="YesBUTTON"
                         Margin="5"
-                        Content="YES"
                         Background="Transparent"
                         BorderBrush="Black"
-                        BorderThickness="1"
+                        BorderThickness="0"
                         Width="{Binding ElementName=YesBUTTON ,Path=ActualHeight}"
                         Click="YesBUTTON_Click"
                         >
                         <Button.Effect>
-                            <DropShadowEffect 
-                                BlurRadius="2" 
-                                ShadowDepth="1"
-                                />
+                            <DropShadowEffect  
+                                ShadowDepth="3" 
+                                BlurRadius="10"/>
                         </Button.Effect>
+                        <Image
+                            Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/OkButton.png"
+                            Stretch="UniformToFill"
+                            />
                     </Button>
 
                     <Button
                         x:Name="NoBUTTON"
                         Margin="5"
-                        Content="No"
                         Background="Transparent"
                         BorderBrush="Black"
-                        BorderThickness="1"
+                        BorderThickness="0"
                         Width="{Binding ElementName=NoBUTTON ,Path=ActualHeight}" 
                         Click="NoBUTTON_Click"
                         >
                         <Button.Effect>
-                            <DropShadowEffect 
-                                BlurRadius="2" 
-                                ShadowDepth="1"
-                                />
+                            <DropShadowEffect  
+                                ShadowDepth="3" 
+                                BlurRadius="10"/>
                         </Button.Effect>
+                        <Image
+                            Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/NoButton.png"
+                            Stretch="UniformToFill"
+                            />
                     </Button>
                 </StackPanel>
                 

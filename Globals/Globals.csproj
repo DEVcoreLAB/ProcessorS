@@ -15,6 +15,8 @@
     <None Remove="Graphics\GraphicFiles\CollapsibleButtonBackgroung.png" />
     <None Remove="Graphics\GraphicFiles\logo.png" />
     <None Remove="Graphics\GraphicFiles\messageboxbackground.png" />
+    <None Remove="Graphics\GraphicFiles\NoButton.png" />
+    <None Remove="Graphics\GraphicFiles\OkButton.png" />
     <None Remove="Graphics\GraphicFiles\poland.png" />
     <None Remove="Graphics\GraphicFiles\ProgramExit.png" />
     <None Remove="Graphics\GraphicFiles\ProgramIcon.ico" />
@@ -34,6 +36,8 @@
     <Resource Include="Graphics\GraphicFiles\CollapsibleButtonBackgroung.png" />
     <Resource Include="Graphics\GraphicFiles\logo.png" />
     <Resource Include="Graphics\GraphicFiles\messageboxbackground.png" />
+    <Resource Include="Graphics\GraphicFiles\NoButton.png" />
+    <Resource Include="Graphics\GraphicFiles\OkButton.png" />
     <Resource Include="Graphics\GraphicFiles\poland.png" />
     <Resource Include="Graphics\GraphicFiles\ProgramExit.png" />
     <Resource Include="Graphics\GraphicFiles\ProgramIcon.ico" />

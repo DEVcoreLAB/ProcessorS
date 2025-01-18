@@ -12,6 +12,7 @@
         Background="Transparent"
         WindowStyle="None"
         MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        WindowStartupLocation="CenterScreen"
         >
     <Window.Clip>
         <PathGeometry>
@@ -123,19 +124,21 @@
                     x:Name="OkBUTTON"
                     Grid.Row="1"
                     Margin="5"
-                    Content="OK"
                     Background="Transparent"
                     BorderBrush="Black"
-                    BorderThickness="1"
+                    BorderThickness="0"
                     Width="{Binding ElementName=OkBUTTON ,Path=ActualHeight}" 
                     Click="OkBUTTON_Click"
                     >
                     <Button.Effect>
-                        <DropShadowEffect 
-                            BlurRadius="2" 
-                            ShadowDepth="1"
-                            />
+                        <DropShadowEffect  
+                            ShadowDepth="3" 
+                            BlurRadius="10"/>
                     </Button.Effect>
+                    <Image
+                        Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/OkButton.png"
+                        Stretch="UniformToFill"
+                        />
                 </Button>
 
             </Grid>

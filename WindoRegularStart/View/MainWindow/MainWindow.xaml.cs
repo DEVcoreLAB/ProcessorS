@@ -35,7 +35,7 @@ namespace WindowRegularStart.View.MainWindow
         {
             if (e.Key == Key.F1)
             {
-                Console.WriteLine(mainViewModel.MainUserControl.Uid);
+                Globals.MyDialogsAndWindows.MyMessagebox.MessageBoxX.Show("this is a test message");
             }
         }
     }
