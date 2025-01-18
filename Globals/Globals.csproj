@@ -13,8 +13,11 @@
     <None Remove="Graphics\GraphicFiles\CheckConnectionToDB.png" />
     <None Remove="Graphics\GraphicFiles\CheckConnectionToDBDisabled.png" />
     <None Remove="Graphics\GraphicFiles\CollapsibleButtonBackgroung.png" />
+    <None Remove="Graphics\GraphicFiles\HomeControl.png" />
+    <None Remove="Graphics\GraphicFiles\Lock.png" />
     <None Remove="Graphics\GraphicFiles\logo.png" />
     <None Remove="Graphics\GraphicFiles\messageboxbackground.png" />
+    <None Remove="Graphics\GraphicFiles\minimizeToTaskBar.png" />
     <None Remove="Graphics\GraphicFiles\NoButton.png" />
     <None Remove="Graphics\GraphicFiles\OkButton.png" />
     <None Remove="Graphics\GraphicFiles\poland.png" />
@@ -23,6 +26,7 @@
     <None Remove="Graphics\GraphicFiles\SaveIconDisabled.png" />
     <None Remove="Graphics\GraphicFiles\SaveIconEnabled.png" />
     <None Remove="Graphics\GraphicFiles\showData.png" />
+    <None Remove="Graphics\GraphicFiles\showTaskBar.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,8 +38,11 @@
     <Resource Include="Graphics\GraphicFiles\CheckConnectionToDB.png" />
     <Resource Include="Graphics\GraphicFiles\CheckConnectionToDBDisabled.png" />
     <Resource Include="Graphics\GraphicFiles\CollapsibleButtonBackgroung.png" />
+    <Resource Include="Graphics\GraphicFiles\HomeControl.png" />
+    <Resource Include="Graphics\GraphicFiles\Lock.png" />
     <Resource Include="Graphics\GraphicFiles\logo.png" />
     <Resource Include="Graphics\GraphicFiles\messageboxbackground.png" />
+    <Resource Include="Graphics\GraphicFiles\minimizeToTaskBar.png" />
     <Resource Include="Graphics\GraphicFiles\NoButton.png" />
     <Resource Include="Graphics\GraphicFiles\OkButton.png" />
     <Resource Include="Graphics\GraphicFiles\poland.png" />
@@ -44,6 +51,7 @@
     <Resource Include="Graphics\GraphicFiles\SaveIconDisabled.png" />
     <Resource Include="Graphics\GraphicFiles\SaveIconEnabled.png" />
     <Resource Include="Graphics\GraphicFiles\showData.png" />
+    <Resource Include="Graphics\GraphicFiles\showTaskBar.png" />
   </ItemGroup>
 
   <ItemGroup>
