@@ -23,12 +23,14 @@ namespace WindowRegularStart.View.MainWindow
     public partial class MainWindow : Window
     {
         MainViewModel mainViewModel;
+        WindowMainWindowContextMenu.View.ContextMenuWindow contextMenuWindow;
 
         public MainWindow()
         {
             InitializeComponent();
             mainViewModel = new MainViewModel();
             this.DataContext = mainViewModel;
+            contextMenuWindow = new WindowMainWindowContextMenu.View.ContextMenuWindow(this);
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -36,6 +38,10 @@ namespace WindowRegularStart.View.MainWindow
             if (e.Key == Key.F1)
             {
                 Globals.MyDialogsAndWindows.MyMessagebox.MessageBoxX.Show("this is a test message");
+            }
+            if (e.Key == Key.Escape)
+            { 
+                contextMenuWindow.ShowDialog();
             }
         }
     }

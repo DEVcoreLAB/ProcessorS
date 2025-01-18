@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ControlProgramStart\ControlProgramStart.csproj" />
     <ProjectReference Include="..\Globals\Globals.csproj" />
+    <ProjectReference Include="..\WindowMainWindowContextMenu\WindowMainWindowContextMenu.csproj" />
   </ItemGroup>
 
   <ItemGroup>

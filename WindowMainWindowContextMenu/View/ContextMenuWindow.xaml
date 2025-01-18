@@ -13,6 +13,8 @@
         Background="Transparent"
         WindowStyle="None"
         KeyDown="Window_KeyDown"
+        Loaded="Window_Loaded" 
+        SizeToContent="WidthAndHeight"
         >
     <Border
          Background="#DDAAAAAA"
@@ -21,43 +23,43 @@
          CornerRadius="10,10,10,10" Padding="10"
         >
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-            </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
 
-            <Grid
+                <Grid
                 Grid.Row="0"
                 >
-                <Button
+                    <Button
                     x:Name="LockButton"
                     Width="50"
                     Height="50"
                     BorderThickness="0"
-                    Background="Transparent"
+                    Background="Transparent" 
                     >
-                    <Button.Effect>
-                        <DropShadowEffect  
+                        <Button.Effect>
+                            <DropShadowEffect  
                             ShadowDepth="3" 
-                            BlurRadius="10"/>
-                    </Button.Effect>
-                    <Image
+                            BlurRadius="3"/>
+                        </Button.Effect>
+                        <Image
                         Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/Lock.png"
                         Stretch="UniformToFill"
                         />
-                </Button>
-            </Grid>
+                    </Button>
+                </Grid>
 
-            <Grid
+                <Grid
                 Grid.Row="1"
                 >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="50"/>
-                </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="70"/>
+                    </Grid.ColumnDefinitions>
 
-                <Button
+                    <Button
                     x:Name="HomeButton"
                     Grid.Column="0"
                     Width="50"
@@ -65,18 +67,18 @@
                     BorderThickness="0"
                     Background="Transparent"
                     >
-                    <Button.Effect>
-                        <DropShadowEffect  
+                        <Button.Effect>
+                            <DropShadowEffect  
                             ShadowDepth="3" 
-                            BlurRadius="10"/>
-                    </Button.Effect>
-                    <Image
+                            BlurRadius="3"/>
+                        </Button.Effect>
+                        <Image
                         Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/HomeControl.png"
                         Stretch="UniformToFill"
                         />
-                </Button>
+                    </Button>
 
-                <Button
+                    <Button
                     x:Name="ShowTaskBarButton"
                     Grid.Column="1"
                     Width="50"
@@ -84,18 +86,18 @@
                     BorderThickness="0"
                     Background="Transparent"
                     >
-                    <Button.Effect>
-                        <DropShadowEffect  
+                        <Button.Effect>
+                            <DropShadowEffect  
                             ShadowDepth="3" 
-                            BlurRadius="10"/>
-                    </Button.Effect>
-                    <Image
+                            BlurRadius="3"/>
+                        </Button.Effect>
+                        <Image
                         Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/showTaskBar.png"
                         Stretch="UniformToFill"
                         />
-                </Button>
+                    </Button>
 
-                <Button
+                    <Button
                     x:Name="MinimizeButton"
                     Grid.Column="2"
                     Width="50"
@@ -103,17 +105,17 @@
                     BorderThickness="0"
                     Background="Transparent"
                     >
-                    <Button.Effect>
-                        <DropShadowEffect  
+                        <Button.Effect>
+                            <DropShadowEffect  
                             ShadowDepth="3" 
-                            BlurRadius="10"/>
-                    </Button.Effect>
-                    <Image
+                            BlurRadius="3"/>
+                        </Button.Effect>
+                        <Image
                         Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/minimizeToTaskBar.png"
                         Stretch="UniformToFill"
                         />
-                </Button>
+                    </Button>
+                </Grid>
             </Grid>
-        </Grid>
     </Border>
 </Window>
