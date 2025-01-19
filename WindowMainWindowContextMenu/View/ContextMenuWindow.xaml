@@ -37,6 +37,8 @@
                     Height="50"
                     BorderThickness="0"
                     Background="Transparent" 
+                    Command="{Binding LockSreenCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                     >
                         <Button.Effect>
                             <DropShadowEffect  

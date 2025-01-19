@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WindowMainWindowContextMenu.ViewModel;
 
 namespace WindowMainWindowContextMenu.View
 {
@@ -21,11 +22,15 @@ namespace WindowMainWindowContextMenu.View
     public partial class ContextMenuWindow : Window
     {
         Window window;
+        MainViewModel MainViewModel { get; }
 
         public ContextMenuWindow(Window window)
         {
             InitializeComponent();
             this.window = window;
+
+            MainViewModel = new MainViewModel();
+            this.DataContext = MainViewModel;
         }
 
 
