@@ -24,7 +24,9 @@ namespace Globals.MyDialogsAndWindows.MyLockScreen
         public LockScreenWindow()
         {
             InitializeComponent();
-            this.DataContext = this;
+            this.DataContext = this; 
+            this.Owner = Application.Current.MainWindow;
+            Application.Current.MainWindow.IsEnabled = false;
         }
 
         private SecureString myPass;
@@ -43,6 +45,7 @@ namespace Globals.MyDialogsAndWindows.MyLockScreen
         {
             if (e.Key == Key.Escape)
             { 
+                Application.Current.MainWindow.IsEnabled = true;
                 this.Hide();
             }
         }
