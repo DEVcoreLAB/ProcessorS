@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Globals.MyControlsSchemas.Controls;
 
 namespace ProcessorS.Model
 {
@@ -19,11 +20,13 @@ namespace ProcessorS.Model
 
         private void SetMyControls()
         {
-            SetCustmControl setCustmControl = new SetCustmControl(new ButtonBasic());
-            var buttonStyle = setCustmControl.setControl.SetControlProperties(SettingFontProperties.Default.FontSize);
+            SetResources.Set(Globals.SettingFiles.SettingFontProperties.Default.FontSize);
 
-            Application.Current.Resources.Remove(typeof(System.Windows.Controls.Button));
-            Application.Current.Resources.Add(typeof(System.Windows.Controls.Button), buttonStyle);
+            //SetCustmControl setCustmControl = new SetCustmControl(new ButtonBasic());
+            //var buttonStyle = setCustmControl.setControl.SetControlProperties(SettingFontProperties.Default.FontSize);
+
+            //Application.Current.Resources.Remove(typeof(System.Windows.Controls.Button));
+            //Application.Current.Resources.Add(typeof(System.Windows.Controls.Button), buttonStyle);
         }
     }
 }

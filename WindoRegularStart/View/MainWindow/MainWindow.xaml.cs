@@ -40,9 +40,9 @@ namespace WindowRegularStart.View.MainWindow
                 Globals.MyDialogsAndWindows.MyMessagebox.MessageBoxX.Show("this is a test message");
             }
             if (e.Key == Key.Escape)
-            { 
+            {
                 contextMenuWindow.ShowDialog();
-            }
+            }          
         }
     }
 }

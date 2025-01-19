@@ -32,8 +32,10 @@ namespace WindowFirstStart.ViewModel.Commands.SaveSettinsButton
             Thread.CurrentThread.CurrentUICulture = new CultureInfo($"{SettingCurrentLanguage.Default.CurrentLanguageCode}");
 
 
-            WindowRegularStart.View.MainWindow.MainWindow mainWindow = new WindowRegularStart.View.MainWindow.MainWindow();
-            mainWindow.Show();
+            //WindowRegularStart.View.MainWindow.MainWindow mainWindow = new WindowRegularStart.View.MainWindow.MainWindow();
+            //mainWindow.Show();
+
+            Application.Current.MainWindow.Show();
 
             Window window = parameter as Window;
             window.Close();

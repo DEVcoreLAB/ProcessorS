@@ -39,17 +39,21 @@ namespace Globals.MyDialogsAndWindows.MyLockScreen
            
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Current.MainWindow.Effect = new BlurEffect() { Radius = 0};
-        }
-
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Escape)
             { 
-                this.Close();
+                this.Hide();
             }
+        }
+
+        private void Window_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!this.IsVisible)
+            { 
+                Application.Current.MainWindow.Effect = new BlurEffect() { Radius = 0 };
+            }
+
         }
     }
 }

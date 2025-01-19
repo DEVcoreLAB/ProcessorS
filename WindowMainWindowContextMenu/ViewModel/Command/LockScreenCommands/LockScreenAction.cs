@@ -20,7 +20,6 @@ namespace WindowMainWindowContextMenu.Command.LockScreenCommands
             Application.Current.MainWindow.Effect = new BlurEffect() { Radius = 50};
             
             Globals.MyDialogsAndWindows.MyLockScreen.LockScreenWindow lockScreenWindow = new Globals.MyDialogsAndWindows.MyLockScreen.LockScreenWindow();
-            lockScreenWindow.Owner = Application.Current.MainWindow;
             lockScreenWindow.ShowDialog();
         }
     }

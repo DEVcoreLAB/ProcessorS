@@ -12,7 +12,7 @@
         AllowsTransparency="True"
         Background="Transparent"
         SizeToContent="WidthAndHeight"
-        Closing="Window_Closing"
+        IsVisibleChanged="Window_IsVisibleChanged"
         KeyDown="Window_KeyDown"
         >
     <Border

@@ -54,11 +54,14 @@ namespace ProcessorS.Model
 
         private void SetFontSize()
         {
-            configurator.ConfigureFile.Configure(
+            if (Globals.SettingFiles.SettingFontProperties.Default.FontSize == 0)
+            {
+                configurator.ConfigureFile.Configure(
                 SettingFontProperties.Default,
                 nameof(SettingFontProperties.Default.FontSize),
                 SystemFonts.MessageFontSize
                 );
+            }
         }
     }
 }

@@ -5,7 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ControlProgramStart"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" 
+             d:DesignWidth="1920"
+             >
 
     <UserControl.Background>
         <ImageBrush
@@ -13,9 +15,15 @@
     </UserControl.Background>
 
     <Grid>
-        <!--<TextBox
-            FontSize="40"
-            Text="awdawd awdaw daw daw d awdsdffgsef sf sed fsefsedf sfedsfsdfsdfr gsdrgs aersaderf ga ewrgsdarg sdrgsd rfg"
-            />-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock
+            Grid.Column="2"
+            Text="{Binding MyTextblockText}"
+            />
     </Grid>
 </UserControl>

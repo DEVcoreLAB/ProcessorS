@@ -25,7 +25,7 @@ namespace WindowFirstStart.View
     {
         MainViewModel mainViewModel; 
 
-        public FirsStartWindow(WindowRegularStart.View.MainWindow.MainWindow mainWindow)
+        public FirsStartWindow()
         {
             InitializeComponent();
             mainViewModel = new MainViewModel();

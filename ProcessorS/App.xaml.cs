@@ -23,6 +23,8 @@ namespace ProcessorS
         {
             base.OnStartup(e);
 
+            Application.Current.MainWindow = new WindowRegularStart.View.MainWindow.MainWindow();
+
             new ConfigureSettingsFiles();
             new ConfigureControls();
             new ShowProperWidow();

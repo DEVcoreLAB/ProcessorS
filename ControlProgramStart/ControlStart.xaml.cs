@@ -23,6 +23,24 @@ namespace ControlProgramStart
         public ControlStart()
         {
             InitializeComponent();
+            this.DataContext = this;
+            SetText();
+        }
+
+        private string myTextblockText;
+        public string MyTextblockText
+        {
+            get { return myTextblockText; }
+            set { myTextblockText = value; }
+        }
+
+        private void SetText()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("xxxxxxx");
+
+            MyTextblockText = sb.ToString();
         }
     }
 }

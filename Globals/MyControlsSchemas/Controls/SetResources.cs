@@ -1,6 +1,7 @@
 ﻿using Globals.MyControlsSchemas.Controls.MyButton;
 using Globals.MyControlsSchemas.Controls.MyCombobox;
 using Globals.MyControlsSchemas.Controls.MyLabel;
+using Globals.MyControlsSchemas.Controls.MyPasswordBox;
 using Globals.MyControlsSchemas.Controls.MyTextBlock;
 using Globals.MyControlsSchemas.Controls.MyTextBox;
 using Globals.MyControlsSchemas.Controls.MyToolTip;
@@ -52,6 +53,11 @@ namespace Globals.MyControlsSchemas.Controls
             Style userControlStyle = setCustomUserControl.setControl.SetControlProperties(fontSize);
             Application.Current.Resources.Remove(typeof(System.Windows.Controls.UserControl));
             Application.Current.Resources.Add(typeof(System.Windows.Controls.UserControl), userControlStyle);
+            
+            SetCustmControl setCustomPasswordBox = new SetCustmControl(new PasswordBoxBasic());
+            Style passwordBoxStyle = setCustomPasswordBox.setControl.SetControlProperties(fontSize);
+            Application.Current.Resources.Remove(typeof(System.Windows.Controls.PasswordBox));
+            Application.Current.Resources.Add(typeof(System.Windows.Controls.PasswordBox), passwordBoxStyle);
         }
     }
 }
