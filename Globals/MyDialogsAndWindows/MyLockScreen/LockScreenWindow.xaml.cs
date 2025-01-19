@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -36,6 +37,19 @@ namespace Globals.MyDialogsAndWindows.MyLockScreen
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
            
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.MainWindow.Effect = new BlurEffect() { Radius = 0};
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            { 
+                this.Close();
+            }
         }
     }
 }

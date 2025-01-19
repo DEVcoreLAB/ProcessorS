@@ -8,11 +8,12 @@
         Title="LockScreenWindow" 
         ResizeMode="NoResize"
         WindowStyle="None" 
-        WindowState="Maximized"
-        WindowStartupLocation="CenterOwner"
+        WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
         Background="Transparent"
         SizeToContent="WidthAndHeight"
+        Closing="Window_Closing"
+        KeyDown="Window_KeyDown"
         >
     <Border
      Background="#DDAAAAAA"
@@ -20,12 +21,15 @@
      BorderThickness="4,4,4,4"
      CornerRadius="10,10,10,10" Padding="10"
     >
-        <PasswordBox
-            x:Name="MyPasswordBox"
-            Width="300"
-            VerticalContentAlignment="Center"
-            Padding="5,0,0,0" 
-            PasswordChanged="PasswordBox_PasswordChanged"
-            />
+        <StackPanel>
+            <PasswordBox
+                x:Name="MyPasswordBox"
+                Width="300"
+                VerticalContentAlignment="Center"
+                Padding="5,0,0,0" 
+                PasswordChanged="PasswordBox_PasswordChanged"
+                />
+        </StackPanel>
+
     </Border>
 </Window>

@@ -17,9 +17,11 @@ namespace WindowMainWindowContextMenu.Command.LockScreenCommands
                  window.Visibility = Visibility.Collapsed;
             }
 
+            Application.Current.MainWindow.Effect = new BlurEffect() { Radius = 50};
+            
             Globals.MyDialogsAndWindows.MyLockScreen.LockScreenWindow lockScreenWindow = new Globals.MyDialogsAndWindows.MyLockScreen.LockScreenWindow();
+            lockScreenWindow.Owner = Application.Current.MainWindow;
             lockScreenWindow.ShowDialog();
-            Application.Current.MainWindow.Effect = new BlurEffect() { Radius = 10};
         }
     }
 }
