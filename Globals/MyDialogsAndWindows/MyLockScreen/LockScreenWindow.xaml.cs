@@ -27,6 +27,7 @@ namespace Globals.MyDialogsAndWindows.MyLockScreen
             this.DataContext = this; 
             this.Owner = Application.Current.MainWindow;
             Application.Current.MainWindow.IsEnabled = false;
+            MyPasswordBox.Focus();
         }
 
         private SecureString myPass;
@@ -56,7 +57,6 @@ namespace Globals.MyDialogsAndWindows.MyLockScreen
             { 
                 Application.Current.MainWindow.Effect = new BlurEffect() { Radius = 0 };
             }
-
         }
     }
 }

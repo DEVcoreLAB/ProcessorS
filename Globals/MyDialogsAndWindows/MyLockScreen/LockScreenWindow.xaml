@@ -28,6 +28,7 @@
                 VerticalContentAlignment="Center"
                 Padding="5,0,0,0" 
                 PasswordChanged="PasswordBox_PasswordChanged"
+                LostFocus="MyPasswordBox_LostFocus"
                 />
         </StackPanel>
 
