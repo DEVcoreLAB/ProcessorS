@@ -40,7 +40,7 @@ namespace WindowRegularStart.View.MainWindow
         {
             if (e.Key == Key.F1)
             {
-                Globals.MyDialogsAndWindows.MyMessagebox.MessageBoxX.Show("this is a test message");
+                //Globals.MyDialogsAndWindows.MyMessagebox.MessageBoxX.Show("this is a test message");
             }
             if (e.Key == Key.Escape)
             {
