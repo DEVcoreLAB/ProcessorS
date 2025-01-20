@@ -13,7 +13,6 @@
         Background="Transparent"
         SizeToContent="WidthAndHeight"
         IsVisibleChanged="Window_IsVisibleChanged"
-        KeyDown="Window_KeyDown"
         >
     <Border
      Background="#DDAAAAAA"
@@ -28,7 +27,6 @@
                 VerticalContentAlignment="Center"
                 Padding="5,0,0,0" 
                 PasswordChanged="PasswordBox_PasswordChanged"
-                LostFocus="MyPasswordBox_LostFocus"
                 />
         </StackPanel>
 

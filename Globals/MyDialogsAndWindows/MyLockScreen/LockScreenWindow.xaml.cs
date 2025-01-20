@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Globals.Security.PasswordBoxControlHelper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security;
@@ -21,6 +22,8 @@ namespace Globals.MyDialogsAndWindows.MyLockScreen
     /// </summary>
     public partial class LockScreenWindow : Window
     {
+        
+
         public LockScreenWindow()
         {
             InitializeComponent();
@@ -28,6 +31,10 @@ namespace Globals.MyDialogsAndWindows.MyLockScreen
             this.Owner = Application.Current.MainWindow;
             Application.Current.MainWindow.IsEnabled = false;
             MyPasswordBox.Focus();
+
+            MyPass = ConvertToSecureString.Convert(ReadFromFileSecuredStringToString.UnprotectString(
+                Globals.SettingFiles.PassKey.Default.MyPassKey));
+
         }
 
         private SecureString myPass;
@@ -39,13 +46,12 @@ namespace Globals.MyDialogsAndWindows.MyLockScreen
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-           
-        }
+            string origin = ReadFromFileSecuredStringToString.UnprotectString(
+               Globals.SettingFiles.PassKey.Default.MyPassKey);
+            string current = MyPasswordBox.Password;
 
-        private void Window_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Escape)
-            { 
+            if (current.SequenceEqual(origin))
+            {
                 Application.Current.MainWindow.IsEnabled = true;
                 this.Hide();
             }
