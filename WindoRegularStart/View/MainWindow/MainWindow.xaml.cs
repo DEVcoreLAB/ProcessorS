@@ -31,6 +31,9 @@ namespace WindowRegularStart.View.MainWindow
             mainViewModel = new MainViewModel();
             this.DataContext = mainViewModel;
             contextMenuWindow = new WindowMainWindowContextMenu.View.ContextMenuWindow(this);
+
+
+           
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -43,6 +46,13 @@ namespace WindowRegularStart.View.MainWindow
             {
                 contextMenuWindow.ShowDialog();
             }          
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Globals.MyDialogsAndWindows.MyLockScreen.LockScreenWindow lockScreenWindow =
+               new Globals.MyDialogsAndWindows.MyLockScreen.LockScreenWindow();
+            lockScreenWindow.Show();
         }
     }
 }

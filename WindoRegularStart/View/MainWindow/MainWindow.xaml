@@ -15,6 +15,7 @@
         d:Width="1920"
         d:Height="1080"
         KeyDown="Window_KeyDown"
+        Loaded="Window_Loaded"
         >
     <Border 
         x:Name="MainBORDER"  
