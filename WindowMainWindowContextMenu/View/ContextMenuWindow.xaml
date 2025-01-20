@@ -87,6 +87,8 @@
                     Height="50"
                     BorderThickness="0"
                     Background="Transparent"
+                    Command="{Binding ShowStartBarCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                     >
                         <Button.Effect>
                             <DropShadowEffect  
