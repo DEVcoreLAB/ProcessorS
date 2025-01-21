@@ -68,6 +68,7 @@
                     Height="50"
                     BorderThickness="0"
                     Background="Transparent"
+                        IsEnabled="False"
                     >
                         <Button.Effect>
                             <DropShadowEffect  
@@ -108,6 +109,8 @@
                     Height="50"
                     BorderThickness="0"
                     Background="Transparent"
+                    Command="{Binding MinimizeProgram}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                     >
                         <Button.Effect>
                             <DropShadowEffect  
