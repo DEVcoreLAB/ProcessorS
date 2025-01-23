@@ -76,6 +76,17 @@
                                     <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
 
+                                <!--WizardButton-->
+                                <StackPanel
+                                    Grid.Row="0"
+                                    >
+                                    <Button
+                                        x:Name="WizardButton"
+                                        Content="Wizard"
+                                        Click="WizardButton_Click"
+                                        />
+                                </StackPanel>
+
                                 <!--Exit Button-->
                                 <StackPanel
                                     Grid.Row="2"

@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlProgramStart", "Cont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowMainWindowContextMenu", "WindowMainWindowContextMenu\WindowMainWindowContextMenu.csproj", "{8C92284B-B9E9-4B92-9971-BD6FF8E33FD4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wizard", "Wizard", "{71572882-E962-4E03-BBA5-5CF5154F8B9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reader", "Reader", "{6ED80880-614E-4CC3-9FF7-C839EE1CB8FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlMainWizard", "ControlMainWizard\ControlMainWizard.csproj", "{CDCF9B9E-974D-41B3-AE0D-3C6E5A7AAB1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,9 +63,16 @@ Global
 		{8C92284B-B9E9-4B92-9971-BD6FF8E33FD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C92284B-B9E9-4B92-9971-BD6FF8E33FD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C92284B-B9E9-4B92-9971-BD6FF8E33FD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDCF9B9E-974D-41B3-AE0D-3C6E5A7AAB1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDCF9B9E-974D-41B3-AE0D-3C6E5A7AAB1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDCF9B9E-974D-41B3-AE0D-3C6E5A7AAB1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDCF9B9E-974D-41B3-AE0D-3C6E5A7AAB1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CDCF9B9E-974D-41B3-AE0D-3C6E5A7AAB1D} = {71572882-E962-4E03-BBA5-5CF5154F8B9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5ECB4232-8BB4-4BB7-9098-7CBC612B2A4C}
