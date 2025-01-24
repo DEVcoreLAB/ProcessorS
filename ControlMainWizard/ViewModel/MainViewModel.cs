@@ -11,7 +11,7 @@ namespace ControlMainWizard.ViewModel
     {
         public MainViewModel()
         {
-            MessageBox.Show("view model connection test");
+            
         }
     }
 }

@@ -62,14 +62,15 @@
                     </Grid.ColumnDefinitions>
 
                     <Button
-                    x:Name="HomeButton"
-                    Grid.Column="0"
-                    Width="50"
-                    Height="50"
-                    BorderThickness="0"
-                    Background="Transparent"
-                        IsEnabled="False"
-                    >
+                        x:Name="HomeButton"
+                        Grid.Column="0"
+                        Width="50"
+                        Height="50"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        Command="{Binding ShowHomeControlCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                        >
                         <Button.Effect>
                             <DropShadowEffect  
                             ShadowDepth="3" 
@@ -109,7 +110,7 @@
                     Height="50"
                     BorderThickness="0"
                     Background="Transparent"
-                    Command="{Binding MinimizeProgram}"
+                    Command="{Binding MinimizeProgramCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
                     >
                         <Button.Effect>

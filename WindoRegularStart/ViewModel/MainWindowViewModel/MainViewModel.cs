@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using WindowRegularStart.ViewModel.Command.CollapsibleButtonCommand;
 using WindowRegularStart.ViewModel.Command.ExitButtonCommand;
+using WindowMainWindowContextMenu.ViewModel.Command.ShowHomeControlCommands;
 
 namespace WindowRegularStart.ViewModel.MainWindowViewModel
 {
@@ -32,6 +33,8 @@ namespace WindowRegularStart.ViewModel.MainWindowViewModel
                 new ExitButtonAction(this).Execute, 
                 new ExitButtonPredict(this).Check
                 );
+
+            ClickEvent.Click += (s, e) => { MainUserControl = new ControlProgramStart.ControlStart(); };
         }
     }
 }

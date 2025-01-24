@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowMainWindowContextMenu.Command.LockScreenCommands;
 using WindowMainWindowContextMenu.ViewModel.Command.MinimizeProgramCommands;
+using WindowMainWindowContextMenu.ViewModel.Command.ShowHomeControlCommands;
 using WindowMainWindowContextMenu.ViewModel.Command.ShowStartBarCommand;
 
 namespace WindowMainWindowContextMenu.ViewModel
@@ -14,7 +15,8 @@ namespace WindowMainWindowContextMenu.ViewModel
     {
         public RelayCommand LockSreenCommand {  get; }
         public RelayCommand ShowStartBarCommand { get; }
-        public RelayCommand MinimizeProgram {  get; }
+        public RelayCommand MinimizeProgramCommand {  get; }
+        public RelayCommand ShowHomeControlCommand { get; }
 
         public MainViewModel()
         {
@@ -26,7 +28,8 @@ namespace WindowMainWindowContextMenu.ViewModel
             ShowStartBarCommand = new RelayCommand(
                 showStartBarAction.Execute,  
                 () => new ShowStartBarPredict().Check());
-            MinimizeProgram = new RelayCommand(new MinimizeProgramAction(this).Execute,new MinimizeProgramPredict().Check);
+            MinimizeProgramCommand = new RelayCommand(new MinimizeProgramAction(this).Execute,new MinimizeProgramPredict().Check);
+            ShowHomeControlCommand = new RelayCommand(new ShowHomeControlAction().Execute, new ShowHomeControlPredict().Check);
         }
 
         private bool isStartBarVisible;
