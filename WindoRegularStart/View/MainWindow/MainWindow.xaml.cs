@@ -55,9 +55,9 @@ namespace WindowRegularStart.View.MainWindow
             lockScreenWindow.Show();
         }
 
-        private void WizardButton_Click(object sender, RoutedEventArgs e)
-        {
-            mainViewModel.MainUserControl = new ControlMainWizard.View.WizardMainControl();
-        }
+        //private void WizardButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    mainViewModel.MainUserControl = new ControlMainWizard.View.WizardMainControl();
+        //}
     }
 }

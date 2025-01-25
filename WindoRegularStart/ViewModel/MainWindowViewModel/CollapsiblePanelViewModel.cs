@@ -14,6 +14,6 @@ namespace WindowRegularStart.ViewModel.MainWindowViewModel
     {
         public RelayCommand CollapsibleButtonClickCommand { get; }
         public RelayCommand ExitButtonClickCommand { get; }   
-      
+        public RelayCommand WizardButtonClickCommand { get; }
     }
 }

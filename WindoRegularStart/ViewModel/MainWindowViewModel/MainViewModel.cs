@@ -11,6 +11,7 @@ using System.Windows;
 using WindowRegularStart.ViewModel.Command.CollapsibleButtonCommand;
 using WindowRegularStart.ViewModel.Command.ExitButtonCommand;
 using WindowMainWindowContextMenu.ViewModel.Command.ShowHomeControlCommands;
+using WindowRegularStart.ViewModel.Command.WizardButtonCommands;
 
 namespace WindowRegularStart.ViewModel.MainWindowViewModel
 {
@@ -32,6 +33,12 @@ namespace WindowRegularStart.ViewModel.MainWindowViewModel
             (
                 new ExitButtonAction(this).Execute, 
                 new ExitButtonPredict(this).Check
+                );
+
+            WizardButtonClickCommand = new RelayCommand
+            (
+                new WizardButtonAction(this).Execute,
+                new WizardButtonPredict().Check
                 );
 
             ClickEvent.Click += (s, e) => { MainUserControl = new ControlProgramStart.ControlStart(); };
