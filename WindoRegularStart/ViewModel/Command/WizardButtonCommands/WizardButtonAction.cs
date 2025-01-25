@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControlMainWizard.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,11 @@ namespace WindowRegularStart.ViewModel.Command.WizardButtonCommands
 
         public void Execute(object? parameter)
         {
-            MainViewModel.MainUserControl = new ControlMainWizard.View.WizardMainControl();
+            if (MainViewModel.MainUserControl is not WizardMainControl)
+            {
+                MainViewModel.MainUserControl = new ControlMainWizard.View.WizardMainControl();
+                MainViewModel.CollapsibleButtonClickCommand.Execute(parameter);
+            }
         }
     }
 }
