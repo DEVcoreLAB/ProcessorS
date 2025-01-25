@@ -27,6 +27,7 @@
     <None Remove="Graphics\GraphicFiles\SaveIconEnabled.png" />
     <None Remove="Graphics\GraphicFiles\showData.png" />
     <None Remove="Graphics\GraphicFiles\showTaskBar.png" />
+    <None Remove="Graphics\GraphicFiles\WizardIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +53,7 @@
     <Resource Include="Graphics\GraphicFiles\SaveIconEnabled.png" />
     <Resource Include="Graphics\GraphicFiles\showData.png" />
     <Resource Include="Graphics\GraphicFiles\showTaskBar.png" />
+    <Resource Include="Graphics\GraphicFiles\WizardIcon.png" />
   </ItemGroup>
 
   <ItemGroup>

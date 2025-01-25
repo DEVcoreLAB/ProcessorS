@@ -82,9 +82,21 @@
                                     >
                                     <Button
                                         x:Name="WizardButton"
-                                        Content="Wizard"
                                         Click="WizardButton_Click"
-                                        />
+                                        Width="50"
+                                        Height="50"
+                                        Background="Transparent"
+                                        >
+                                        <Button.Effect>
+                                            <DropShadowEffect  
+                                                ShadowDepth="3" 
+                                                BlurRadius="10"/>
+                                        </Button.Effect>
+                                        <Image
+                                            Source="pack://application:,,,/Globals;component/Graphics/GraphicFiles/WizardIcon.png"
+                                            Stretch="UniformToFill"
+                                            />
+                                    </Button>
                                 </StackPanel>
 
                                 <!--Exit Button-->
