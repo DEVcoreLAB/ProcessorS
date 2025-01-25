@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SubControlProductProject.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,24 +14,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ControlProgramStart
+namespace SubControlProductProject.View
 {
     /// <summary>
-    /// Interaction logic for ControlStart.xaml
+    /// Interaction logic for ProductControl.xaml
     /// </summary>
-    public partial class ControlStart : UserControl
+    public partial class ProductControl : UserControl
     {
-        public ControlStart()
+        public ProductControl()
         {
             InitializeComponent();
-            this.DataContext = this;
-        }
-
-        private string myTextblockText;
-        public string MyTextblockText
-        {
-            get { return myTextblockText; }
-            set { myTextblockText = value; }
+            MainViewModel mainViewModel = new MainViewModel();
+            this.DataContext = mainViewModel;
         }
     }
 }
