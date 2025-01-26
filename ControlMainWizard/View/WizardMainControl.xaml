@@ -39,11 +39,14 @@
                 BorderThickness="2,2,2,0"
                 d:BorderBrush="Black"
                 CornerRadius="5"
+                BorderBrush="{Binding SupplierButtonBorderBrudh}"
                 >
                 <Button
                     BorderBrush="Transparent"
                     d:Content="Supplier"
                     d:FontSize="18"
+                    Background="Transparent"
+                    Content="{Binding SupplierButtonContent}"
                     >
                 </Button>
             </Border>
@@ -55,11 +58,14 @@
                 BorderThickness="2,2,2,0"
                 d:BorderBrush="Black"
                 CornerRadius="5"
+                BorderBrush="{Binding CustomerButtonBorderBrush}"
                 >
                 <Button
                     BorderBrush="Transparent"
                     d:Content="Customer"
                     d:FontSize="18"
+                    Background="Transparent"
+                    Content="{Binding CustomerButtonContent}"
                     >
                 </Button>
             </Border>
@@ -71,11 +77,14 @@
                 BorderThickness="2,2,2,0"
                 d:BorderBrush="Black"
                 CornerRadius="5"
+                BorderBrush="{Binding EquipmentButtonBorderBrush}"
                 >
                 <Button
                     BorderBrush="Transparent"
                     d:Content="Equipment"
                     d:FontSize="18"
+                    Background="Transparent"
+                    Content="{Binding EquipmentButtonContent}"
                     >
                 </Button>
             </Border>
@@ -87,11 +96,14 @@
                 BorderThickness="2,2,2,0"
                 d:BorderBrush="Black"
                 CornerRadius="5"
+                BorderBrush="{Binding IntermediateProductButtonBorderBrush}"
                 >
                 <Button
                     BorderBrush="Transparent"
                     d:Content="Inter. Product"
                     d:FontSize="18"
+                    Background="Transparent"
+                    Content="{Binding IntermediateProductButtonContent}"
                     >
                 </Button>
             </Border>
@@ -103,11 +115,14 @@
                 BorderThickness="2,2,2,0"
                 d:BorderBrush="Black"
                 CornerRadius="5"
+                BorderBrush="{Binding ProductButtonBorderBrush}"
                 >
                 <Button
                     BorderBrush="Transparent"
                     d:Content="Product"
                     d:FontSize="18"
+                    Background="Transparent"
+                    Content="{Binding ProductButtonContent}"
                     >
                 </Button>
             </Border>
@@ -119,11 +134,14 @@
                 BorderThickness="2,2,2,0"
                 d:BorderBrush="Black"
                 CornerRadius="5"
+                BorderBrush="{Binding LocationButtonBorderBrush}"
                 >
                 <Button
                     BorderBrush="Transparent"
                     d:Content="Location"
                     d:FontSize="18"
+                    Background="Transparent"
+                    Content="{Binding LocationButtonContent}"
                     >
                 </Button>
             </Border>
@@ -135,11 +153,14 @@
                 BorderThickness="2,2,2,0"
                 d:BorderBrush="Black"
                 CornerRadius="5"
+                BorderBrush="{Binding BlockDiagramButtonBorderBrush}"
                 >
                 <Button
                     BorderBrush="Transparent"
                     d:Content="Block diagram"
                     d:FontSize="18"
+                    Background="Transparent"
+                    Content="{Binding BlockDiagramButtonContent}"
                     >
                 </Button>
             </Border>
