@@ -1,4 +1,4 @@
-﻿using SubControlIntermediateProductProject.ViewModel;
+﻿using SubContrrolEquipmentProject.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SubControlIntermediateProductProject.View
+namespace SubContrrolEquipmentProject.View
 {
     /// <summary>
-    /// Interaction logic for IntermediateProductControl.xaml
+    /// Interaction logic for EquipmentControl.xaml
     /// </summary>
-    public partial class IntermediateProductControl : UserControl
+    public partial class EquipmentControl : UserControl
     {
-        public IntermediateProductControl()
+        public EquipmentControl()
         {
             InitializeComponent();
             MainViewModel mainViewModel = new MainViewModel();
