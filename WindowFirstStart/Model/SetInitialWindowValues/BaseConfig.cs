@@ -59,7 +59,7 @@ namespace WindowFirstStart.Model.SetInitialWindowValues
 
             mainViewModel.ConnStrinngTextBoxForeground = new SolidColorBrush(Colors.Black);
 
-            mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram();
+            mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram(mainViewModel.FontSizeSelectedValue);
 
             if (Thread.CurrentThread.CurrentCulture.Name == "pl-PL")
             {

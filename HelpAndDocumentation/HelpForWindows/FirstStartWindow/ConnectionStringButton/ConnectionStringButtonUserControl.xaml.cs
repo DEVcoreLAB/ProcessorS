@@ -20,10 +20,11 @@ namespace HelpAndDocumentation.HelpForWindows.FirstStartWindow.ConnectionStringB
     /// </summary>
     public partial class ConnectionStringButtonUserControl : UserControl
     {
-        public ConnectionStringButtonUserControl()
+        public ConnectionStringButtonUserControl(double fontSzie)
         {
             InitializeComponent();
             this.DataContext = this;
+            ThisFontSize = fontSzie;
             MainDescription = Langs.LangConnectionButton.mainDescription;
         }
 
@@ -33,6 +34,14 @@ namespace HelpAndDocumentation.HelpForWindows.FirstStartWindow.ConnectionStringB
             get { return mainDescription; }
             set { mainDescription = value; }
         }
+
+        private double thisFontSize;
+        public double ThisFontSize
+        {
+            get { return thisFontSize; }
+            set { thisFontSize = value; }
+        }
+
 
     }
 }

@@ -23,11 +23,11 @@ namespace HelpAndDocumentation.ProgramInfo.BasicInfo
     /// </summary>
     public partial class BasicInformationAbouProgram : UserControl
     {
-        public BasicInformationAbouProgram()
+        public BasicInformationAbouProgram(double fontSize)
         {
             InitializeComponent();
             this.DataContext = this;
-
+            ThisFontSize = fontSize;
             MainDescription = Lang.mainDescriptioText;
         }
 
@@ -38,5 +38,11 @@ namespace HelpAndDocumentation.ProgramInfo.BasicInfo
             set { mainDescription = value; }
         }
 
+        private double thisFontSize;
+        public double ThisFontSize
+        {
+            get { return thisFontSize; }
+            set { thisFontSize = value; }
+        }
     }
 }

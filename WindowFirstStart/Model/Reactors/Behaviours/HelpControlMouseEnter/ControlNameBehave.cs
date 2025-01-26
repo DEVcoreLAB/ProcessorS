@@ -20,19 +20,19 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.HelpControlMouseEnter
             {
                 if (mainViewModel.ControlName == "connStringTEXTBOX")
                 {
-                    mainViewModel.HelpDocument = new HelpAndDocumentation.HelpForWindows.FirstStartWindow.ConnectionStringTextbox.ConnectionStringUserControl();
+                    mainViewModel.HelpDocument = new HelpAndDocumentation.HelpForWindows.FirstStartWindow.ConnectionStringTextbox.ConnectionStringUserControl(mainViewModel.FontSizeSelectedValue);
                 }
                 if (mainViewModel.ControlName == "connectionStringButton")
                 {
-                    mainViewModel.HelpDocument = new HelpAndDocumentation.HelpForWindows.FirstStartWindow.ConnectionStringButton.ConnectionStringButtonUserControl();
+                    mainViewModel.HelpDocument = new HelpAndDocumentation.HelpForWindows.FirstStartWindow.ConnectionStringButton.ConnectionStringButtonUserControl(mainViewModel.FontSizeSelectedValue);
                 }
                 if (mainViewModel.ControlName == "languageCOMBOBOX")
                 {
-                    mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram();
+                    mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram(mainViewModel.FontSizeSelectedValue);
                 }
                 if (mainViewModel.ControlName == "passwordBoxBase")
                 {
-                    mainViewModel.HelpDocument = new HelpAndDocumentation.HelpForWindows.FirstStartWindow.FirstPasswordBox.FirstPasswordBoxControl();
+                    mainViewModel.HelpDocument = new HelpAndDocumentation.HelpForWindows.FirstStartWindow.FirstPasswordBox.FirstPasswordBoxControl(mainViewModel.FontSizeSelectedValue);
                 }
             });
         }

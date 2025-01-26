@@ -20,10 +20,11 @@ namespace HelpAndDocumentation.HelpForWindows.FirstStartWindow.FirstPasswordBox
     /// </summary>
     public partial class FirstPasswordBoxControl : UserControl
     {
-        public FirstPasswordBoxControl()
+        public FirstPasswordBoxControl(double fontSize)
         {
             InitializeComponent();
             this.DataContext = this;
+            ThisFontSize = fontSize;
             MainDescription = Langs.LangFirstPasswordBox.mainDescription;
         }
 
@@ -34,5 +35,11 @@ namespace HelpAndDocumentation.HelpForWindows.FirstStartWindow.FirstPasswordBox
             set { mainDescription = value; }
         }
 
+        private double thisFontSize;
+        public double ThisFontSize
+        {
+            get { return thisFontSize; }
+            set { thisFontSize = value; }
+        }
     }
 }

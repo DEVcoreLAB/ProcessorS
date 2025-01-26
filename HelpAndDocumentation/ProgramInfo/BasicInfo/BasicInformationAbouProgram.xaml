@@ -12,6 +12,7 @@
         <TextBlock
             Padding="10"
             Text="{Binding MainDescription}"
+            FontSize="{Binding ThisFontSize}"
             TextWrapping="Wrap"
             />
     </Grid>

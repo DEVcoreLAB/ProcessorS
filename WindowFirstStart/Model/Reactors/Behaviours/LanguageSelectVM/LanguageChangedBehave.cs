@@ -29,7 +29,7 @@ namespace WindowFirstStart.Model.Reactors.Behaviours.LanguageSelectVM
                 changeVisibleTexts.Change(mainViewModel);
 
                 mainViewModel.HelpDocument = null;
-                mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram();
+                mainViewModel.HelpDocument = new HelpAndDocumentation.ProgramInfo.BasicInfo.BasicInformationAbouProgram(mainViewModel.FontSizeSelectedValue);
 
                 mainViewModel.LicenseDocument = null;
                 if (mainViewModel.SelectedLanguage.CultureCode == "pl-PL")
