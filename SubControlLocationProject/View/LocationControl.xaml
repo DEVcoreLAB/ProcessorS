@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBlock
-            Text="Equipment control"
+            Text="Location control"
             Background="White"
             TextAlignment="Center"
             Width="100"

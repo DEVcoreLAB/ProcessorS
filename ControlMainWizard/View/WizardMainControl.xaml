@@ -47,6 +47,7 @@
                     d:FontSize="18"
                     Background="Transparent"
                     Content="{Binding SupplierButtonContent}"
+                    Command="{Binding SupplierButtonCommand}"
                     >
                 </Button>
             </Border>
@@ -66,6 +67,7 @@
                     d:FontSize="18"
                     Background="Transparent"
                     Content="{Binding CustomerButtonContent}"
+                    Command="{Binding CustomerButtonCommand}"
                     >
                 </Button>
             </Border>
@@ -85,6 +87,7 @@
                     d:FontSize="18"
                     Background="Transparent"
                     Content="{Binding EquipmentButtonContent}"
+                    Command="{Binding EquipmentButtonCommand}"
                     >
                 </Button>
             </Border>
@@ -104,6 +107,7 @@
                     d:FontSize="18"
                     Background="Transparent"
                     Content="{Binding IntermediateProductButtonContent}"
+                    Command="{Binding IntermediateProductButtonCommand}"
                     >
                 </Button>
             </Border>
@@ -123,6 +127,7 @@
                     d:FontSize="18"
                     Background="Transparent"
                     Content="{Binding ProductButtonContent}"
+                    Command="{Binding ProductButtonCommand}"
                     >
                 </Button>
             </Border>
@@ -142,6 +147,7 @@
                     d:FontSize="18"
                     Background="Transparent"
                     Content="{Binding LocationButtonContent}"
+                    Command="{Binding LocationButtonCommand}"
                     >
                 </Button>
             </Border>
@@ -161,6 +167,7 @@
                     d:FontSize="18"
                     Background="Transparent"
                     Content="{Binding BlockDiagramButtonContent}"
+                    Command="{Binding BlockDiagramButtonCommand}"
                     >
                 </Button>
             </Border>
@@ -176,8 +183,10 @@
         
         <!--SubUserControl-->
         <UserControl
+            x:Name="MainUserControl"
             Grid.Row="2"
             Margin="5"
+            Content="{Binding MainUserControlContent}"
             />
     </Grid>
 </UserControl>

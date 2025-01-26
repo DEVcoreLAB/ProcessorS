@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0-windows10.0.26100.0</TargetFramework>
@@ -10,11 +10,17 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="ViewModel\Commands\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Globals\Globals.csproj" />
+    <ProjectReference Include="..\SubControlBlockDiagramProject\SubControlBlockDiagramProject.csproj" />
+    <ProjectReference Include="..\SubControlCustomerProject\SubControlCustomerProject.csproj" />
+    <ProjectReference Include="..\SubControlIntermediateProductProject\SubControlIntermediateProductProject.csproj" />
+    <ProjectReference Include="..\SubControlLocationProject\SubControlLocationProject.csproj" />
+    <ProjectReference Include="..\SubControlProductProject\SubControlProductProject.csproj" />
+    <ProjectReference Include="..\SubControlSupplierProject\SubControlSupplierProject.csproj" />
+    <ProjectReference Include="..\SubContrrolEquipmentProject\SubContrrolEquipmentProject.csproj" />
   </ItemGroup>
 
   <ItemGroup>

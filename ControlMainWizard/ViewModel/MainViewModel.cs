@@ -1,4 +1,11 @@
 ﻿using ControlMainWizard.Langs;
+using ControlMainWizard.ViewModel.Commands.BlockDiagramButtonCommands;
+using ControlMainWizard.ViewModel.Commands.CustomerButtonCommand;
+using ControlMainWizard.ViewModel.Commands.EquipmentButtonCommands;
+using ControlMainWizard.ViewModel.Commands.IntermediateProductButtonCommands;
+using ControlMainWizard.ViewModel.Commands.LocationButtonCommands;
+using ControlMainWizard.ViewModel.Commands.ProductButtonCommands;
+using ControlMainWizard.ViewModel.Commands.SupplierButtonCommands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +35,48 @@ namespace ControlMainWizard.ViewModel
             LocationButtonBorderBrush = new SolidColorBrush(Colors.Black);
             ProductButtonBorderBrush = new SolidColorBrush(Colors.Black);
             SupplierButtonBorderBrudh = new SolidColorBrush(Colors.Black);
+
+            BlockDiagramButtonCommand = new Globals.ViewModel.RelayCommand
+                (
+                    new BlockDiagramButtonAction(this).Execute,
+                    new BlockDiagramButtonPredisct().Check
+                );
+
+            CustomerButtonCommand = new Globals.ViewModel.RelayCommand
+                (
+                    new CustomerButtonAction(this).Execute,
+                    new CustomerButtonPredict().Check
+                );
+
+            EquipmentButtonCommand = new Globals.ViewModel.RelayCommand
+                (
+                    new EquipmentButtonAction(this).Execute,
+                    new EquipmentButtonPredict().Check
+                );
+
+            IntermediateProductButtonCommand = new Globals.ViewModel.RelayCommand
+                (
+                    new IntermediateButtonAction(this).Execute,
+                    new IntermediateProductButtonPredict().Check
+                );
+
+            LocationButtonCommand = new Globals.ViewModel.RelayCommand
+                (
+                    new LocationButtonAction(this).Execute,
+                    new LocationButtonPredict().Check
+                );
+
+            ProductButtonCommand = new Globals.ViewModel.RelayCommand
+                (
+                    new ProductButtonAction(this).Execute,
+                    new ProductButtonPredict().Check
+                );
+
+            SupplierButtonCommand = new Globals.ViewModel.RelayCommand
+                (
+                    new SupplierButtonAction(this).Execute,
+                    new SupplierButtonPredict().Check
+                );
         }
     }
 }

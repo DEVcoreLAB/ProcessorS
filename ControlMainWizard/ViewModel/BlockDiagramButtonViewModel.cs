@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Globals.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,8 @@ namespace ControlMainWizard.ViewModel
 {
     internal partial class MainViewModel : Globals.ViewModel.BaseViewModel
     {
+		public RelayCommand BlockDiagramButtonCommand { get; }
+
 		private string blockDiagramButtonContent;
 		public string BlockDiagramButtonContent
 		{
