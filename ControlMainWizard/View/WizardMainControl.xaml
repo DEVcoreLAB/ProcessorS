@@ -11,11 +11,152 @@
     <Grid 
         Background="LightGray"
         >
-        <TextBlock
-            FontSize="45"
-            Text="This is a test message"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--ButtonsRow-->
+        <Grid 
+            Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+
+            <!--SupplierButton-->
+            <Border
+                Grid.Column="1"
+                Margin="0,2,0,0"
+                BorderThickness="2,2,2,0"
+                d:BorderBrush="Black"
+                CornerRadius="5"
+                >
+                <Button
+                    BorderBrush="Transparent"
+                    d:Content="Supplier"
+                    d:FontSize="18"
+                    >
+                </Button>
+            </Border>
+
+            <!--CustomerButton-->
+            <Border
+                Grid.Column="2"
+                Margin="0,2,0,0"
+                BorderThickness="2,2,2,0"
+                d:BorderBrush="Black"
+                CornerRadius="5"
+                >
+                <Button
+                    BorderBrush="Transparent"
+                    d:Content="Customer"
+                    d:FontSize="18"
+                    >
+                </Button>
+            </Border>
+
+            <!--EquipmentButton-->
+            <Border
+                Grid.Column="3"
+                Margin="0,2,0,0"
+                BorderThickness="2,2,2,0"
+                d:BorderBrush="Black"
+                CornerRadius="5"
+                >
+                <Button
+                    BorderBrush="Transparent"
+                    d:Content="Equipment"
+                    d:FontSize="18"
+                    >
+                </Button>
+            </Border>
+            
+            <!--IntermediateProductButton-->
+            <Border
+                Grid.Column="4"
+                Margin="0,2,0,0"
+                BorderThickness="2,2,2,0"
+                d:BorderBrush="Black"
+                CornerRadius="5"
+                >
+                <Button
+                    BorderBrush="Transparent"
+                    d:Content="Inter. Product"
+                    d:FontSize="18"
+                    >
+                </Button>
+            </Border>
+            
+            <!--ProductButton-->
+            <Border
+                Grid.Column="5"
+                Margin="0,2,0,0"
+                BorderThickness="2,2,2,0"
+                d:BorderBrush="Black"
+                CornerRadius="5"
+                >
+                <Button
+                    BorderBrush="Transparent"
+                    d:Content="Product"
+                    d:FontSize="18"
+                    >
+                </Button>
+            </Border>
+            
+            <!--LocationButton-->
+            <Border
+                Grid.Column="6"
+                Margin="0,2,0,0"
+                BorderThickness="2,2,2,0"
+                d:BorderBrush="Black"
+                CornerRadius="5"
+                >
+                <Button
+                    BorderBrush="Transparent"
+                    d:Content="Location"
+                    d:FontSize="18"
+                    >
+                </Button>
+            </Border>
+            
+            <!--BlockDiagramProduct-->
+            <Border
+                Grid.Column="7"
+                Margin="0,2,0,0"
+                BorderThickness="2,2,2,0"
+                d:BorderBrush="Black"
+                CornerRadius="5"
+                >
+                <Button
+                    BorderBrush="Transparent"
+                    d:Content="Block diagram"
+                    d:FontSize="18"
+                    >
+                </Button>
+            </Border>
+        </Grid>
+
+        <!--Separator-->
+        <Border
+            Grid.Row="1"
+            Height="2"
+            Margin="5,0,5,0"
+            Background="Orange"
+            />
+        
+        <!--SubUserControl-->
+        <UserControl
+            Grid.Row="2"
+            Margin="5"
             />
     </Grid>
 </UserControl>
