@@ -44,16 +44,16 @@ namespace Globals.MyControlsSchemas.Controls
             Application.Current.Resources.Remove(typeof(System.Windows.Controls.ToolTip));
             Application.Current.Resources.Add(typeof(System.Windows.Controls.ToolTip), toolTipStyle);
 
-            SetCustmControl setCustomTextBlockControl = new SetCustmControl(new TextBlockBasic());
-            Style textBlockStyle = setCustomTextBlockControl.setControl.SetControlProperties(fontSize);
-            Application.Current.Resources.Remove(typeof(System.Windows.Controls.TextBlock));
-            Application.Current.Resources.Add(typeof(System.Windows.Controls.TextBlock), textBlockStyle);
+            //SetCustmControl setCustomTextBlockControl = new SetCustmControl(new TextBlockBasic());
+            //Style textBlockStyle = setCustomTextBlockControl.setControl.SetControlProperties(fontSize);
+            //Application.Current.Resources.Remove(typeof(System.Windows.Controls.TextBlock));
+            //Application.Current.Resources.Add(typeof(System.Windows.Controls.TextBlock), textBlockStyle);
 
             SetCustmControl setCustomUserControl = new SetCustmControl(new UserControlBasic());
             Style userControlStyle = setCustomUserControl.setControl.SetControlProperties(fontSize);
             Application.Current.Resources.Remove(typeof(System.Windows.Controls.UserControl));
             Application.Current.Resources.Add(typeof(System.Windows.Controls.UserControl), userControlStyle);
-            
+
             SetCustmControl setCustomPasswordBox = new SetCustmControl(new PasswordBoxBasic());
             Style passwordBoxStyle = setCustomPasswordBox.setControl.SetControlProperties(fontSize);
             Application.Current.Resources.Remove(typeof(System.Windows.Controls.PasswordBox));

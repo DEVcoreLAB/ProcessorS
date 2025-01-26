@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -31,7 +32,7 @@ namespace Globals.MyControlsSchemas.Controls.MyButton
                 {
                     if (button.Content is string)
                     {
-                        button.FontSize = actualFontsize + 0.5;
+                        button.FontSize = actualFontsize + 1;
                     }
                     else if (button.Content is Image image)
                     {
@@ -53,7 +54,7 @@ namespace Globals.MyControlsSchemas.Controls.MyButton
                 {
                     if (button.Content is string)
                     {
-                        button.FontSize = actualFontsize - 0.5;
+                        button.FontSize = actualFontsize - 1;
                     }
                     else if (button.Content is Image image)
                     {
@@ -80,6 +81,7 @@ namespace Globals.MyControlsSchemas.Controls.MyButton
             // Creating factory for ContentPresenter, which will display the content of the button.
             var contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
             contentPresenter.SetValue(ContentPresenter.ContentProperty, new TemplateBindingExtension(ContentControl.ContentProperty));
+            //contentPresenter.SetValue(TextElement.FontSizeProperty, new TemplateBindingExtension(Control.FontSizeProperty));
             contentPresenter.SetValue(FrameworkElement.HorizontalAlignmentProperty, HorizontalAlignment.Center);
             contentPresenter.SetValue(FrameworkElement.VerticalAlignmentProperty, VerticalAlignment.Center);
 
