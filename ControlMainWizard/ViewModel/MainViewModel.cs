@@ -1,4 +1,5 @@
 ﻿using ControlMainWizard.Langs;
+using ControlMainWizard.Model;
 using ControlMainWizard.ViewModel.Commands.BlockDiagramButtonCommands;
 using ControlMainWizard.ViewModel.Commands.CustomerButtonCommand;
 using ControlMainWizard.ViewModel.Commands.EquipmentButtonCommands;
@@ -77,6 +78,8 @@ namespace ControlMainWizard.ViewModel
                     new SupplierButtonAction(this).Execute,
                     new SupplierButtonPredict().Check
                 );
+
+            MainModel mainModel = new MainModel(this);
         }
     }
 }
