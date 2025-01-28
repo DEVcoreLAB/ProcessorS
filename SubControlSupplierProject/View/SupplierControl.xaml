@@ -5,14 +5,110 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SubControlSupplierProject.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock
-            Text="Supplier control"
-            Background="White"
-            TextAlignment="Center"
-            Width="100"
-            Height="100"
-            />
+             d:DesignHeight="1080"
+             d:DesignWidth="1920">
+    <Grid
+        Background="White"
+        Margin="5"
+        >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--list of schemas-->
+        <Border
+            Grid.Column="0"
+            Padding="10"
+            CornerRadius="5"
+            BorderBrush="Orange"
+            BorderThickness="1"
+            >
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button
+                    Grid.Row="0"
+                    Height="50"
+                    Margin="2"
+                    Content="New schema"
+                    FontSize="18"
+                    BorderBrush="Black"
+                    BorderThickness="1"
+                    />
+
+                <TextBox
+                    Grid.Row="1"
+                    Margin="2"
+                    Height="50"
+                    FontSize="18"
+                    d:Text="search"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    />
+
+                <ListBoxItem
+                    Grid.Row="2"
+                    Margin="2"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    />
+            </Grid>
+        </Border>
+
+        <!--proper user control-->
+        <Border
+            Grid.Column="1"
+            Padding="10"
+            CornerRadius="5"
+            BorderBrush="Orange"
+            BorderThickness="1">
+                <UserControl
+                
+                />
+        </Border>
+
+        <!--list of suppliers-->
+        <Border
+            Grid.Column="2"
+            Padding="10"
+            CornerRadius="5"
+            BorderBrush="Orange"
+            BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Content="panel for buttnos like delete or edit or something.."
+                    />
+
+                <TextBox
+                    Grid.Row="1"
+                    Margin="2"
+                    Height="50"
+                    FontSize="18"
+                    d:Text="search"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    />
+
+                <ListBoxItem
+                    Grid.Row="2"
+                    Margin="2"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    />
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>
