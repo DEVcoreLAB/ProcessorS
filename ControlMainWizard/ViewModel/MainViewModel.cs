@@ -78,8 +78,6 @@ namespace ControlMainWizard.ViewModel
                     new SupplierButtonAction(this).Execute,
                     new SupplierButtonPredict().Check
                 );
-
-            MainModel mainModel = new MainModel(this);
         }
     }
 }

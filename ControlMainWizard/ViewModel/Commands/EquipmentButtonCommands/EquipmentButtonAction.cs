@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ControlMainWizard.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace ControlMainWizard.ViewModel.Commands.EquipmentButtonCommands
 {
@@ -21,6 +23,11 @@ namespace ControlMainWizard.ViewModel.Commands.EquipmentButtonCommands
             {
                 MainViewModel.MainUserControlContent = new SubContrrolEquipmentProject.View.EquipmentControl();
             }
+
+            SetButtonsBorderToBlack setButtonsBorderToBlack = new SetButtonsBorderToBlack();
+            setButtonsBorderToBlack.Set(MainViewModel);
+
+            MainViewModel.EquipmentButtonBorderBrush = new System.Windows.Media.SolidColorBrush(Colors.Orange);
         }
     }
 }

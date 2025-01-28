@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ControlMainWizard.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace ControlMainWizard.ViewModel.Commands.IntermediateProductButtonCommands
 {
@@ -21,6 +23,11 @@ namespace ControlMainWizard.ViewModel.Commands.IntermediateProductButtonCommands
             {
                 MainViewModel.MainUserControlContent = new SubControlIntermediateProductProject.View.IntermediateProductControl();
             }
+
+            SetButtonsBorderToBlack setButtonsBorderToBlack = new SetButtonsBorderToBlack();
+            setButtonsBorderToBlack.Set(MainViewModel);
+
+            MainViewModel.IntermediateProductButtonBorderBrush = new System.Windows.Media.SolidColorBrush(Colors.Orange);
         }
     }
 }
