@@ -9,11 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
+    <ProjectReference Include="..\Globals\Globals.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Globals\Globals.csproj" />
+    <Folder Include="Model\MainControl\" />
+    <Folder Include="Model\SupplierSchemasControl\" />
+    <Folder Include="Model\SupplierListControl\" />
   </ItemGroup>
 
 </Project>

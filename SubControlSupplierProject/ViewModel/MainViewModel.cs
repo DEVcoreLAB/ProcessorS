@@ -1,4 +1,5 @@
 ﻿using Globals.ViewModel;
+using SubControlSupplierProject.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,25 +12,15 @@ namespace SubControlSupplierProject.ViewModel
 {
     internal partial class MainViewModel : BaseViewModel
     {
+        MainModel MainModel { get; }
+
         public MainViewModel()
         {
-            OnTest();
-        }
-
-        private void OnTest()
-        {
-            ListOfSchemas = new System.Collections.ObjectModel.ObservableCollection<string>
-            {
-                "cocacola",
-                "left side",
-                "left corner",
-                "middle corner",
-                "new york city",
-                "old york city",
-                "yolanda be cool"
-            };
-
+            MainModel = new MainModel(this);
             ViewListOfSchemas = CollectionViewSource.GetDefaultView(ListOfSchemas);
+
         }
+
+
     }
 }
