@@ -50,13 +50,15 @@
                     d:Text="search"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
+                    Text="{Binding SchemasFilteringTextBox, UpdateSourceTrigger=PropertyChanged}"
                     />
 
-                <ListBoxItem
+                <ListBox
                     Grid.Row="2"
                     Margin="2"
                     BorderBrush="Gray"
                     BorderThickness="1"
+                    ItemsSource="{Binding ViewListOfSchemas}"
                     />
             </Grid>
         </Border>
