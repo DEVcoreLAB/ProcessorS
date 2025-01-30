@@ -15,6 +15,7 @@
   <ItemGroup>
     <Folder Include="Model\MainControl\" />
     <Folder Include="Model\SupplierListControl\" />
+    <Folder Include="ViewModel\Command\NewSchemaControl\" />
   </ItemGroup>
 
 </Project>

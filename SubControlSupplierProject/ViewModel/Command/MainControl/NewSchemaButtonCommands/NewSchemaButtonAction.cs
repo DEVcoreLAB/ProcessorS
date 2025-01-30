@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace SubControlSupplierProject.ViewModel.Command.NewSchemaButtonCommands
+namespace SubControlSupplierProject.ViewModel.Command.MainControl.NewSchemaButtonCommands
 {
     internal class NewSchemaButtonAction
     {

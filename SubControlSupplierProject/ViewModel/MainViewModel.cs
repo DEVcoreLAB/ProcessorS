@@ -1,6 +1,6 @@
 ﻿using Globals.ViewModel;
 using SubControlSupplierProject.Model;
-using SubControlSupplierProject.ViewModel.Command.NewSchemaButtonCommands;
+using SubControlSupplierProject.ViewModel.Command.MainControl.NewSchemaButtonCommands;
 using System;
 using System.Collections.Generic;
 using System.Linq;

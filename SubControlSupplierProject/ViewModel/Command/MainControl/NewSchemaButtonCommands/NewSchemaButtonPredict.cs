@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SubControlSupplierProject.ViewModel.Command.NewSchemaButtonCommands
+namespace SubControlSupplierProject.ViewModel.Command.MainControl.NewSchemaButtonCommands
 {
     internal class NewSchemaButtonPredict
     {
