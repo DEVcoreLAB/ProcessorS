@@ -1,5 +1,6 @@
 ﻿using Globals.ViewModel;
 using SubControlSupplierProject.Model;
+using SubControlSupplierProject.ViewModel.Command.NewSchemaButtonCommands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,11 @@ namespace SubControlSupplierProject.ViewModel
             MainModel = new MainModel(this);
             ViewListOfSchemas = CollectionViewSource.GetDefaultView(ListOfSchemas);
 
+            NewSchemaCommand = new RelayCommand
+                (
+                    new NewSchemaButtonAction(this).Execute,
+                    new NewSchemaButtonPredict().Check
+                );
         }
-
-
     }
 }

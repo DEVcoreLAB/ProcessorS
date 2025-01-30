@@ -40,6 +40,7 @@
                     FontSize="18"
                     BorderBrush="Black"
                     BorderThickness="1"
+                    Command="{Binding NewSchemaCommand}"
                     />
 
                 <TextBox
@@ -71,7 +72,7 @@
             BorderBrush="Orange"
             BorderThickness="1">
                 <UserControl
-                
+                    Content="{Binding SupplierSchemasUserControl}"
                 />
         </Border>
 
