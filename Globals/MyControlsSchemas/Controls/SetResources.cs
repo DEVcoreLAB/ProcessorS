@@ -1,6 +1,7 @@
 ﻿using Globals.MyControlsSchemas.Controls.MyButton;
 using Globals.MyControlsSchemas.Controls.MyCombobox;
 using Globals.MyControlsSchemas.Controls.MyLabel;
+using Globals.MyControlsSchemas.Controls.MyListbox;
 using Globals.MyControlsSchemas.Controls.MyPasswordBox;
 using Globals.MyControlsSchemas.Controls.MyTextBlock;
 using Globals.MyControlsSchemas.Controls.MyTextBox;
@@ -58,6 +59,12 @@ namespace Globals.MyControlsSchemas.Controls
             Style passwordBoxStyle = setCustomPasswordBox.setControl.SetControlProperties(fontSize);
             Application.Current.Resources.Remove(typeof(System.Windows.Controls.PasswordBox));
             Application.Current.Resources.Add(typeof(System.Windows.Controls.PasswordBox), passwordBoxStyle);
+
+            SetCustmControl setCustomListBox = new SetCustmControl(new ListBoxBasic());
+            Style listBoxStyle = setCustomListBox.setControl.SetControlProperties(fontSize);
+            Application.Current.Resources.Remove(typeof(System.Windows.Controls.ListBox));
+            Application.Current.Resources.Add(typeof(System.Windows.Controls.ListBox), listBoxStyle);
+
         }
     }
 }
