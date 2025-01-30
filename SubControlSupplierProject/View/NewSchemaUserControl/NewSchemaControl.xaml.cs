@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SubControlSupplierProject.ViewModel.NewSchemaUserControl;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace SubControlSupplierProject.View.NewSchemaUserControl
     /// </summary>
     public partial class NewSchemaControl : UserControl
     {
+        NewSchemaMainViewModel NewSchemaMainViewModel { get; }
+
         public NewSchemaControl()
         {
             InitializeComponent();
+            NewSchemaMainViewModel = new NewSchemaMainViewModel();
+            this.DataContext = NewSchemaMainViewModel;
         }
     }
 }
