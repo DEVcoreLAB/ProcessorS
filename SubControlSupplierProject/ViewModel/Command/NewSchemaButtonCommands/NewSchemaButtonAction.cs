@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SubControlSupplierProject.View.NewSchemaUserControl;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace SubControlSupplierProject.ViewModel.Command.NewSchemaButtonCommands
 
         public void Execute(object? parameter)
         {
-            MessageBox.Show("test");   
+            mainViewModel.SupplierSchemasUserControl = new NewSchemaControl();
         }
     }
 }
