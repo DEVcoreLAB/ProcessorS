@@ -1,4 +1,5 @@
 ﻿using Globals.ViewModel;
+using SubControlSupplierProject.Langs;
 using SubControlSupplierProject.Model;
 using SubControlSupplierProject.ViewModel.Command.MainControl.NewSchemaButtonCommands;
 using System;
@@ -19,6 +20,7 @@ namespace SubControlSupplierProject.ViewModel
         {
             MainModel = new MainModel(this);
             ViewListOfSchemas = CollectionViewSource.GetDefaultView(ListOfSchemas);
+            NewSchemaButtonContent = Lang.newSchema;
 
             NewSchemaCommand = new RelayCommand
                 (

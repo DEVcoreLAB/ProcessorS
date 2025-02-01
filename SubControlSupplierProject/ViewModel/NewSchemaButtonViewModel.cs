@@ -10,5 +10,17 @@ namespace SubControlSupplierProject.ViewModel
     internal partial class MainViewModel : BaseViewModel
     {
         public RelayCommand NewSchemaCommand { get; }
-    }
+
+		private string newSchemaButtonContent;
+		public string NewSchemaButtonContent
+		{
+			get { return newSchemaButtonContent; }
+			set 
+			{ 
+				newSchemaButtonContent = value; 
+				OnPropertyChanged(nameof(NewSchemaButtonContent));
+            }
+		}
+
+	}
 }

@@ -1,5 +1,4 @@
-﻿using SubControlSupplierProject.View.NewSchemaUserControl;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +18,7 @@ namespace SubControlSupplierProject.ViewModel.Command.MainControl.NewSchemaButto
 
         public void Execute(object? parameter)
         {
-            mainViewModel.SupplierSchemasUserControl = new NewSchemaControl();
+            
         }
     }
 }

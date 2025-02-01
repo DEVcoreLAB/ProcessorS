@@ -13,9 +13,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\MainControl\" />
-    <Folder Include="Model\SupplierListControl\" />
+    <Folder Include="Model\NewSchemaUserControl\" />
     <Folder Include="ViewModel\Command\NewSchemaControl\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Langs\Lang.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Lang.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Langs\Lang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
