@@ -21,7 +21,6 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
         public void Execute(object? parameter)
         {
             NewSchemaControl newSchemaControl = parameter as NewSchemaControl;
-
         }
     }
 }
