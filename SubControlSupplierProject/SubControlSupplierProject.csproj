@@ -13,11 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\NewSchemaUserControl\" />
-    <Folder Include="ViewModel\Command\NewSchemaControl\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Langs\Lang.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
