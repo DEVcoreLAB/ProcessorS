@@ -34,14 +34,14 @@ namespace SubControlSupplierProject.View.NewSchemaUserControl
         {
             if (e.Key == Key.F1)
             {
-                StringBuilder sb = new StringBuilder();
+                //StringBuilder sb = new StringBuilder();
 
-                foreach (var item in newSchemaMainViewModel.ItemsToSaveDictionary)
-                {
-                    sb.AppendLine($@"{item.Key} {item.Value}");
-                }
+                //foreach (var item in newSchemaMainViewModel.ItemsToSaveDictionary)
+                //{
+                //    sb.AppendLine($@"{item.Key} {item.Value}");
+                //}
 
-                MessageBox.Show(sb.ToString());
+                //MessageBox.Show(sb.ToString());
             }
         }
     }

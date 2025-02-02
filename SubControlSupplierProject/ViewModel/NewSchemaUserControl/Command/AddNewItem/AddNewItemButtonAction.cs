@@ -39,7 +39,31 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNe
 
         public void AddToDictionary(string itemName, string itemType)
         {
-            newSchemaMainViewModel.ItemsToSaveDictionary.Add(itemName, itemType);
+            if (itemType == Langs.Lang.textBox)
+            {
+                newSchemaMainViewModel.ItemsToSaveDictionary.Add
+                    (
+                    itemName, 
+                    Globals.DbOperations.InvariantTypeOfControls.ControlTypes.TextBoxControl.ToString()
+                    );
+            }
+            else if (itemType == Langs.Lang.comboBox)
+            {
+                newSchemaMainViewModel.ItemsToSaveDictionary.Add
+                    (
+                    itemName,
+                    Globals.DbOperations.InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString()
+                    );
+            }
+            else if (itemType == Langs.Lang.checkBox)
+            {
+                newSchemaMainViewModel.ItemsToSaveDictionary.Add
+                    (
+                    itemName,
+                    Globals.DbOperations.InvariantTypeOfControls.ControlTypes.CheckBoxControl.ToString()
+                    );
+            }
+ 
         }
 
         public Grid AddToControl(string itemName, string itemType)
