@@ -26,15 +26,12 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNe
 
             RowDefinition rowDefinition = new RowDefinition();
             rowDefinition.Height = new GridLength(1, GridUnitType.Auto);
-
             newSchemaControl.GridForItems.RowDefinitions.Add(rowDefinition);
             Grid itemGrid = Add(newSchemaMainViewModel.NameOfNewItem, newSchemaMainViewModel.SelectedTypeOfNewItem);
-
-
             Grid.SetRow(itemGrid, newSchemaControl.GridForItems.RowDefinitions.Count - 1);
-
             newSchemaControl.GridForItems.Children.Add(itemGrid);
 
+           
             newSchemaMainViewModel.SelectedTypeOfNewItem = null;
             newSchemaMainViewModel.NameOfNewItem = null;
         }

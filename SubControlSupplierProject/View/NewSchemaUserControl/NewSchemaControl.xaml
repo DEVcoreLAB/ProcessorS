@@ -52,15 +52,29 @@
                 >
             </Grid>
         </ScrollViewer>
-    
-        <Button
-            Content="save"
-            Grid.Row="2"
-            HorizontalAlignment="Center"
-            Margin="5"
-            Command="{Binding SaveNewSchemaCommand}"
-            />
 
+        <Grid
+            Grid.Row="2"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <TextBox
+                Grid.Row="0"
+                Margin="5,0,5,0"
+                Text="{Binding NameOfNewSchema}"
+                />
+            <Button
+                Content="save"
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                Margin="5"
+                Command="{Binding SaveNewSchemaCommand}"
+                />
+
+        </Grid>
+       
 
     </Grid>
 </UserControl>

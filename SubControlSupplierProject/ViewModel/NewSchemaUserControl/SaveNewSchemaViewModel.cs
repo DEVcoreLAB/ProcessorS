@@ -10,5 +10,17 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
     internal partial class NewSchemaMainViewModel : BaseViewModel
     {
         public RelayCommand SaveNewSchemaCommand { get; }
-    }
+
+		private string nameOfNewSchema;
+		public string NameOfNewSchema
+		{
+			get { return nameOfNewSchema; }
+			set 
+			{
+				nameOfNewSchema = value;
+				OnPropertyChanged(nameof(NameOfNewSchema));
+            }
+		}
+
+	}
 }

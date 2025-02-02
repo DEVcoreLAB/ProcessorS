@@ -27,5 +27,6 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
             };
             SaveNewSchemaCommand = new RelayCommand(new SaveSchemaAction(this).Execute, new SaveSchemaPredict().Check);
         }
+
     }
 }
