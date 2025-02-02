@@ -12,7 +12,7 @@ namespace Globals.DbOperations.CresteNewDb
 {
     public class CreateDb
     {
-        public void Create(string nameOfNewDb)
+        public async Task Create(string nameOfNewDb)
         {
             // Connection string to connect to the master database
             string connectionString =
@@ -24,19 +24,20 @@ namespace Globals.DbOperations.CresteNewDb
 
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                await using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(createDbQuery, connection))
+                    await connection.OpenAsync();
+
+                    await using (SqlCommand command = new SqlCommand(createDbQuery, connection))
                     {
-                        command.ExecuteNonQuery();
+                        await command.ExecuteNonQueryAsync(); 
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Try to create supplier schemas DB - " + ex.Message);
-                L4N.L4NDefault.Error("Try to create supplier schemas DB - " + ex.Message);
+                MessageBox.Show("Try to new DB - " + ex.Message);
+                L4N.L4NDefault.Error("Try to create new DB - " + ex.Message);
             }
         }
     }
