@@ -65,7 +65,7 @@
             <TextBox
                 Grid.Row="0"
                 Margin="5,0,5,0"
-                Text="{Binding NameOfNewSchema}"
+                Text="{Binding NameOfNewSchema, UpdateSourceTrigger=PropertyChanged}"
                 />
             <Button
                 Content="save"
@@ -73,6 +73,7 @@
                 HorizontalAlignment="Center"
                 Margin="5"
                 Command="{Binding SaveNewSchemaCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
                 />
 
         </Grid>

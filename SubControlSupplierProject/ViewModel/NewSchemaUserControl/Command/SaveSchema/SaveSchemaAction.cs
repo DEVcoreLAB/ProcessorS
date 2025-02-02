@@ -1,9 +1,11 @@
-﻿using System;
+﻿using SubControlSupplierProject.View.NewSchemaUserControl;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveSchema
 {
@@ -16,10 +18,17 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
             NewSchemaMainViewModel = ewSchemaMainViewModel;
         }
 
-        public void Execute(object? parameter)
+        public async void Execute(object? parameter)
         {
-           Globals.DbOperations.SupplierNewSchemaTable.CreateTable createTable = new Globals.DbOperations.SupplierNewSchemaTable.CreateTable(NewSchemaMainViewModel.ItemsToSaveDictionary, NewSchemaMainViewModel.NameOfNewSchema);
-            createTable.Create();
+            NewSchemaControl newSchemaControl = parameter as NewSchemaControl;
+
+            Globals.DbOperations.SupplierNewSchemaTable.CreateTable createTable = new Globals.DbOperations.SupplierNewSchemaTable.CreateTable(NewSchemaMainViewModel.ItemsToSaveDictionary, NewSchemaMainViewModel.NameOfNewSchema);
+            await createTable.Create();
+
+            NewSchemaMainViewModel.ItemsToSaveDictionary.Clear();
+            NewSchemaMainViewModel.NameOfNewSchema = string.Empty;
+
+            newSchemaControl.GridForItems.Children.Clear();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
                 Langs.Lang.comboBox, 
                 Langs.Lang.checkBox 
             };
-            SaveNewSchemaCommand = new RelayCommand(new SaveSchemaAction(this).Execute, new SaveSchemaPredict().Check);
+            SaveNewSchemaCommand = new RelayCommand(new SaveSchemaAction(this).Execute, new SaveSchemaPredict(this).Check);
             ItemsToSaveDictionary = new Dictionary<string, string>();
         }
 

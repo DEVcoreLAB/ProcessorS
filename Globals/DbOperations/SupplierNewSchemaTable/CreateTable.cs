@@ -35,14 +35,13 @@ namespace Globals.DbOperations.SupplierNewSchemaTable
             string thirdColumn = "ControlType";
 
             string createTableQuery = $@"
-        IF NOT EXISTS (SELECT * FROM {databaseName}.INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{_tableName}')
-        BEGIN
-            CREATE TABLE [{databaseName}].[dbo].[{_tableName}] (
+                IF NOT EXISTS (SELECT * FROM {databaseName}.INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '{_tableName}')
+                BEGIN
+                CREATE TABLE [{databaseName}].[dbo].[{_tableName}] (
                 {firstColumn} INT IDENTITY(1,1) PRIMARY KEY,
                 {secondColumn} NVARCHAR(255) NOT NULL,
                 {thirdColumn} NVARCHAR(255) NOT NULL
-            );
-        END";
+                ); END";
 
             try
             {
@@ -52,6 +51,23 @@ namespace Globals.DbOperations.SupplierNewSchemaTable
                     await using (SqlCommand command = new SqlCommand(createTableQuery, connection))
                     {
                         await command.ExecuteNonQueryAsync();
+                    }
+
+                    foreach (var kvp in _schemaItems)
+                    {
+                        string insertQuery = $@"
+                            INSERT INTO [{databaseName}].[dbo].[{_tableName}]
+                            ({secondColumn}, {thirdColumn})
+                            VALUES (@content, @controlType)";
+
+                        await using (SqlCommand insertCommand =
+                            new SqlCommand(insertQuery, connection))
+                        {
+                            insertCommand.Parameters.AddWithValue("@content", kvp.Key);
+                            insertCommand.Parameters.AddWithValue("@controlType", kvp.Value);
+
+                            await insertCommand.ExecuteNonQueryAsync();
+                        }
                     }
                 }
             }

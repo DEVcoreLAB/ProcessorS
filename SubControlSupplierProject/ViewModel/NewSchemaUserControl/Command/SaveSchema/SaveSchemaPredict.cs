@@ -8,6 +8,23 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
 {
     internal class SaveSchemaPredict
     {
-        public bool Check() => true;
+        NewSchemaMainViewModel newSchemaMainViewModel;
+
+        public SaveSchemaPredict(NewSchemaMainViewModel newSchemaMainViewModel)
+        {
+            this.newSchemaMainViewModel = newSchemaMainViewModel;
+        }
+
+        public bool Check()
+        {
+            if (newSchemaMainViewModel.ItemsToSaveDictionary.Count > 0 && !string.IsNullOrWhiteSpace(newSchemaMainViewModel.NameOfNewSchema))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
