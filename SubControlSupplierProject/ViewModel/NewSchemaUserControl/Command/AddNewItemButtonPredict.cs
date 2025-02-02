@@ -8,6 +8,24 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
 {
     internal class AddNewItemButtonPredict
     {
-        public bool Check() => true;
+        NewSchemaMainViewModel newSchemaMainViewModel;
+
+        public AddNewItemButtonPredict(NewSchemaMainViewModel newSchemaMainViewModel)
+        {
+            this.newSchemaMainViewModel = newSchemaMainViewModel;   
+        }
+
+        public bool Check()
+        {
+            if (newSchemaMainViewModel.SelectedTypeOfNewItem == null || newSchemaMainViewModel.NameOfNewItem == null)
+            {
+                return false;
+            }
+            else
+            {
+            return true;
+
+            }
+        }
     }
 }

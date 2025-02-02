@@ -46,9 +46,10 @@
             Grid.Row="1"
             x:Name="ItemsContentControlScrollViewer" 
             >
-            <ContentControl
-                Content="{Binding NewSchemaItemsContentControl}"
-                />
+            <Grid
+                x:Name="GridForItems"
+                >
+            </Grid>
         </ScrollViewer>
 
     </Grid>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
 {
@@ -16,8 +17,13 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
         public NewSchemaMainViewModel()
         {
             NewSchemaMainModel = new NewSchemaMainModel(this);
-            AddNewItemCommand = new RelayCommand(new AddNewItemButtonAction(this).Execute,new AddNewItemButtonPredict().Check);
-            TypeOfNewItem = new System.Collections.ObjectModel.ObservableCollection<string> { "Type 1", "Type 2", "Type 3" };
+            AddNewItemCommand = new RelayCommand(new AddNewItemButtonAction(this).Execute,new AddNewItemButtonPredict(this).Check);
+            TypeOfNewItem = new System.Collections.ObjectModel.ObservableCollection<string> 
+            { 
+                Langs.Lang.textBox, 
+                Langs.Lang.comboBox, 
+                Langs.Lang.checkBox 
+            };
         }
     }
 }
