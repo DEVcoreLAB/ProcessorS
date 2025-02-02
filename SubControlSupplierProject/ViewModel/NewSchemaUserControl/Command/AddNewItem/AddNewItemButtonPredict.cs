@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
+namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNewItem
 {
     internal class AddNewItemButtonPredict
     {
@@ -12,7 +12,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
 
         public AddNewItemButtonPredict(NewSchemaMainViewModel newSchemaMainViewModel)
         {
-            this.newSchemaMainViewModel = newSchemaMainViewModel;   
+            this.newSchemaMainViewModel = newSchemaMainViewModel;
         }
 
         public bool Check()
@@ -23,7 +23,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
             }
             else
             {
-            return true;
+                return true;
 
             }
         }

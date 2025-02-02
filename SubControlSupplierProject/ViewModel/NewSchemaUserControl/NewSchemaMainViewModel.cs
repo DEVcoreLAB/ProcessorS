@@ -1,6 +1,7 @@
 ﻿using Globals.ViewModel;
 using SubControlSupplierProject.Model.NewSchemaUserControl;
-using SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command;
+using SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNewItem;
+using SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveSchema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
                 Langs.Lang.comboBox, 
                 Langs.Lang.checkBox 
             };
+            SaveNewSchemaCommand = new RelayCommand(new SaveSchemaAction(this).Execute, new SaveSchemaPredict().Check);
         }
     }
 }

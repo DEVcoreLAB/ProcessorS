@@ -11,6 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
         <Grid 
@@ -51,6 +52,15 @@
                 >
             </Grid>
         </ScrollViewer>
+    
+        <Button
+            Content="save"
+            Grid.Row="2"
+            HorizontalAlignment="Center"
+            Margin="5"
+            Command="{Binding SaveNewSchemaCommand}"
+            />
+
 
     </Grid>
 </UserControl>

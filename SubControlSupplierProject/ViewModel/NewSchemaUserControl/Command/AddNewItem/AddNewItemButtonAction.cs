@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
+namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNewItem
 {
     internal class AddNewItemButtonAction
     {
@@ -25,7 +25,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
             NewSchemaControl newSchemaControl = parameter as NewSchemaControl;
 
             RowDefinition rowDefinition = new RowDefinition();
-            rowDefinition.Height = new System.Windows.GridLength(1, System.Windows.GridUnitType.Auto);
+            rowDefinition.Height = new GridLength(1, GridUnitType.Auto);
 
             newSchemaControl.GridForItems.RowDefinitions.Add(rowDefinition);
             Grid itemGrid = Add(newSchemaMainViewModel.NameOfNewItem, newSchemaMainViewModel.SelectedTypeOfNewItem);
@@ -43,9 +43,9 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
         {
             Grid itemGrid = new Grid();
             ColumnDefinition nameColumnDefinition = new ColumnDefinition();
-            nameColumnDefinition.Width = new System.Windows.GridLength(1, System.Windows.GridUnitType.Star);
+            nameColumnDefinition.Width = new GridLength(1, GridUnitType.Star);
             ColumnDefinition typeColumnDefinition = new ColumnDefinition();
-            typeColumnDefinition.Width = new System.Windows.GridLength(1, System.Windows.GridUnitType.Star);
+            typeColumnDefinition.Width = new GridLength(1, GridUnitType.Star);
             itemGrid.ColumnDefinitions.Add(nameColumnDefinition);
             itemGrid.ColumnDefinitions.Add(typeColumnDefinition);
 
@@ -56,7 +56,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
             nameTextBlock.HorizontalAlignment = HorizontalAlignment.Left;
             nameTextBlock.VerticalAlignment = VerticalAlignment.Center;
             nameTextBlock.TextWrapping = TextWrapping.Wrap;
-            nameTextBlock.Margin = new Thickness(5,0,5,0);
+            nameTextBlock.Margin = new Thickness(5, 0, 5, 0);
             nameTextBlock.FontSize = Globals.SettingFiles.SettingFontProperties.Default.FontSize;
             Grid.SetColumn(nameTextBlock, 0);
             itemGrid.Children.Add(nameTextBlock);
