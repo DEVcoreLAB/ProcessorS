@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
-
+using Globals;
+using System.Net.WebSockets;
 
 namespace SubControlSupplierProject.ViewModel
 {
@@ -19,8 +20,8 @@ namespace SubControlSupplierProject.ViewModel
         public MainViewModel()
         {
             MainModel = new MainModel(this);
+            ListOfSchemas = new System.Collections.ObjectModel.ObservableCollection<string>();
             ViewListOfSchemas = CollectionViewSource.GetDefaultView(ListOfSchemas);
-            NewSchemaButtonContent = Lang.newSchema;
 
             NewSchemaCommand = new RelayCommand
                 (
@@ -30,6 +31,14 @@ namespace SubControlSupplierProject.ViewModel
 
             SchemasLabel = Lang.schemasLabel;
             SuppliersLabel = Lang.suppliersLabel;
+
+            NewSchemaButtonForewground = Globals.Graphics.SetProperButtonBackground.Set
+                (
+                    true,
+                    Globals.Graphics.Uris.AddEnabled,
+                    Globals.Graphics.Uris.AddDisabled
+                );
+
         }
     }
 }

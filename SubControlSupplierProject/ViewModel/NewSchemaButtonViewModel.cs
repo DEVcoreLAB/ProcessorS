@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace SubControlSupplierProject.ViewModel
 {
@@ -11,16 +12,17 @@ namespace SubControlSupplierProject.ViewModel
     {
         public RelayCommand NewSchemaCommand { get; }
 
-		private string newSchemaButtonContent;
-		public string NewSchemaButtonContent
+		private BitmapImage newSchemaButtonForewground;
+		public BitmapImage NewSchemaButtonForewground
 		{
-			get { return newSchemaButtonContent; }
+			get { return newSchemaButtonForewground; }
 			set 
 			{ 
-				newSchemaButtonContent = value; 
-				OnPropertyChanged(nameof(NewSchemaButtonContent));
-            }
+				newSchemaButtonForewground = value;
+				OnPropertyChanged(nameof(NewSchemaButtonForewground));
+			}
 		}
+
 
 	}
 }

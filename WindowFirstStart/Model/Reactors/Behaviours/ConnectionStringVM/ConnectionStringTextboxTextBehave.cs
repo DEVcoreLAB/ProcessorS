@@ -1,5 +1,4 @@
-﻿using ADocumentation.Projects.Globals.Graphics;
-using Globals.Graphics;
+﻿using Globals.Graphics;
 using Globals.Model.Observer.Components;
 using Globals.ViewModel;
 using System;

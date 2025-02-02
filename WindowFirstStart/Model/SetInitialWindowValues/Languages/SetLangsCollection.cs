@@ -1,5 +1,5 @@
 ﻿
-using ADocumentation.Projects.Globals.Graphics;
+using Globals.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;

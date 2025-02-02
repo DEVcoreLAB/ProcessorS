@@ -15,6 +15,8 @@ namespace SubControlSupplierProject.ViewModel
 			get { return schemasFilteringTextBox; }
 			set 
 			{ 
+                if (ListOfSchemas.Count == 0) return;
+
 				schemasFilteringTextBox = value;
                 ViewListOfSchemas.Filter = FilterByName;
 

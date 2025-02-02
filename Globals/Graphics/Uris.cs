@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ADocumentation.Projects.Globals.Graphics
+namespace Globals.Graphics
 {
-    public class Uris
+    public static class Uris
     {
         public static Uri Messageboxbackground { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/messageboxbackground.png");
 
@@ -20,6 +20,9 @@ namespace ADocumentation.Projects.Globals.Graphics
 
         public static Uri SaveSettingsEnabled { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/SaveIconEnabled.png");
         public static Uri SaveSettingsDisabled { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/SaveIconDisabled.png");
+
+        public static Uri AddEnabled { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/AddEnabled.png");
+        public static Uri AddDisabled { get; } = new Uri("pack://application:,,,/Globals;component/Graphics/GraphicFiles/AddDisabled.png");
     }
 }
     
