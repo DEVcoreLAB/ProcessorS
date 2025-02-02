@@ -74,13 +74,19 @@
                 Text="{Binding NameOfNewSchema, UpdateSourceTrigger=PropertyChanged}"
                 />
             <Button
-                Content="save"
+                Background="Transparent"
+                BorderThickness="0"
+                Height="25"
                 Grid.Row="1"
                 HorizontalAlignment="Center"
                 Margin="5"
                 Command="{Binding SaveNewSchemaCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
-                />
+                >
+                <Image 
+                    Source="{Binding SaveNewSchemaButtonForeground, 
+                    FallbackValue='pack://application:,,,/Globals;component/Graphics/GraphicFiles/SaveIconEnabled.png'}"/>
+            </Button>
 
         </Grid>
        

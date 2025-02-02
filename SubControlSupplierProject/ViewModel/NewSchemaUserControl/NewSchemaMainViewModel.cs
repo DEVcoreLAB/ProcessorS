@@ -34,6 +34,13 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
                     Globals.Graphics.Uris.AddEnabled,
                     Globals.Graphics.Uris.AddDisabled
                 );
+
+            SaveNewSchemaButtonForeground = Globals.Graphics.SetProperButtonBackground.Set
+                (
+                    false,
+                    Globals.Graphics.Uris.SaveSettingsEnabled,
+                    Globals.Graphics.Uris.SaveSettingsDisabled
+                );
         }
 
         private Dictionary<string,string> itemsToSaveDictionary;

@@ -30,7 +30,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNe
             }
         }
 
-        public BitmapImage SetButtonForeground(bool isEnabled)
+        private BitmapImage SetButtonForeground(bool isEnabled)
         {
             return Globals.Graphics.SetProperButtonBackground.Set
                 (

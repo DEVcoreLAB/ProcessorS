@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
 {
@@ -19,6 +20,17 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
 			{
 				nameOfNewSchema = value;
 				OnPropertyChanged(nameof(NameOfNewSchema));
+            }
+		}
+
+		private BitmapImage saveNewSchemaButtonForeground;
+		public BitmapImage SaveNewSchemaButtonForeground
+		{
+			get { return saveNewSchemaButtonForeground; }
+			set 
+			{ 
+				saveNewSchemaButtonForeground = value;
+				OnPropertyChanged(nameof(SaveNewSchemaButtonForeground));
             }
 		}
 

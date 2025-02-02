@@ -26,9 +26,10 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
             await createTable.Create();
 
             NewSchemaMainViewModel.ItemsToSaveDictionary.Clear();
-            NewSchemaMainViewModel.NameOfNewSchema = string.Empty;
+            NewSchemaMainViewModel.NameOfNewSchema = null;
 
             newSchemaControl.GridForItems.Children.Clear();
+            new SaveSchemaPredict(NewSchemaMainViewModel).Check();
         }
     }
 }
