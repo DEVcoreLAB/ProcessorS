@@ -11,12 +11,12 @@ namespace Globals.DbOperations.SupplierNewSchemaTable
 {
     public class CreateTable
     {
-        private readonly Dictionary<string, string> _databaseConnections;
+        private readonly Dictionary<string, string> _schemaItems;
         private readonly string _tableName;
 
         public CreateTable(Dictionary<string, string> listOfItems, string tableName)
         {
-            _databaseConnections = listOfItems ?? throw new ArgumentNullException(nameof(listOfItems));
+            _schemaItems = listOfItems ?? throw new ArgumentNullException(nameof(listOfItems));
             _tableName = string.IsNullOrWhiteSpace(tableName)
                 ? throw new ArgumentException("Table name cannot be empty.", nameof(tableName))
                 : tableName;
