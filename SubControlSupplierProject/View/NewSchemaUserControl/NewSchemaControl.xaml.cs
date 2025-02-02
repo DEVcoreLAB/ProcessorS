@@ -29,5 +29,20 @@ namespace SubControlSupplierProject.View.NewSchemaUserControl
             newSchemaMainViewModel = new NewSchemaMainViewModel();
             this.DataContext = newSchemaMainViewModel;
         }
+
+        private void UserControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                foreach (var item in newSchemaMainViewModel.ItemsToSaveDictionary)
+                {
+                    sb.AppendLine($@"{item.Key} {item.Value}");
+                }
+
+                MessageBox.Show(sb.ToString());
+            }
+        }
     }
 }

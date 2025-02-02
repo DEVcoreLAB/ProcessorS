@@ -27,16 +27,22 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNe
             RowDefinition rowDefinition = new RowDefinition();
             rowDefinition.Height = new GridLength(1, GridUnitType.Auto);
             newSchemaControl.GridForItems.RowDefinitions.Add(rowDefinition);
-            Grid itemGrid = Add(newSchemaMainViewModel.NameOfNewItem, newSchemaMainViewModel.SelectedTypeOfNewItem);
+            Grid itemGrid = AddToControl(newSchemaMainViewModel.NameOfNewItem, newSchemaMainViewModel.SelectedTypeOfNewItem);
             Grid.SetRow(itemGrid, newSchemaControl.GridForItems.RowDefinitions.Count - 1);
             newSchemaControl.GridForItems.Children.Add(itemGrid);
 
-           
+            AddToDictionary(newSchemaMainViewModel.NameOfNewItem, newSchemaMainViewModel.SelectedTypeOfNewItem);
+
             newSchemaMainViewModel.SelectedTypeOfNewItem = null;
             newSchemaMainViewModel.NameOfNewItem = null;
         }
 
-        public Grid Add(string itemName, string itemType)
+        public void AddToDictionary(string itemName, string itemType)
+        {
+            newSchemaMainViewModel.ItemsToSaveDictionary.Add(itemName, itemType);
+        }
+
+        public Grid AddToControl(string itemName, string itemType)
         {
             Grid itemGrid = new Grid();
             ColumnDefinition nameColumnDefinition = new ColumnDefinition();
