@@ -27,6 +27,9 @@ namespace SubControlSupplierProject.ViewModel
                     new NewSchemaButtonAction(this).Execute,
                     new NewSchemaButtonPredict().Check
                 );
+
+            SchemasLabel = Lang.schemasLabel;
+            SuppliersLabel = Lang.suppliersLabel;
         }
     }
 }

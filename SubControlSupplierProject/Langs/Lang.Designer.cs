@@ -68,5 +68,23 @@ namespace SubControlSupplierProject.Langs {
                 return ResourceManager.GetString("newSchema", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Schematy.
+        /// </summary>
+        internal static string schemasLabel {
+            get {
+                return ResourceManager.GetString("schemasLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dostawcy.
+        /// </summary>
+        internal static string suppliersLabel {
+            get {
+                return ResourceManager.GetString("suppliersLabel", resourceCulture);
+            }
+        }
     }
 }
