@@ -49,9 +49,11 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
             itemGrid.ColumnDefinitions.Add(nameColumnDefinition);
             itemGrid.ColumnDefinitions.Add(typeColumnDefinition);
 
+
+
             TextBlock nameTextBlock = new TextBlock();
             nameTextBlock.Text = itemName;
-            nameTextBlock.HorizontalAlignment = HorizontalAlignment.Right;
+            nameTextBlock.HorizontalAlignment = HorizontalAlignment.Left;
             nameTextBlock.VerticalAlignment = VerticalAlignment.Center;
             nameTextBlock.TextWrapping = TextWrapping.Wrap;
             nameTextBlock.Margin = new Thickness(5,0,5,0);
@@ -76,7 +78,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command
             else if (itemType == Langs.Lang.checkBox)
             {
                 CheckBox checkBox = new CheckBox();
-                checkBox.VerticalAlignment = VerticalAlignment.Center;
+                checkBox.VerticalContentAlignment = VerticalAlignment.Center;
                 Grid.SetColumn(checkBox, 1);
                 itemGrid.Children.Add(checkBox);
 
