@@ -18,7 +18,8 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
 
         public void Execute(object? parameter)
         {
-           MessageBox.Show("Save Item");    
+           Globals.DbOperations.SupplierNewSchemaTable.CreateTable createTable = new Globals.DbOperations.SupplierNewSchemaTable.CreateTable(NewSchemaMainViewModel.ItemsToSaveDictionary, NewSchemaMainViewModel.NameOfNewSchema);
+            createTable.Create();
         }
     }
 }
