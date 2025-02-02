@@ -27,6 +27,13 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
             };
             SaveNewSchemaCommand = new RelayCommand(new SaveSchemaAction(this).Execute, new SaveSchemaPredict(this).Check);
             ItemsToSaveDictionary = new Dictionary<string, string>();
+
+            AddNewItmButtonForeground = Globals.Graphics.SetProperButtonBackground.Set
+                (
+                    false,
+                    Globals.Graphics.Uris.AddEnabled,
+                    Globals.Graphics.Uris.AddDisabled
+                );
         }
 
         private Dictionary<string,string> itemsToSaveDictionary;

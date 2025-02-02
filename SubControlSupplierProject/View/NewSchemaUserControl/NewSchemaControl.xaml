@@ -37,11 +37,17 @@
                 />
             <Button
                 Grid.Column="2"
-                Content="Add"
+                Height="25"
+                Background="Transparent"
+                BorderThickness="0"
                 Margin="5,0,5,0"
                 Command="{Binding AddNewItemCommand}"
                 CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
-                />
+                >
+                <Image 
+                    Source="{Binding AddNewItmButtonForeground, 
+                    FallbackValue='pack://application:,,,/Globals;component/Graphics/GraphicFiles/AddEnabled.png'}"/>
+            </Button>
 
         </Grid>
 
