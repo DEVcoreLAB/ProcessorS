@@ -92,6 +92,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNe
             {
                 TextBox textBox = new TextBox();
                 textBox.VerticalAlignment = VerticalAlignment.Center;
+                textBox.IsEnabled = false;
                 Grid.SetColumn(textBox, 1);
                 itemGrid.Children.Add(textBox);
             }
@@ -99,6 +100,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNe
             {
                 ComboBox comboBox = new ComboBox();
                 comboBox.VerticalAlignment = VerticalAlignment.Center;
+                comboBox.IsEnabled = false;
                 Grid.SetColumn(comboBox, 1);
                 itemGrid.Children.Add(comboBox);
             }
@@ -106,6 +108,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNe
             {
                 CheckBox checkBox = new CheckBox();
                 checkBox.VerticalContentAlignment = VerticalAlignment.Center;
+                checkBox.IsEnabled = false;
                 Grid.SetColumn(checkBox, 1);
                 itemGrid.Children.Add(checkBox);
 
