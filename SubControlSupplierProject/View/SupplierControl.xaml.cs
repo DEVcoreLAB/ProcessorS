@@ -21,11 +21,21 @@ namespace SubControlSupplierProject.View
     /// </summary>
     public partial class SupplierControl : UserControl
     {
+        MainViewModel mainViewModel;
+
         public SupplierControl()
         {
             InitializeComponent();
-            MainViewModel mainViewModel = new MainViewModel();
+            mainViewModel = new MainViewModel();
             this.DataContext = mainViewModel;
+        }
+
+        private void UserControl_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F1)
+            {
+                MessageBox.Show(mainViewModel.CompleteSchemasData.Count().ToString());
+            }
         }
     }
 }

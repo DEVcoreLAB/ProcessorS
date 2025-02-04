@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using Globals;
 using System.Net.WebSockets;
+using Globals.DbOperations.Supplier.SupplierSchemasReader;
 
 namespace SubControlSupplierProject.ViewModel
 {
@@ -39,6 +40,18 @@ namespace SubControlSupplierProject.ViewModel
                     Globals.Graphics.Uris.AddDisabled
                 );
 
+            RefreshSchemas();
+        }
+
+        public async void RefreshSchemas()
+        {
+            ReadAllSchemas readAllSchemas = new ReadAllSchemas();
+            CompleteSchemasData = await readAllSchemas.ReadSchemasAsync();
+
+            foreach (var schema in CompleteSchemasData)
+            {
+                ListOfSchemas.Add(schema.Item1);
+            }
         }
     }
 }

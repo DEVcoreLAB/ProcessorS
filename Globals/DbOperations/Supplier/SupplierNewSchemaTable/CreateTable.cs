@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Globals.DbOperations.SupplierNewSchemaTable
+namespace Globals.DbOperations.Supplier.SupplierNewSchemaTable
 {
     public class CreateTable
     {
@@ -24,11 +24,11 @@ namespace Globals.DbOperations.SupplierNewSchemaTable
 
         public async Task Create()
         {
-            string databaseName = Globals.DbOperations.DbasesNames.DbNames.SupplierSchemas.ToString();
+            string databaseName = DbasesNames.DbNames.SupplierSchemas.ToString();
 
-            string connectionString = Globals.Security.PasswordBoxControlHelper
+            string connectionString = Security.PasswordBoxControlHelper
                 .ReadFromFileSecuredStringToString
-                .UnprotectString(Globals.SettingFiles.ConnString.Default.ConnectionString);
+                .UnprotectString(SettingFiles.ConnString.Default.ConnectionString);
 
             string firstColumn = "Id";
             string secondColumn = "Content";
@@ -72,7 +72,7 @@ namespace Globals.DbOperations.SupplierNewSchemaTable
                 }
             }
             catch (Exception ex)
-            {
+            {      
                 MessageBox.Show($"Error while create table new supplier schema '{_tableName}': {ex.Message}");
                 L4N.L4NDefault.Error($"Error while create table new supplier schema '{_tableName}': {ex.Message}");
             }

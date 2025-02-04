@@ -33,6 +33,13 @@ namespace SubControlSupplierProject.ViewModel
 			}
 		}
 
+        private List<(string, Dictionary<string, string>)> completeSchemasData;
+		public List<(string, Dictionary<string, string>)> CompleteSchemasData
+		{
+			get { return completeSchemasData; }
+			set { completeSchemasData = value; }
+		}
+
 
 	}
 }

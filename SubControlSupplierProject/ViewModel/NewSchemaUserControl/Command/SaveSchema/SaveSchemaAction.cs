@@ -1,4 +1,5 @@
-﻿using SubControlSupplierProject.View.NewSchemaUserControl;
+﻿using Globals.DbOperations.Supplier.SupplierNewSchemaTable;
+using SubControlSupplierProject.View.NewSchemaUserControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
         {
             NewSchemaControl newSchemaControl = parameter as NewSchemaControl;
 
-            Globals.DbOperations.SupplierNewSchemaTable.CreateTable createTable = new Globals.DbOperations.SupplierNewSchemaTable.CreateTable(NewSchemaMainViewModel.ItemsToSaveDictionary, NewSchemaMainViewModel.NameOfNewSchema);
+            CreateTable createTable = new Globals.DbOperations.Supplier.SupplierNewSchemaTable.CreateTable(NewSchemaMainViewModel.ItemsToSaveDictionary, NewSchemaMainViewModel.NameOfNewSchema);
             await createTable.Create();
 
             NewSchemaMainViewModel.ItemsToSaveDictionary.Clear();
