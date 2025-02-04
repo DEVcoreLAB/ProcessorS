@@ -11,6 +11,8 @@ using System.Windows.Data;
 using Globals;
 using System.Net.WebSockets;
 using Globals.DbOperations.Supplier.SupplierSchemasReader;
+using SubControlSupplierProject.Model.NewSchemaUserControl;
+using System.Windows;
 
 namespace SubControlSupplierProject.ViewModel
 {
@@ -41,6 +43,12 @@ namespace SubControlSupplierProject.ViewModel
                 );
 
             RefreshSchemas();
+
+            ReturnNewSchema.ReturnNewSchemaEvent += (s,e) =>
+            {
+                listOfSchemas.Add(e[0].Item1);
+                CompleteSchemasData.Add(e[0]);
+            };
         }
 
         public async void RefreshSchemas()

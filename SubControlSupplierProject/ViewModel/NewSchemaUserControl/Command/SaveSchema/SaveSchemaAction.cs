@@ -1,4 +1,5 @@
 ﻿using Globals.DbOperations.Supplier.SupplierNewSchemaTable;
+using SubControlSupplierProject.Model.NewSchemaUserControl;
 using SubControlSupplierProject.View.NewSchemaUserControl;
 using System;
 using System.Collections.Generic;
@@ -26,11 +27,27 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
             CreateTable createTable = new Globals.DbOperations.Supplier.SupplierNewSchemaTable.CreateTable(NewSchemaMainViewModel.ItemsToSaveDictionary, NewSchemaMainViewModel.NameOfNewSchema);
             await createTable.Create();
 
+
+
+
+            List<(string, Dictionary<string, string>)> newSchema = new List<(string, Dictionary<string, string>)>();
+            newSchema.Add((NewSchemaMainViewModel.NameOfNewSchema, NewSchemaMainViewModel.ItemsToSaveDictionary));
+
+            ReturnNewSchema returnNewSchema = new ReturnNewSchema();
+            returnNewSchema.ReturnNewSchemaMethod(newSchema);
+
+
+
+
             NewSchemaMainViewModel.ItemsToSaveDictionary.Clear();
             NewSchemaMainViewModel.NameOfNewSchema = null;
 
             newSchemaControl.GridForItems.Children.Clear();
             new SaveSchemaPredict(NewSchemaMainViewModel).Check();
+
+           
+
+           
         }
     }
 }

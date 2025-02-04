@@ -34,8 +34,18 @@ namespace SubControlSupplierProject.View
         {
             if (e.Key == Key.F1)
             {
-                MessageBox.Show(mainViewModel.CompleteSchemasData.Count().ToString());
+                StringBuilder sb = new StringBuilder();
+                foreach (var item in mainViewModel.CompleteSchemasData)
+                {
+                    sb.AppendLine(item.Item1);
+                    foreach (var item2 in item.Item2)
+                    {
+                        sb.AppendLine(item2.Key + " " + item2.Value);
+                    }
+                }
+                MessageBox.Show(sb.ToString());
             }
+
         }
     }
 }
