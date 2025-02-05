@@ -33,5 +33,16 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
             }
 		}
 
+		private bool isTypeOfNewItemEnabled;
+		public bool IsTypeOfNewItemEnabled
+		{
+			get { return isTypeOfNewItemEnabled; }
+			set 
+			{
+				isTypeOfNewItemEnabled = value; 
+				OnPropertyChanged(nameof(IsTypeOfNewItemEnabled));
+            }
+		}
+
 	}
 }

@@ -24,10 +24,12 @@ namespace SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviou
                     if (item == mainViewModel.NameOfNewItem)
                     {
                         mainViewModel.NewItemNameBrush = new SolidColorBrush(Colors.Red);
+                        mainViewModel.IsTypeOfNewItemEnabled = false;
                     }
                     else
                     {
                         mainViewModel.NewItemNameBrush = new SolidColorBrush(Colors.Black);
+                        mainViewModel.IsTypeOfNewItemEnabled = true;
                     }
                 }
             });

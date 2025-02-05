@@ -18,7 +18,11 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNe
 
         public bool Check()
         {
-            if (newSchemaMainViewModel.SelectedTypeOfNewItem == null || newSchemaMainViewModel.NameOfNewItem == null || string.IsNullOrEmpty(newSchemaMainViewModel.NameOfNewItem))
+            if (newSchemaMainViewModel.SelectedTypeOfNewItem == null 
+                || newSchemaMainViewModel.NameOfNewItem == null 
+                || string.IsNullOrEmpty(newSchemaMainViewModel.NameOfNewItem)
+                || !newSchemaMainViewModel.IsTypeOfNewItemEnabled
+                )
             {
                 newSchemaMainViewModel.AddNewItmButtonForeground = SetButtonForeground(false);
                 return false;
