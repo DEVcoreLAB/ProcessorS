@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviours.NameOfNewItemVM
 {
@@ -18,7 +19,17 @@ namespace SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviou
 
             return new Action(() =>
             {
-                 MessageBox.Show("Hello from NmaeOfNewItemBehvoiur");
+                foreach (var item in mainViewModel.ItemsToSaveDictionary.Keys)
+                {
+                    if (item == mainViewModel.NameOfNewItem)
+                    {
+                        mainViewModel.NewItemNameBrush = new SolidColorBrush(Colors.Red);
+                    }
+                    else
+                    {
+                        mainViewModel.NewItemNameBrush = new SolidColorBrush(Colors.Black);
+                    }
+                }
             });
         }
     }
