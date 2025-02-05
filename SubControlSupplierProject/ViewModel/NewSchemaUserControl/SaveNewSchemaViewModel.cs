@@ -15,7 +15,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
 
 		private string nameOfNewSchema;
 		public string NameOfNewSchema
-		{
+        {
 			get { return nameOfNewSchema; }
 			set 
 			{

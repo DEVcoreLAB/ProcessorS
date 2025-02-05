@@ -21,7 +21,7 @@ namespace SubControlSupplierProject.ViewModel.Command.MainControl.NewSchemaButto
 
         public void Execute(object? parameter)
         {
-            mainViewModel.OperationUserControl = new NewSchemaControl();
+            mainViewModel.OperationUserControl = new NewSchemaControl(mainViewModel.ListOfSchemas);
         }
     }
 }

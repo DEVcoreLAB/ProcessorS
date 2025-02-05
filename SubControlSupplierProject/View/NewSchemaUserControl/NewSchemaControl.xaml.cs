@@ -1,6 +1,7 @@
 ﻿using SubControlSupplierProject.ViewModel.NewSchemaUserControl;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,12 @@ namespace SubControlSupplierProject.View.NewSchemaUserControl
     {
         NewSchemaMainViewModel newSchemaMainViewModel;
 
-        public NewSchemaControl()
+        public NewSchemaControl(ObservableCollection<string> listOfShemasNames)
         {
             InitializeComponent();
             newSchemaMainViewModel = new NewSchemaMainViewModel();
             this.DataContext = newSchemaMainViewModel;
+            newSchemaMainViewModel.ListOfSchemasNames = listOfShemasNames;
         }
 
         private void UserControl_KeyDown(object sender, KeyEventArgs e)
@@ -42,6 +44,8 @@ namespace SubControlSupplierProject.View.NewSchemaUserControl
                 //}
 
                 //MessageBox.Show(sb.ToString());
+
+                MessageBox.Show(newSchemaMainViewModel.ListOfSchemasNames.Count().ToString());
             }
         }
     }

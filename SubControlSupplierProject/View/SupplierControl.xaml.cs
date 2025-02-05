@@ -32,19 +32,19 @@ namespace SubControlSupplierProject.View
 
         private void UserControl_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.F1)
-            {
-                StringBuilder sb = new StringBuilder();
-                foreach (var item in mainViewModel.CompleteSchemasData)
-                {
-                    sb.AppendLine(item.Item1);
-                    foreach (var item2 in item.Item2)
-                    {
-                        sb.AppendLine(item2.Key + " " + item2.Value);
-                    }
-                }
-                MessageBox.Show(sb.ToString());
-            }
+            //if (e.Key == Key.F1)
+            //{
+            //    StringBuilder sb = new StringBuilder();
+            //    foreach (var item in mainViewModel.CompleteSchemasData)
+            //    {
+            //        sb.AppendLine(item.Item1);
+            //        foreach (var item2 in item.Item2)
+            //        {
+            //            sb.AppendLine(item2.Key + " " + item2.Value);
+            //        }
+            //    }
+            //    MessageBox.Show(sb.ToString());
+            //}
 
         }
     }

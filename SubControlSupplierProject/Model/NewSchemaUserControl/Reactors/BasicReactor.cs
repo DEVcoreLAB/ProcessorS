@@ -1,6 +1,7 @@
 ﻿using Globals.Model.Observer.Components;
 using Globals.ViewModel;
 using SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviours.NameOfNewItemVM;
+using SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviours.SaveNewSchemaVM;
 using SubControlSupplierProject.ViewModel;
 using SubControlSupplierProject.ViewModel.NewSchemaUserControl;
 using System;
@@ -23,6 +24,10 @@ namespace SubControlSupplierProject.Model.NewSchemaUserControl.Reactors
             if (newValue.Name == nameof(mainViewModel.NameOfNewItem))
             {
                 connector = new Connector(new NmaeOfNewItemBehvoiur());
+            }
+            if (newValue.Name == nameof(mainViewModel.NameOfNewSchema))
+            {
+                connector = new Connector(new NameOfNewSchemaBehaviour());
             }
 
             if (connector != null)

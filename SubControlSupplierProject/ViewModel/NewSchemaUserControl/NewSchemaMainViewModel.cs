@@ -4,6 +4,7 @@ using SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.AddNewIte
 using SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveSchema;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,6 +58,17 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
                 itemsToSaveDictionary = value; 
             }
         }
+
+        private ObservableCollection<string> listOfSchemasNames;
+        public ObservableCollection<string> ListOfSchemasNames
+        {
+            get { return listOfSchemasNames; }
+            set 
+            { 
+                listOfSchemasNames = value;
+            }
+        }
+
 
     }
 }
