@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
 {
@@ -22,6 +23,15 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
             }
         }
 
-       
+        private SolidColorBrush newItemNameBrush;
+        public SolidColorBrush NewItemNameBrush
+        {
+            get { return newItemNameBrush; }
+            set 
+            { 
+                newItemNameBrush = value;
+                OnPropertyChanged(nameof(NewItemNameBrush));
+            }
+        }
     }
 }

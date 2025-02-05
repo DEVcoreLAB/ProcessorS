@@ -41,6 +41,9 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
                     Globals.Graphics.Uris.SaveSettingsEnabled,
                     Globals.Graphics.Uris.SaveSettingsDisabled
                 );
+
+            NewItemNameBrush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Black);
+            NewShemaNameBrush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Black);
         }
 
         private Dictionary<string,string> itemsToSaveDictionary;

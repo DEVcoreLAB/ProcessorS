@@ -1,4 +1,6 @@
-﻿using SubControlSupplierProject.ViewModel;
+﻿using Globals.Model.Observer;
+using SubControlSupplierProject.Model.NewSchemaUserControl.Reactors;
+using SubControlSupplierProject.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,7 @@ namespace SubControlSupplierProject.Model
 
         public MainModel(MainViewModel mainViewModel)
         {
-            MainViewModel = mainViewModel;
+            MainViewModel = mainViewModel; 
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using SubControlSupplierProject.ViewModel.NewSchemaUserControl;
+﻿using Globals.Model.Observer;
+using SubControlSupplierProject.Model.NewSchemaUserControl.Reactors;
+using SubControlSupplierProject.ViewModel;
+using SubControlSupplierProject.ViewModel.NewSchemaUserControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +18,10 @@ namespace SubControlSupplierProject.Model.NewSchemaUserControl
         public NewSchemaMainModel(NewSchemaMainViewModel newSchemaMainViewModel)
         {
             this.NewSchemaMainViewModel = newSchemaMainViewModel;
+
+
+            BasicReactor reactor = new BasicReactor();
+            new TObserver<NewSchemaMainViewModel, BasicReactor>(newSchemaMainViewModel, reactor);
         }
     }
 }

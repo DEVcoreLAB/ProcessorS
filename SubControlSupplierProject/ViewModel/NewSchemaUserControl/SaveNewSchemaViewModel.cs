@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
@@ -31,6 +32,17 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
 			{ 
 				saveNewSchemaButtonForeground = value;
 				OnPropertyChanged(nameof(SaveNewSchemaButtonForeground));
+            }
+		}
+
+		private SolidColorBrush newShemaNameBrush;
+		public SolidColorBrush NewShemaNameBrush
+		{
+			get { return newShemaNameBrush; }
+			set 
+			{ 
+				newShemaNameBrush = value; 
+				OnPropertyChanged(nameof(NewShemaNameBrush));
             }
 		}
 
