@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveSchema
@@ -18,7 +19,21 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
 
         public bool Check()
         {
-            if (newSchemaMainViewModel.ItemsToSaveDictionary.Count > 0 && !string.IsNullOrEmpty(newSchemaMainViewModel.NameOfNewSchema))
+            bool isNameOfNewSchemaUnique = true;
+
+            foreach (var item in newSchemaMainViewModel.ListOfSchemasNames)
+            {
+                if (item == newSchemaMainViewModel.NameOfNewSchema)
+                {
+                    isNameOfNewSchemaUnique = false;
+                    break;
+                }
+            }
+
+
+            if (newSchemaMainViewModel.ItemsToSaveDictionary.Count > 0 
+                && !string.IsNullOrEmpty(newSchemaMainViewModel.NameOfNewSchema) 
+                && isNameOfNewSchemaUnique)
             {
                 newSchemaMainViewModel.SaveNewSchemaButtonForeground = SetButtonForeground(true);
                 return true;
