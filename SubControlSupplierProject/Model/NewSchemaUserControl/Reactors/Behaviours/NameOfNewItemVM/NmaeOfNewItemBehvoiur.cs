@@ -1,4 +1,5 @@
-﻿using Globals.Model.Observer.Components;
+﻿using Globals.DbOperations.Validation.TextValidation;
+using Globals.Model.Observer.Components;
 using Globals.ViewModel;
 using SubControlSupplierProject.ViewModel.NewSchemaUserControl;
 using System;
@@ -19,19 +20,11 @@ namespace SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviou
 
             return new Action(() =>
             {
-                foreach (var item in mainViewModel.ItemsToSaveDictionary.Keys)
-                {
-                    if (item == mainViewModel.NameOfNewItem)
-                    {
-                        mainViewModel.NewItemNameBrush = new SolidColorBrush(Colors.Red);
-                        mainViewModel.IsTypeOfNewItemEnabled = false;
-                    }
-                    else
-                    {
-                        mainViewModel.NewItemNameBrush = new SolidColorBrush(Colors.Black);
-                        mainViewModel.IsTypeOfNewItemEnabled = true;
-                    }
-                }
+                NamesValidation namesValidation = new NamesValidation();
+                var result = namesValidation.Validate(mainViewModel.ItemsToSaveDictionary.Keys, mainViewModel.NameOfNewItem);
+
+                mainViewModel.NewItemNameBrush = result._textColor;
+                mainViewModel.IsTypeOfNewItemEnabled = result._isNameInique;
             });
         }
     }

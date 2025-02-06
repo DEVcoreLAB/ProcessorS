@@ -1,4 +1,5 @@
-﻿using Globals.Model.Observer.Components;
+﻿using Globals.DbOperations.Validation.TextValidation;
+using Globals.Model.Observer.Components;
 using Globals.ViewModel;
 using SubControlSupplierProject.ViewModel.NewSchemaUserControl;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviours.SaveNewSchemaVM
@@ -18,52 +20,11 @@ namespace SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviou
 
             return new Action(() =>
             {
-                bool colorChanged = false;
+                NamesValidation namesValidation = new NamesValidation();
+                var result = namesValidation.Validate(mainViewModel.ListOfSchemasNames, mainViewModel.NameOfNewSchema);
 
-                var restrictedWords = Enum
-                    .GetValues(typeof(Globals.DbOperations.Validation.ReserverWords.ReservedDbWords))
-                    .Cast<Globals.DbOperations.Validation.ReserverWords.ReservedDbWords>()
-                    .Select(x => x.ToString())
-                    .ToList();
-
-                foreach (var word in restrictedWords)
-                {
-                    if (word.ToLower().Equals(mainViewModel.NameOfNewSchema.ToLower()))
-                    {
-                        mainViewModel.NewShemaNameBrush = new SolidColorBrush(Colors.Red);
-                        colorChanged = true;
-                        
-                        break;
-                    }
-                    else
-                    {
-                        mainViewModel.NewShemaNameBrush = new SolidColorBrush(Colors.Black);
-                    }
-                }
-
-                if (colorChanged)
-                {
-                    return;
-                }
-
-                foreach (var item in mainViewModel.ListOfSchemasNames)
-                {
-
-                    if (item.Equals(mainViewModel.NameOfNewSchema))
-                    {
-                        mainViewModel.NewShemaNameBrush = new SolidColorBrush(Colors.Red);
-                        break;
-                    }
-                    else
-                    {
-                        mainViewModel.NewShemaNameBrush = new SolidColorBrush(Colors.Black);
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(mainViewModel.NameOfNewSchema) && !char.IsLetter(mainViewModel.NameOfNewSchema[0]))
-                {
-                    mainViewModel.NameOfNewSchema = string.Empty;
-                }
+                mainViewModel.NewShemaNameBrush = result._textColor;
+                mainViewModel.IsNameOfNewSchemaUnique = result._isNameInique;
             });
         }
     }

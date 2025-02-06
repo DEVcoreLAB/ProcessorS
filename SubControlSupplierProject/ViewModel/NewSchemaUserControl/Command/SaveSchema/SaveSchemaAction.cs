@@ -46,8 +46,9 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
             new SaveSchemaPredict(NewSchemaMainViewModel).Check();
 
            
+            NewSchemaMainViewModel.NameOfNewItem = null;
+            NewSchemaMainViewModel.SelectedTypeOfNewItem = null;
 
-           
         }
     }
 }
