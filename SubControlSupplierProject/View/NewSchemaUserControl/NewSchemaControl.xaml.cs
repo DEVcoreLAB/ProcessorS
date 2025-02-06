@@ -48,5 +48,27 @@ namespace SubControlSupplierProject.View.NewSchemaUserControl
                 MessageBox.Show(newSchemaMainViewModel.ListOfSchemasNames.Count().ToString());
             }
         }
+
+        private void NewItemTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(newSchemaMainViewModel.NameOfNewItem))
+            {
+                if (!char.IsLetter(newSchemaMainViewModel.NameOfNewItem[0]))
+                {
+                    newSchemaMainViewModel.NameOfNewItem = newSchemaMainViewModel.NameOfNewItem.Remove(0, 1);
+                }
+            }
+        }
+
+        private void NewSchemaNameTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(newSchemaMainViewModel.NameOfNewSchema))
+            {
+                if (!char.IsLetter(newSchemaMainViewModel.NameOfNewSchema[0]))
+                {
+                    newSchemaMainViewModel.NameOfNewSchema = newSchemaMainViewModel.NameOfNewSchema.Remove(0, 1);
+                }
+            }
+        }
     }
 }
