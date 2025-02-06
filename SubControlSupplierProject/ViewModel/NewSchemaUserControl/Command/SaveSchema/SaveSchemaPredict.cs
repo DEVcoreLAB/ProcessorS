@@ -30,7 +30,6 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
                 }
             }
 
-
             if (newSchemaMainViewModel.ItemsToSaveDictionary.Count > 0 
                 && !string.IsNullOrEmpty(newSchemaMainViewModel.NameOfNewSchema) 
                 && isNameOfNewSchemaUnique)

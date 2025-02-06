@@ -20,14 +20,22 @@ namespace SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviou
             {
                 foreach (var item in mainViewModel.ListOfSchemasNames)
                 {
+                   
+
                     if (item.Equals(mainViewModel.NameOfNewSchema))
                     {
                         mainViewModel.NewShemaNameBrush = new SolidColorBrush(Colors.Red);
+                        break;
                     }
                     else
                     {
                         mainViewModel.NewShemaNameBrush = new SolidColorBrush(Colors.Black);
                     }
+                }
+
+                if (!string.IsNullOrEmpty(mainViewModel.NameOfNewSchema) && !char.IsLetter(mainViewModel.NameOfNewSchema[0]))
+                {
+                    mainViewModel.NameOfNewSchema = string.Empty;
                 }
             });
         }
