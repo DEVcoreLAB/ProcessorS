@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Globals.DbOperations.Validation.ReserverWords
 {
     //https://learn.microsoft.com/en-us/sql/t-sql/language-elements/reserved-keywords-transact-sql?view=sql-server-ver16
-    internal enum ReservedDbWords
+    public enum ReservedDbWords
     {
         ADD,
         EXTERNAL,

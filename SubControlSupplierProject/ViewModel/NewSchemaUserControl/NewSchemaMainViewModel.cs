@@ -69,6 +69,13 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
             }
         }
 
+        private bool isNameOfNewSchemaUnique;
+        public bool IsNameOfNewSchemaUnique
+        {
+            get { return isNameOfNewSchemaUnique; }
+            set { isNameOfNewSchemaUnique = value; }
+        }
+
 
     }
 }
