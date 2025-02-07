@@ -16,7 +16,10 @@ namespace SubControlSupplierProject.Model
 
         public MainModel(MainViewModel mainViewModel)
         {
-            MainViewModel = mainViewModel; 
+            MainViewModel = mainViewModel;
+
+            SubControlSupplierProject.Model.Reactors.BasicReactor reactor = new SubControlSupplierProject.Model.Reactors.BasicReactor();
+            new TObserver<MainViewModel, SubControlSupplierProject.Model.Reactors.BasicReactor>(mainViewModel, reactor);
         }
     }
 }

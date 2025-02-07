@@ -74,6 +74,7 @@
                     BorderBrush="Gray"
                     BorderThickness="1"
                     ItemsSource="{Binding ViewListOfSchemas}"
+                    SelectedValue="{Binding SelectedSchemaValue}"
                     />
             </Grid>
         </Border>

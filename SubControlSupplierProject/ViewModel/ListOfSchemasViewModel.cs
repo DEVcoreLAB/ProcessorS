@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SubControlSupplierProject.ViewModel
 {
@@ -40,6 +41,16 @@ namespace SubControlSupplierProject.ViewModel
 			set { completeSchemasData = value; }
 		}
 
+		private string selectedSchemaValue;
+		public string SelectedSchemaValue
+		{
+			get { return selectedSchemaValue; }
+			set 
+			{ 
+				selectedSchemaValue = value;
+				OnPropertyChanged(nameof(SelectedSchemaValue));
+            }
+		}
 
 	}
 }
