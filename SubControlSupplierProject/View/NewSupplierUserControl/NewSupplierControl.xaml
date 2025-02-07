@@ -8,9 +8,50 @@
              d:DesignHeight="1080" 
              d:DesignWidth="640">
     <Grid>
-        <TextBox
-            Text="new supplier control"
-            FontSize="20"
-            />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer 
+            Grid.Row="0"
+            Padding="10"
+            >
+            <Grid
+                x:Name="GridForData"
+                />
+        </ScrollViewer>
+
+        <Grid
+            Grid.Row="1"
+            Background="white"
+            >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+
+            <TextBox
+                Grid.Row="0"
+                Margin="5,0,5,0"
+                Text="{Binding NewSupplierName, UpdateSourceTrigger=PropertyChanged}"
+                Padding="5,0,0,0"
+                />
+            <Button
+                Grid.Row="1"
+                Height="25"
+                Margin="5"
+                HorizontalAlignment="Center"
+                Background="Transparent"
+                BorderThickness="0"
+                Command="{Binding SaveNewSupplierCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                >
+                <Image 
+                    Source="{Binding SaveNewSupplierButtonForeground, 
+                    FallbackValue='pack://application:,,,/Globals;component/Graphics/GraphicFiles/SaveIconEnabled.png'}"/>
+            </Button>
+        </Grid>
+
     </Grid>
 </UserControl>
