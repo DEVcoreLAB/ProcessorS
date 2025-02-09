@@ -128,13 +128,15 @@
                     d:Text="search"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"
+                    Text="{Binding SupplierFilteringTextBox, UpdateSourceTrigger=PropertyChanged}"
                     />
 
-                <ListBoxItem
+                <ListBox
                     Grid.Row="3"
                     Margin="2"
                     BorderBrush="Gray"
                     BorderThickness="1"
+                    ItemsSource="{Binding ViewListOfSuppliers}"
                     />
             </Grid>
         </Border>

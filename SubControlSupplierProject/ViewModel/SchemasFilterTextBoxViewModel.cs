@@ -18,13 +18,13 @@ namespace SubControlSupplierProject.ViewModel
                 if (ListOfSchemas.Count == 0) return;
 
 				schemasFilteringTextBox = value;
-                ViewListOfSchemas.Filter = FilterByName;
+                ViewListOfSchemas.Filter = FilterSchemasByName;
 
                 OnPropertyChanged(nameof(SchemasFilteringTextBox));
 			}
 		}
 
-        private bool FilterByName(object item)
+        private bool FilterSchemasByName(object item)
         {
             var emp = item as string; 
             if (!string.IsNullOrEmpty(SchemasFilteringTextBox) && emp != null)

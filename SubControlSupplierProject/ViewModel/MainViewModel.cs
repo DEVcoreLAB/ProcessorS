@@ -49,6 +49,18 @@ namespace SubControlSupplierProject.ViewModel
                 listOfSchemas.Add(e[0].Item1);
                 CompleteSchemasData.Add(e[0]);
             };
+
+
+            ListOfSuppliers = new System.Collections.ObjectModel.ObservableCollection<string>() 
+            { 
+                "Kamix",
+                "Font end developers",
+                "Kojijama",
+                "End points",
+                "Forsaken",
+            };
+
+            ViewListOfSuppliers = CollectionViewSource.GetDefaultView(ListOfSuppliers);
         }
 
         public async void RefreshSchemas()

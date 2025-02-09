@@ -9,7 +9,7 @@
              d:DesignWidth="1920"
              >
     <Grid 
-        Background="LightGray"
+        Background="White"
         >
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -45,7 +45,7 @@
                     BorderBrush="Transparent"
                     d:Content="Supplier"
                     d:FontSize="18"
-                    Background="Transparent"
+                    Background="LightGray"
                     Content="{Binding SupplierButtonContent}"
                     Command="{Binding SupplierButtonCommand}"
                     >
@@ -65,7 +65,7 @@
                     BorderBrush="Transparent"
                     d:Content="Customer"
                     d:FontSize="18"
-                    Background="Transparent"
+                    Background="LightGray"
                     Content="{Binding CustomerButtonContent}"
                     Command="{Binding CustomerButtonCommand}"
                     >
@@ -85,7 +85,7 @@
                     BorderBrush="Transparent"
                     d:Content="Equipment"
                     d:FontSize="18"
-                    Background="Transparent"
+                    Background="LightGray"
                     Content="{Binding EquipmentButtonContent}"
                     Command="{Binding EquipmentButtonCommand}"
                     >
@@ -105,7 +105,7 @@
                     BorderBrush="Transparent"
                     d:Content="Inter. Product"
                     d:FontSize="18"
-                    Background="Transparent"
+                    Background="LightGray"
                     Content="{Binding IntermediateProductButtonContent}"
                     Command="{Binding IntermediateProductButtonCommand}"
                     >
@@ -125,7 +125,7 @@
                     BorderBrush="Transparent"
                     d:Content="Product"
                     d:FontSize="18"
-                    Background="Transparent"
+                    Background="LightGray"
                     Content="{Binding ProductButtonContent}"
                     Command="{Binding ProductButtonCommand}"
                     >
@@ -145,7 +145,7 @@
                     BorderBrush="Transparent"
                     d:Content="Location"
                     d:FontSize="18"
-                    Background="Transparent"
+                    Background="LightGray"
                     Content="{Binding LocationButtonContent}"
                     Command="{Binding LocationButtonCommand}"
                     >
@@ -165,7 +165,7 @@
                     BorderBrush="Transparent"
                     d:Content="Block diagram"
                     d:FontSize="18"
-                    Background="Transparent"
+                    Background="LightGray"
                     Content="{Binding BlockDiagramButtonContent}"
                     Command="{Binding BlockDiagramButtonCommand}"
                     >
