@@ -123,6 +123,15 @@
   <data name="comboBox" xml:space="preserve">
     <value>ComboBox</value>
   </data>
+  <data name="itemName" xml:space="preserve">
+    <value>Item name</value>
+  </data>
+  <data name="itemType" xml:space="preserve">
+    <value>Element type</value>
+  </data>
+  <data name="schemaName" xml:space="preserve">
+    <value>Schema name</value>
+  </data>
   <data name="textBox" xml:space="preserve">
     <value>Text box</value>
   </data>

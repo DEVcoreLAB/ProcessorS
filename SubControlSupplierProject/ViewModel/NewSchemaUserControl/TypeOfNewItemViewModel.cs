@@ -44,5 +44,16 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
             }
 		}
 
+		private string typeOfNewItemLabel;
+		public string TypeOfNewItemLabel
+		{
+			get { return typeOfNewItemLabel; }
+			set 
+			{ 
+				typeOfNewItemLabel = value; 
+				OnPropertyChanged(nameof(TypeOfNewItemLabel));
+            }
+		}
+
 	}
 }

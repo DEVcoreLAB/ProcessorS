@@ -33,5 +33,17 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
                 OnPropertyChanged(nameof(NewItemNameBrush));
             }
         }
+
+        private string newItemNameLabel;
+        public string NewItemNameLabel
+        {
+            get { return newItemNameLabel; }
+            set 
+            { 
+                newItemNameLabel = value;
+                OnPropertyChanged(nameof(NewItemNameLabel));
+            }
+        }
+
     }
 }

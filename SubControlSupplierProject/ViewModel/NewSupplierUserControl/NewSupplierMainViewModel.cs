@@ -25,7 +25,6 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
                );
 
             SaveNewSupplierCommand = new RelayCommand(new SaveNewSupplierButtonAction(this).Execute, new SaveNewSupplierButtonPredict().Check);
-            GridForDataProperty = new System.Windows.Controls.Grid();
         }
     }
 }

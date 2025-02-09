@@ -17,30 +17,65 @@
 
         <Grid 
             Grid.Row="0"
+            Margin="2"
             >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
 
-            <TextBox
-                Grid.Column="0"
-                Margin="5,0,5,0"
-                Padding="5,0,0,0"
-                Text="{Binding NameOfNewItem, UpdateSourceTrigger=PropertyChanged}"
-                Foreground="{Binding NewItemNameBrush}"
-                x:Name="NewItemTextBox"
-                TextChanged="NewItemTextBox_TextChanged"
-                />
-            <ComboBox
-                Grid.Column="1"
-                ItemsSource="{Binding TypeOfNewItem}"
-                SelectedValue="{Binding SelectedTypeOfNewItem}"
-                IsEnabled="{Binding IsTypeOfNewItemEnabled}"
-                />
+            <Grid 
+                Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Column="0"
+                    Content="{Binding NewItemNameLabel}"
+                    Background="White"
+                    HorizontalContentAlignment="Left"
+                    d:Content="New Item name"
+                    />
+                <TextBox
+                    Grid.Column="1"
+                    Padding="5,0,0,0"
+                    Text="{Binding NameOfNewItem, UpdateSourceTrigger=PropertyChanged}"
+                    Foreground="{Binding NewItemNameBrush}"
+                    x:Name="NewItemTextBox"
+                    TextChanged="NewItemTextBox_TextChanged"
+                    />
+            </Grid>
+
+            <Grid
+                Grid.Row="1"
+                Margin="2"
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Column="0"
+                    Content="{Binding TypeOfNewItemLabel}"
+                    Background="White"
+                    HorizontalContentAlignment="Left"
+                    d:Content="Type of new item"
+                    />
+                <ComboBox
+                    Grid.Column="1"
+                    ItemsSource="{Binding TypeOfNewItem}"
+                    SelectedValue="{Binding SelectedTypeOfNewItem}"
+                    IsEnabled="{Binding IsTypeOfNewItemEnabled}"
+                    />
+            </Grid>
+
+           
             <Button
-                Grid.Column="2"
+                Grid.Row="2"
                 Height="25"
                 Background="Transparent"
                 BorderThickness="0"
@@ -72,14 +107,33 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
-            <TextBox
+
+            <Grid
                 Grid.Row="0"
-                Margin="5,0,5,0"
-                Text="{Binding NameOfNewSchema, UpdateSourceTrigger=PropertyChanged}"
-                Foreground="{Binding NewShemaNameBrush}"
-                x:Name="NewSchemaNameTextbox"
-                TextChanged="NewSchemaNameTextbox_TextChanged"
-                />
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Column="0"
+                    Content="{Binding NewSchemaNameLabel}"
+                    Background="White"
+                    HorizontalContentAlignment="Left"
+                    d:Content="New Schema name"
+                    />
+                <TextBox
+                    Grid.Column="1"
+                    Margin="5,0,5,0"
+                    Text="{Binding NameOfNewSchema, UpdateSourceTrigger=PropertyChanged}"
+                    Foreground="{Binding NewShemaNameBrush}"
+                    x:Name="NewSchemaNameTextbox"
+                    TextChanged="NewSchemaNameTextbox_TextChanged"
+                    />
+            </Grid>
+
+            
             <Button
                 Background="Transparent"
                 BorderThickness="0"

@@ -79,6 +79,33 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Langs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nazwa elementu.
+        /// </summary>
+        internal static string itemName {
+            get {
+                return ResourceManager.GetString("itemName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Typ elementu.
+        /// </summary>
+        internal static string itemType {
+            get {
+                return ResourceManager.GetString("itemType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nawa schematu.
+        /// </summary>
+        internal static string schemaName {
+            get {
+                return ResourceManager.GetString("schemaName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pole tekstowe.
         /// </summary>
         internal static string textBox {

@@ -53,5 +53,16 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
 			set { isNewSchemaNameUnique = value; }
 		}
 
+		private string newSchemaNameLabel;
+		public string NewSchemaNameLabel
+		{
+			get { return newSchemaNameLabel; }
+			set 
+			{ 
+				newSchemaNameLabel = value; 
+				OnPropertyChanged(nameof(NewSchemaNameLabel));
+            }
+		}
+
 	}
 }

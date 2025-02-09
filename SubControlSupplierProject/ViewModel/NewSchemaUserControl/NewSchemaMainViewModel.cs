@@ -47,6 +47,10 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl
             NewShemaNameBrush = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Colors.Black);
 
             IsTypeOfNewItemEnabled = true;
+
+            NewItemNameLabel = Langs.Lang.itemName;
+            TypeOfNewItemLabel = Langs.Lang.itemType;
+            NewSchemaNameLabel = Langs.Lang.schemaName;
         }
 
         private Dictionary<string,string> itemsToSaveDictionary;
