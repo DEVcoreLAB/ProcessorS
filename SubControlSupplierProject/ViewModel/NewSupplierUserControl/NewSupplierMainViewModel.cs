@@ -38,6 +38,7 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
             set 
             { 
                 schemaControlsList = value;
+                OnPropertyChanged(nameof(SchemaControlsList));
             }
         }
     }
