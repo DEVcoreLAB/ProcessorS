@@ -8,6 +8,36 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl.Command.Sav
 {
     internal class SaveNewSupplierButtonPredict
     {
-        public bool Check() => true;
+        NewSupplierMainViewModel newSupplierMainViewModel;
+
+        public SaveNewSupplierButtonPredict(NewSupplierMainViewModel newSupplierMainViewModel)
+        {
+            this.newSupplierMainViewModel = newSupplierMainViewModel;
+        }
+
+        public bool Check()
+        {
+            if (string.IsNullOrEmpty(newSupplierMainViewModel.NewSupplierName))
+            {
+                newSupplierMainViewModel.SaveNewSupplierButtonForeground = Globals.Graphics.SetProperButtonBackground.Set
+                (
+                    false,
+                    Globals.Graphics.Uris.SaveSettingsEnabled,
+                    Globals.Graphics.Uris.SaveSettingsDisabled
+                );
+
+                return false;
+            }
+            else
+            {
+                newSupplierMainViewModel.SaveNewSupplierButtonForeground = Globals.Graphics.SetProperButtonBackground.Set
+                (
+                    true,
+                    Globals.Graphics.Uris.SaveSettingsEnabled,
+                    Globals.Graphics.Uris.SaveSettingsDisabled
+                );
+                return true;
+            }
+        }
     }
 }

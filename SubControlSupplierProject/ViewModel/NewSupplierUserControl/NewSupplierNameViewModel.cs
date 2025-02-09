@@ -21,5 +21,16 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
 			}
 		}
 
+		private string newSupplierNameLabel;
+		public string NewSupplierNameLabel
+		{
+			get { return newSupplierNameLabel; }
+			set 
+			{ 
+				newSupplierNameLabel = value;
+				OnPropertyChanged(nameof(NewSupplierNameLabel));
+            }
+		}
+
 	}
 }

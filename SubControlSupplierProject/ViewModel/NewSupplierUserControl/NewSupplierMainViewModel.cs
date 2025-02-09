@@ -24,7 +24,10 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
                    Globals.Graphics.Uris.SaveSettingsDisabled
                );
 
-            SaveNewSupplierCommand = new RelayCommand(new SaveNewSupplierButtonAction(this).Execute, new SaveNewSupplierButtonPredict().Check);
+            SaveNewSupplierCommand = new RelayCommand(new SaveNewSupplierButtonAction(this).Execute, new SaveNewSupplierButtonPredict(this).Check);
+
+
+            NewSupplierNameLabel = Langs.Lang.newSupplierName;
         }
     }
 }

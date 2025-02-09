@@ -31,12 +31,29 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
 
-            <TextBox
+            <Grid
                 Grid.Row="0"
-                Margin="5,0,5,0"
-                Text="{Binding NewSupplierName, UpdateSourceTrigger=PropertyChanged}"
-                Padding="5,0,0,0"
-                />
+                >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Column="0"
+                    Content="{Binding NewSupplierNameLabel}"
+                    Background="White"
+                    HorizontalContentAlignment="Left"
+                    d:Content="new supplier name"
+                    />
+                <TextBox
+                    Grid.Column="1"
+                    Margin="5,0,5,0"
+                    Text="{Binding NewSupplierName, UpdateSourceTrigger=PropertyChanged}"
+                    Padding="5,0,0,0"
+                    />
+            </Grid>
+
             <Button
                 Grid.Row="1"
                 Height="25"
