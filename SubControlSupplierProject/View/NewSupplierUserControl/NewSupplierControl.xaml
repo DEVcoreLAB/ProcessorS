@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:SubControlSupplierProject.View.NewSupplierUserControl"
              mc:Ignorable="d" 
              d:DesignHeight="1080" 
-             d:DesignWidth="640">
+             d:DesignWidth="640"
+             KeyDown="UserControl_KeyDown"
+             >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

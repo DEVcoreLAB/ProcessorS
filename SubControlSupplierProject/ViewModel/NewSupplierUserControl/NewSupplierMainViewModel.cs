@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
 {
     internal partial class NewSupplierMainViewModel : BaseViewModel
     {
         NewSupplierMainModel NewSupplierMainModel { get; }
+        public event EventHandler ListChanged;
+        public void ListChangedInvoke() => ListChanged?.Invoke(this, EventArgs.Empty);
+
 
         public NewSupplierMainViewModel()
         {
@@ -26,9 +30,9 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
                );
 
             SaveNewSupplierCommand = new RelayCommand(new SaveNewSupplierButtonAction(this).Execute, new SaveNewSupplierButtonPredict(this).Check);
-
-
             NewSupplierNameLabel = Langs.Lang.newSupplierName;
+
+            SupplierControlsList = new List<(string name, Control type, Type property)>();
         }
 
         private List<(string controlName,string controlType)> schemaControlsList;
@@ -41,5 +45,16 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
                 OnPropertyChanged(nameof(SchemaControlsList));
             }
         }
+
+        private List<(string name,Control type, Type property)> supplierControlsList;
+        public List<(string name, Control type, Type property)> SupplierControlsList
+        {
+            get { return supplierControlsList; }
+            set 
+            { 
+                supplierControlsList = value;
+            }
+        }
+
     }
 }
