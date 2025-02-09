@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
 {
@@ -28,6 +29,16 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
 
 
             NewSupplierNameLabel = Langs.Lang.newSupplierName;
+        }
+
+        private List<(string controlName,string controlType)> schemaControlsList;
+        public List<(string controlName,string controlType)> SchemaControlsList
+        {
+            get { return schemaControlsList; }
+            set 
+            { 
+                schemaControlsList = value;
+            }
         }
     }
 }

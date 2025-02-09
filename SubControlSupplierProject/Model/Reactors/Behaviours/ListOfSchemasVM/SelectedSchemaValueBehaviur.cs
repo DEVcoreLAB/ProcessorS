@@ -18,7 +18,10 @@ namespace SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSchemasVM
 
             return () =>
             {
-                mainViewModel.OperationUserControl = new SubControlSupplierProject.View.NewSupplierUserControl.NewSupplierControl();
+                mainViewModel.OperationUserControl = new SubControlSupplierProject.View.NewSupplierUserControl.NewSupplierControl
+                (
+                    mainViewModel.CompleteSchemasData.FirstOrDefault(x => x.Item1 == mainViewModel.SelectedSchemaValue).Item2.Select(x => (x.Key, x.Value)).ToList()
+                );
             };
         }
     }

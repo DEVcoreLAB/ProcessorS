@@ -23,12 +23,14 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
     {
         NewSupplierMainViewModel newSupplierMainViewModel;
 
-        public NewSupplierControl()
+        public NewSupplierControl(List<(string nameOfControl,string typeOfControl)> selectedSchema)
         {
             InitializeComponent();
 
             newSupplierMainViewModel = new NewSupplierMainViewModel();
             this.DataContext = newSupplierMainViewModel;
+
+            newSupplierMainViewModel.SchemaControlsList = selectedSchema;
         }
     }
 }
