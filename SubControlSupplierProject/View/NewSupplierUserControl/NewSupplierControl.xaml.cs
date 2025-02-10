@@ -1,6 +1,8 @@
-﻿using SubControlSupplierProject.ViewModel.NewSupplierUserControl;
+﻿using Globals.MyDialogsAndWindows.MyMessagebox;
+using SubControlSupplierProject.ViewModel.NewSupplierUserControl;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -96,15 +98,84 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
         {
             if (e.Key == Key.F1)
             {
-                StringBuilder stringBuilder = new StringBuilder();
+                StringBuilder sb = new StringBuilder();
 
-                foreach (var item in newSupplierMainViewModel.SupplierControlsList)
+                foreach ((string name, Control ctrl, Type property) in newSupplierMainViewModel.SupplierControlsList)
                 {
-                    stringBuilder.AppendLine($@"{item.name}     {item.type.GetType()}   {item.property.Name}");
+                    // Dodajemy podstawowe info o elemencie
+                    sb.AppendLine($"Nazwa: {name}");
+                    sb.AppendLine($"Typ property: {property.Name}");
+
+                    // Rozróżniamy, co przechowuje dana kontrolka na podstawie property
+                    if (property == typeof(string))
+                    {
+                        // Przykład: TextBox trzymający tekst typu string
+                        if (ctrl is TextBox textBox)
+                        {
+                            sb.AppendLine($"Wartość (string): {textBox.Text}");
+                        }
+                    }
+                    else if (property == typeof(ObservableCollection<string>))
+                    {
+                        // Przykład: ComboBox powiązany z kolekcją stringów
+                        if (ctrl is ComboBox comboBox)
+                        {
+                            // Jeśli ComboBox ma ItemsSource w postaci ObservableCollection<string>,
+                            // możemy ją odczytać i wylistować elementy
+                            if (comboBox.ItemsSource is ObservableCollection<string> collection)
+                            {
+                                sb.AppendLine("Elementy w ObservableCollection<string>:");
+                                foreach (var element in collection)
+                                {
+                                    sb.AppendLine("  - " + element);
+                                }
+                            }
+                            else
+                            {
+                                sb.AppendLine("Brak powiązanej kolekcji lub nie jest to typ ObservableCollection<string>.");
+                            }
+                        }
+                    }
+                    else if (property == typeof(CheckBox))
+                    {
+                        // Przykład: CheckBox trzymający wartość zaznaczenia
+                        if (ctrl is CheckBox checkBox)
+                        {
+                            sb.AppendLine($"CheckBox (IsChecked): {checkBox.IsChecked}");
+                        }
+                    }
+                    else
+                    {
+                        sb.AppendLine("Nieobsługiwany typ property.");
+                    }
+
+                    sb.AppendLine(new string('-', 40)); // Separator dla czytelności
                 }
 
-                MessageBox.Show(stringBuilder.ToString());
+                // Wyświetlamy zebrane informacje
+                MessageBoxX.Show(sb.ToString());
+
+
+
+
+
+
+
+
+
+                //StringBuilder stringBuilder = new StringBuilder();
+
+                //foreach (var item in newSupplierMainViewModel.SupplierControlsList)
+                //{
+                //    stringBuilder.AppendLine($@"{item.name}     {item.type.GetType()}   {item.property.Name}");
+                //}
+
+                //MessageBox.Show(stringBuilder.ToString());
             }
+
+
+
+           
         }
     }
 }

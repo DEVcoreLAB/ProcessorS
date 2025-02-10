@@ -63,6 +63,11 @@ namespace SubControlSupplierProject.Model.NewSupplierUserControl.Reactor.Behavio
             else if (baseType == Globals.DbOperations.InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString())
             {
                 property = typeof(ObservableCollection<string>);
+
+                object createdInstance = Activator.CreateInstance(property);
+                ObservableCollection<string> collection =
+                    createdInstance as ObservableCollection<string>;
+
                 ComboBox comboBox = new ComboBox();
                 comboBox.Name = $@"{new string(
                     name.Where(c => !char.IsWhiteSpace(c)).ToArray())}ComboBox";
