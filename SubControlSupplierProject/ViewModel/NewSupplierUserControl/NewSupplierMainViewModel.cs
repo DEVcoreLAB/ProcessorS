@@ -32,7 +32,7 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
             SaveNewSupplierCommand = new RelayCommand(new SaveNewSupplierButtonAction(this).Execute, new SaveNewSupplierButtonPredict(this).Check);
             NewSupplierNameLabel = Langs.Lang.newSupplierName;
 
-            SupplierControlsList = new List<(string name, Control type, Type property)>();
+            SupplierControlsList = new List<(string name, Control type, object data, Type property)>();
         }
 
         private List<(string controlName,string controlType)> schemaControlsList;
@@ -46,8 +46,8 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
             }
         }
 
-        private List<(string name,Control type, Type property)> supplierControlsList;
-        public List<(string name, Control type, Type property)> SupplierControlsList
+        private List<(string name,Control type, object data, Type property)> supplierControlsList;
+        public List<(string name, Control type, object data, Type property)> SupplierControlsList
         {
             get { return supplierControlsList; }
             set 

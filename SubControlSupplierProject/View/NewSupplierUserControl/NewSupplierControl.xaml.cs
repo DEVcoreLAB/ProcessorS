@@ -100,7 +100,7 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
             {
                 StringBuilder sb = new StringBuilder();
 
-                foreach ((string name, Control ctrl, Type property) in newSupplierMainViewModel.SupplierControlsList)
+                foreach ((string name, Control ctrl, object data, Type property) in newSupplierMainViewModel.SupplierControlsList)
                 {
                     // Dodajemy podstawowe info o elemencie
                     sb.AppendLine($"Nazwa: {name}");
@@ -136,7 +136,7 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                             }
                         }
                     }
-                    else if (property == typeof(CheckBox))
+                    else if (property == typeof(bool))
                     {
                         // Przykład: CheckBox trzymający wartość zaznaczenia
                         if (ctrl is CheckBox checkBox)
