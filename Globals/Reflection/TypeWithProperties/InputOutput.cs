@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -28,7 +29,41 @@ namespace Globals.Reflection.TypeWithProperties
                 properties.Add(PropertyWithInotifyPropertyChanged.Genrate(type.name,type.type));
             }
 
-            MessageBox.Show(properties.Count.ToString());
+
+
+
+
+
+            //StringBuilder sb = new StringBuilder();
+            //sb.AppendLine("Zestawienie właściwości wygenerowanych typów:");
+
+            //foreach (Type dynamicType in properties)
+            //{
+            //    sb.AppendLine($"Typ: {dynamicType.Name}");
+
+            //    // Pobieramy publiczne właściwości instancji
+            //    var props = dynamicType.GetProperties(
+            //        BindingFlags.Public | BindingFlags.Instance
+            //    );
+
+            //    if (props.Length == 0)
+            //    {
+            //        sb.AppendLine("  (brak właściwości)");
+            //    }
+            //    else
+            //    {
+            //        foreach (var prop in props)
+            //        {
+            //            sb.AppendLine(
+            //                $"  - Właściwość: {prop.Name}, " +
+            //                $"Typ: {prop.PropertyType.Name}"
+            //            );
+            //        }
+            //    }
+
+            //    sb.AppendLine(new string('-', 40)); // Separator
+            //}
+            //MessageBox.Show(sb.ToString());
 
             return completeType;
         }
