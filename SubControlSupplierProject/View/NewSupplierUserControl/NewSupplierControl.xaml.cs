@@ -38,7 +38,7 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
         public void NewSupplierMainViewModel_ListChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("list changed");
+            //MessageBox.Show("list changed");
             //int rowCount = newSupplierMainViewModel.SupplierControlsList.Count();
 
             //for (int i = 0; i < rowCount; i++)
