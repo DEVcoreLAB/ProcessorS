@@ -39,6 +39,46 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
         public void NewSupplierMainViewModel_ListChanged(object sender, EventArgs e)
         {
+            object instance = newSupplierMainViewModel.DynamicInstanceOfreflectedProperties;
+
+            // Ustawianie wartości w każdej właściwości dynamicznej:
+            foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+            {
+                if (property.PropertyType == typeof(ObservableCollection<string>))
+                {
+                    property.SetValue(
+                        instance,
+                        new ObservableCollection<string>() { "jeden", "dwa" }
+                    );
+                }
+                else if (property.PropertyType == typeof(string))
+                {
+                    property.SetValue(instance, "item");
+                }
+                else if (property.PropertyType == typeof(bool))
+                {
+                    property.SetValue(instance, true);
+                }
+                // Możesz dodać inne typy według potrzeb
+            }
+
+            //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+            //{
+            //    if (property.PropertyType == typeof(ObservableCollection<string>))
+            //    {
+            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties,
+            //            new ObservableCollection<string>() { "jesde", "dwa" });
+            //    }
+            //    else if (property.PropertyType == typeof(string))
+            //    {
+            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties, "item");
+            //    }
+            //    else if (property.PropertyType == typeof(bool))
+            //    { 
+            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties, true);
+            //    }
+            //}
+
 
             //////////////////////////////////////////////////////////////////
             //StringBuilder builder = new StringBuilder();
@@ -98,6 +138,14 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
             //    }
             //}
 
+
+
+
+
+
+
+
+
             //MessageBox.Show("list changed");
             int rowCount = newSupplierMainViewModel.SchemaControlsList.Count();
 
@@ -107,39 +155,91 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                 {
                     Height = GridLength.Auto
                 };
-
                 rowDefinition.Tag = $"RowDefinition_{i}";
-
                 GridForData.RowDefinitions.Add(rowDefinition);
 
                 Grid gridForRow = new Grid();
-                ColumnDefinition columnNameDefinition = new ColumnDefinition()
-                {
-                    Width = new GridLength(1, GridUnitType.Star)
-                };
-                ColumnDefinition columnTypeDefinition = new ColumnDefinition()
-                {
-                    Width = new GridLength(1, GridUnitType.Star)
-                };
-                ColumnDefinition columnButtonDefinition = new ColumnDefinition()
-                {
-                    Width = new GridLength(50)
-                };
-                gridForRow.ColumnDefinitions.Add(columnNameDefinition);
-                gridForRow.ColumnDefinitions.Add(columnTypeDefinition);
-                gridForRow.ColumnDefinitions.Add(columnButtonDefinition);
 
+                // Definiujemy trzy kolumny: etykieta, kontrolka, opcjonalny przycisk
+                gridForRow.ColumnDefinitions.Add(
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                gridForRow.ColumnDefinitions.Add(
+                    new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+                gridForRow.ColumnDefinitions.Add(
+                    new ColumnDefinition { Width = new GridLength(50) });
+
+                // Dodajemy etykietę
                 Label lblSupplierName = new Label();
-                lblSupplierName.Content = newSupplierMainViewModel.SchemaControlsList[i].controlName;
+                lblSupplierName.Content
+                    = newSupplierMainViewModel.SchemaControlsList[i].controlName;
                 Grid.SetColumn(lblSupplierName, 0);
                 gridForRow.Children.Add(lblSupplierName);
 
+                // Tworzymy kontrolkę (TextBox, ComboBox, CheckBox itp.)
+                Control control = CheckForControlType(
+                    newSupplierMainViewModel.SchemaControlsList[i].controlType);
 
-                Control control = CheckForControlType(newSupplierMainViewModel.SchemaControlsList[i].controlType);
+                //Kluczowe: nadajemy kontrolce Name = nazwa właściwości
+                control.Name
+                    = newSupplierMainViewModel.SchemaControlsList[i].controlName.Replace(" ", "_");
+
+
+                ///////////////////////////////////////////////////////////////////////////////
+                // Dodajemy kontrolkę do siatki w kolumnie 1
                 Grid.SetColumn(control, 1);
                 gridForRow.Children.Add(control);
 
+                // Teraz łączymy kontrolkę z właściwością w obiekcie dynamicznym
+                // - Sprawdzamy, czy w ReflectedProperties istnieje właściwość
+                //   o nazwie równej control.Name
+                foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+                {
+                    if (property.Name == control.Name)
+                    {
+                        // Tworzymy Binding, gdzie Path = nazwa właściwości,
+                        // a Source = instancja zawierająca te właściwości
+                        var binding = new Binding(property.Name)
+                        {
+                            Source = newSupplierMainViewModel.DynamicInstanceOfreflectedProperties,
+                            Mode = BindingMode.OneWay, // lub TwoWay – zależnie od potrzeb
+                            UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                        };
 
+                        // Dopasowanie właściwości w kontrolce do typu danych
+                        if (control is TextBox textBox)
+                        {
+                            BindingOperations.SetBinding(
+                                textBox,
+                                TextBox.TextProperty,
+                                binding
+                            );
+                        }
+                        else if (control is ComboBox comboBox)
+                        {
+                            // Jeśli właściwość to np. ObservableCollection<string>,
+                            // wiążemy do ItemsSource
+                            BindingOperations.SetBinding(
+                                comboBox,
+                                ComboBox.ItemsSourceProperty,
+                                binding
+                            );
+
+                            // Jeśli chcesz też wiązać wybrany element, użyj 
+                            // osobnego Binding do SelectedItemProperty
+                            // ...
+                        }
+                        else if (control is CheckBox checkBox)
+                        {
+                            BindingOperations.SetBinding(
+                                checkBox,
+                                CheckBox.IsCheckedProperty,
+                                binding
+                            );
+                        }
+                    }
+                }
+
+                // Dodaj przycisk, jeżeli to np. ComboBox
                 if (control is ComboBox)
                 {
                     Button button = new Button();
@@ -147,18 +247,20 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                     Grid.SetColumn(button, 2);
                     button.Click += (s, e) =>
                     {
-                        
+                        // Logika przycisku
                     };
                     gridForRow.Children.Add(button);
                 }
 
+                // Dopasuj wygląd CheckBox
                 if (control is CheckBox)
-                { 
+                {
                     control.VerticalAlignment = VerticalAlignment.Center;
                 }
 
                 Grid.SetRow(gridForRow, i);
                 GridForData.Children.Add(gridForRow);
+                /////////////////////////////////////////////////////////////////////////
 
             }
         }
@@ -185,7 +287,14 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
         private void UserControl_KeyDown(object sender, KeyEventArgs e)
         {
-          
+            if (e.Key == Key.Escape)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                
+
+                MessageBox.Show(sb.ToString());
+            }
         }
     }
 }
