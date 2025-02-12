@@ -13,6 +13,7 @@ using System.Net.WebSockets;
 using Globals.DbOperations.Supplier.SupplierSchemasReader;
 using SubControlSupplierProject.Model.NewSchemaUserControl;
 using System.Windows;
+using System.Collections.ObjectModel;
 
 namespace SubControlSupplierProject.ViewModel
 {
@@ -23,7 +24,7 @@ namespace SubControlSupplierProject.ViewModel
         public MainViewModel()
         {
             MainModel = new MainModel(this);
-            ListOfSchemas = new System.Collections.ObjectModel.ObservableCollection<string>();
+            ListOfSchemas = new ObservableCollection<string>();
             ViewListOfSchemas = CollectionViewSource.GetDefaultView(ListOfSchemas);
 
             NewSchemaCommand = new RelayCommand
@@ -44,21 +45,24 @@ namespace SubControlSupplierProject.ViewModel
 
             RefreshSchemas();
 
-            ReturnNewSchema.ReturnNewSchemaEvent += (s,e) =>
+            ReturnNewSchema.ReturnNewSchemaEvent += (s, e) =>
             {
-                listOfSchemas.Add(e.First().Item1);
-                CompleteSchemasData.Add(e.First());
+                var newSchema = e.FirstOrDefault();
+                if (newSchema != default)
+                {
+                    ListOfSchemas.Add(newSchema.Item1);
+                    CompleteSchemasData.Add(newSchema);
+                }
             };
 
-
-            ListOfSuppliers = new System.Collections.ObjectModel.ObservableCollection<string>() 
-            { 
-                "Kamix",
-                "Font end developers",
-                "Kojijama",
-                "End points",
-                "Forsaken",
-            };
+            ListOfSuppliers = new ObservableCollection<string>()
+                {
+                    "Kamix",
+                    "Font end developers",
+                    "Kojijama",
+                    "End points",
+                    "Forsaken",
+                };
 
             ViewListOfSuppliers = CollectionViewSource.GetDefaultView(ListOfSuppliers);
         }

@@ -18,10 +18,16 @@ namespace SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSchemasVM
 
             return new Action(() =>
             {
-                mainViewModel.OperationUserControl = new SubControlSupplierProject.View.NewSupplierUserControl.NewSupplierControl
-                (
-                    mainViewModel.CompleteSchemasData.FirstOrDefault(x => x.Item1 == mainViewModel.SelectedSchemaValue).Item2.Select(x => (x.Key, x.Value)).ToList()
-                );
+                var schemaData = mainViewModel.CompleteSchemasData.FirstOrDefault(x => x.Item1 == mainViewModel.SelectedSchemaValue);
+                if (schemaData != default)
+                {
+                    var data = schemaData.Item2.Select(x => (x.Key, x.Value)).ToList();
+                    mainViewModel.OperationUserControl = new SubControlSupplierProject.View.NewSupplierUserControl.NewSupplierControl(data);
+                }
+                else
+                {
+                    MessageBox.Show("Selected schema value not found.");
+                }
             });
         }
     }
