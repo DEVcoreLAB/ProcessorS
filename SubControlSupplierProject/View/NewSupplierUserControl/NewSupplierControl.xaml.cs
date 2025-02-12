@@ -38,6 +38,39 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
         public void NewSupplierMainViewModel_ListChanged(object sender, EventArgs e)
         {
+
+            ////////////////////////////////////////////////////////////////
+            StringBuilder builder = new StringBuilder();
+
+            foreach (var item in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+            {
+                builder.AppendLine(item.Name + " " + item.PropertyType);
+
+            }
+            MessageBox.Show(builder.ToString());
+            ////////////////////////////////////////////////////////////////
+
+            //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+            //{
+            //    // Interesują nas tylko właściwości typu string
+            //    if (property.PropertyType == typeof(string))
+            //    {
+            //        // Ustawiamy wartość "napis"
+            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties, "napis");
+
+            //        // Odczytujemy tę wartość z instancji
+            //        var currentValue = property.GetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties);
+
+            //        // Sprawdzamy, czy faktycznie jest to string i czy ma oczekiwaną treść
+            //        if (currentValue is string stringValue && stringValue == "napis")
+            //        {
+            //            // Tu możesz dodać kod potwierdzający powodzenie
+            //            // np. zapis do logu lub inna akcja
+            //            MessageBox.Show(currentValue.ToString());
+            //        }
+            //    }
+            //}
+
             //MessageBox.Show("list changed");
             //int rowCount = newSupplierMainViewModel.SupplierControlsList.Count();
 

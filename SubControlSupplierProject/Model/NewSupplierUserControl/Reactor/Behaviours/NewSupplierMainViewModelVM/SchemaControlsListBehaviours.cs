@@ -23,7 +23,9 @@ namespace SubControlSupplierProject.Model.NewSupplierUserControl.Reactor.Behavio
             {
                 Globals.Reflection.TypeWithProperties.InputOutput inputOutput =
                  new(mainViewModel.SchemaControlsList);
-                Type completeType = inputOutput.GetCompleteType();
+                mainViewModel.ReflectedProperties = inputOutput.GetCompleteType();
+
+                mainViewModel.DynamicInstanceOfreflectedProperties = Activator.CreateInstance(mainViewModel.ReflectedProperties);
 
                 mainViewModel.ListChangedInvoke();
             };

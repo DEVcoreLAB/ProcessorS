@@ -44,5 +44,20 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
                 OnPropertyChanged(nameof(SchemaControlsList));
             }
         }
+
+        private Type reflectedProperties;
+        public Type ReflectedProperties
+        {
+            get { return reflectedProperties; }
+            set { reflectedProperties = value; }
+        }
+
+        private object dynamicInstanceOfreflectedProperties;
+        public object DynamicInstanceOfreflectedProperties
+        {
+            get { return dynamicInstanceOfreflectedProperties; }
+            set { dynamicInstanceOfreflectedProperties = value; }
+        }
+
     }
 }
