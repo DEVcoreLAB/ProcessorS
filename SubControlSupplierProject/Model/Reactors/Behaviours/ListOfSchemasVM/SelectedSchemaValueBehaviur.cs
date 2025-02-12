@@ -16,13 +16,13 @@ namespace SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSchemasVM
         {
             MainViewModel mainViewModel = viewModel as MainViewModel;
 
-            return () =>
+            return new Action(() =>
             {
                 mainViewModel.OperationUserControl = new SubControlSupplierProject.View.NewSupplierUserControl.NewSupplierControl
                 (
                     mainViewModel.CompleteSchemasData.FirstOrDefault(x => x.Item1 == mainViewModel.SelectedSchemaValue).Item2.Select(x => (x.Key, x.Value)).ToList()
                 );
-            };
+            });
         }
     }
 }

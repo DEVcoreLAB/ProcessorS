@@ -46,8 +46,8 @@ namespace SubControlSupplierProject.ViewModel
 
             ReturnNewSchema.ReturnNewSchemaEvent += (s,e) =>
             {
-                listOfSchemas.Add(e[0].Item1);
-                CompleteSchemasData.Add(e[0]);
+                listOfSchemas.Add(e.First().Item1);
+                CompleteSchemasData.Add(e.First());
             };
 
 
