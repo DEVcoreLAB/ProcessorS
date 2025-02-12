@@ -153,7 +153,7 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
                         if (collection != null)
                         {
-                            collection.Add("Nowy element");
+                            collection.Add($@"{DateTime.Now.TimeOfDay}");
                         }
                         else
                         {
