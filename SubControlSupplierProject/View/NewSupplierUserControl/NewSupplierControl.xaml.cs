@@ -1,6 +1,7 @@
 ﻿using Globals.MyDialogsAndWindows.MyMessagebox;
 using SubControlSupplierProject.ViewModel.NewSupplierUserControl;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -39,17 +40,43 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
         public void NewSupplierMainViewModel_ListChanged(object sender, EventArgs e)
         {
 
-            ////////////////////////////////////////////////////////////////
-            StringBuilder builder = new StringBuilder();
+            //////////////////////////////////////////////////////////////////
+            //StringBuilder builder = new StringBuilder();
 
-            foreach (var item in newSupplierMainViewModel.ReflectedProperties.GetProperties())
-            {
-                builder.AppendLine(item.Name + " " + item.PropertyType);
+            //foreach (var item in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+            //{
+            //    builder.AppendLine(item.Name + " " + item.PropertyType);
 
-            }
-            MessageBox.Show(builder.ToString());
-            ////////////////////////////////////////////////////////////////
+            //}
+            //MessageBox.Show(builder.ToString());
+            //////////////////////////////////////////////////////////////////
 
+
+            //check observable
+            //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+            //{
+            //    if (property.PropertyType == typeof(ObservableCollection<string>))
+            //    {
+            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties, 
+            //            new ObservableCollection<string>() { "jesde", "dwa" });
+            //    }
+            //    var currentValue = property.GetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties);
+
+            //    if (currentValue is IEnumerable enumerable)
+            //    { 
+            //        StringBuilder sb = new StringBuilder();
+            //        foreach (var item in enumerable)
+            //        {
+            //            sb.AppendLine(item.ToString());
+            //        }
+            //        MessageBox.Show(sb.ToString());
+            //    }
+            //}
+            
+            
+
+
+            ////check string
             //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
             //{
             //    // Interesują nas tylko właściwości typu string
