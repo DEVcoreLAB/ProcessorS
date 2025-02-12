@@ -47,12 +47,9 @@ namespace SubControlSupplierProject.ViewModel
 
             ReturnNewSchema.ReturnNewSchemaEvent += (s, e) =>
             {
-                var newSchema = e.FirstOrDefault();
-                if (newSchema != default)
-                {
-                    ListOfSchemas.Add(newSchema.Item1);
-                    CompleteSchemasData.Add(newSchema);
-                }
+                CompleteSchemasData.Clear();
+                ListOfSchemas.Clear();
+                RefreshSchemas();
             };
 
             ListOfSuppliers = new ObservableCollection<string>()
