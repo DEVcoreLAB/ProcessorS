@@ -72,8 +72,8 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
             //        MessageBox.Show(sb.ToString());
             //    }
             //}
-            
-            
+
+
 
 
             ////check string
@@ -99,75 +99,88 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
             //}
 
             //MessageBox.Show("list changed");
-            //int rowCount = newSupplierMainViewModel.SupplierControlsList.Count();
+            int rowCount = newSupplierMainViewModel.SchemaControlsList.Count();
 
-            //for (int i = 0; i < rowCount; i++)
-            //{
-            //    RowDefinition rowDefinition = new RowDefinition
-            //    {
-            //        Height = GridLength.Auto
-            //    };
+            for (int i = 0; i < rowCount; i++)
+            {
+                RowDefinition rowDefinition = new RowDefinition
+                {
+                    Height = GridLength.Auto
+                };
 
-            //    rowDefinition.Tag = $"RowDefinition_{i}";
+                rowDefinition.Tag = $"RowDefinition_{i}";
 
-            //    GridForData.RowDefinitions.Add(rowDefinition);
+                GridForData.RowDefinitions.Add(rowDefinition);
 
-            //    Grid gridForRow = new Grid();
-            //    ColumnDefinition columnNameDefinition = new ColumnDefinition()
-            //    {
-            //        Width = new GridLength(1, GridUnitType.Star)
-            //    };
-            //    ColumnDefinition columnTypeDefinition = new ColumnDefinition()
-            //    {
-            //        Width = new GridLength(1, GridUnitType.Star)
-            //    };
-            //    ColumnDefinition columnButtonDefinition = new ColumnDefinition()
-            //    {
-            //        Width = new GridLength(50)
-            //    };
-            //    gridForRow.ColumnDefinitions.Add(columnNameDefinition);
-            //    gridForRow.ColumnDefinitions.Add(columnTypeDefinition);
-            //    gridForRow.ColumnDefinitions.Add(columnButtonDefinition);
+                Grid gridForRow = new Grid();
+                ColumnDefinition columnNameDefinition = new ColumnDefinition()
+                {
+                    Width = new GridLength(1, GridUnitType.Star)
+                };
+                ColumnDefinition columnTypeDefinition = new ColumnDefinition()
+                {
+                    Width = new GridLength(1, GridUnitType.Star)
+                };
+                ColumnDefinition columnButtonDefinition = new ColumnDefinition()
+                {
+                    Width = new GridLength(50)
+                };
+                gridForRow.ColumnDefinitions.Add(columnNameDefinition);
+                gridForRow.ColumnDefinitions.Add(columnTypeDefinition);
+                gridForRow.ColumnDefinitions.Add(columnButtonDefinition);
 
-            //    Label lblSupplierName = new Label();
-            //    lblSupplierName.Content = newSupplierMainViewModel.SupplierControlsList[i].name;
-            //    Grid.SetColumn(lblSupplierName, 0);
-            //    gridForRow.Children.Add(lblSupplierName);
-
-
-            //    Control control = newSupplierMainViewModel.SupplierControlsList[i].type;
-            //    Grid.SetColumn(control, 1);
-            //    gridForRow.Children.Add(control);
+                Label lblSupplierName = new Label();
+                lblSupplierName.Content = newSupplierMainViewModel.SchemaControlsList[i].controlName;
+                Grid.SetColumn(lblSupplierName, 0);
+                gridForRow.Children.Add(lblSupplierName);
 
 
-            //    if (newSupplierMainViewModel.SupplierControlsList[i].type is ComboBox)
-            //    {
-            //        Button button = new Button();
-            //        button.Content = "ok";
-            //        Grid.SetColumn(button, 2);
-            //        button.Click += (s, e) =>
-            //        {
-            //            // 'data' przechowuje naszą kolekcję ObservableCollection<string>
-            //            var data = newSupplierMainViewModel
-            //                .SupplierControlsList[i - 1].data;
-
-            //            // Bezpieczne rzutowanie
-            //            if (data is ObservableCollection<string> collection)
-            //            {
-            //                collection.Add("Pozycja 1");
-            //                collection.Add("Pozycja 2");
-            //                collection.Add("Pozycja 3");
-            //            }
-            //        };
-            //        gridForRow.Children.Add(button);
-            //    }
+                Control control = CheckForControlType(newSupplierMainViewModel.SchemaControlsList[i].controlType);
+                Grid.SetColumn(control, 1);
+                gridForRow.Children.Add(control);
 
 
+                if (control is ComboBox)
+                {
+                    Button button = new Button();
+                    button.Content = "ok";
+                    Grid.SetColumn(button, 2);
+                    button.Click += (s, e) =>
+                    {
+                        
+                    };
+                    gridForRow.Children.Add(button);
+                }
 
-            //    Grid.SetRow(gridForRow,i);
-            //    GridForData.Children.Add(gridForRow);
+                if (control is CheckBox)
+                { 
+                    control.VerticalAlignment = VerticalAlignment.Center;
+                }
 
-            //}
+                Grid.SetRow(gridForRow, i);
+                GridForData.Children.Add(gridForRow);
+
+            }
+        }
+
+        private Control CheckForControlType(string controlType)
+        {
+            Control control = null;
+
+            if (controlType == Globals.DbOperations.InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString())
+            {
+                control = new ComboBox();
+            }
+            else if (controlType == Globals.DbOperations.InvariantTypeOfControls.ControlTypes.TextBoxControl.ToString())
+            {
+                control = new TextBox();
+            }
+            else if (controlType == Globals.DbOperations.InvariantTypeOfControls.ControlTypes.CheckBoxControl.ToString())
+            {
+                control = new CheckBox();
+            }
+
+            return control;
         }
 
         private void UserControl_KeyDown(object sender, KeyEventArgs e)
