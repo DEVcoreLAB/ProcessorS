@@ -26,7 +26,7 @@ namespace SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSchemasVM
                 }
                 else
                 {
-                    MessageBox.Show("Selected schema value not found.");
+                    return;
                 }
             });
         }
