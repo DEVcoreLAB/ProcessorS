@@ -28,7 +28,7 @@ namespace Globals.Reflection.TypeWithProperties
             // property with inotifypropertychanged
             foreach (var type in inputValues)
             {
-                properties.Add(PropertyWithInotifyPropertyChanged.Genrate(type.name,type.type));
+                properties.Add(PropertyWithInotifyPropertyChanged.Genrate(type.name.Replace(" ", "_"), type.type));
             }
 
             var typeBuilder = new SimpleTypeBuilder()._typeBuilder;
