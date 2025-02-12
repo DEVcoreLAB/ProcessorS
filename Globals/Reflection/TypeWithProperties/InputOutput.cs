@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Globals.Reflection.TypeWithProperties.PropertyAsType;
+using Globals.Reflection.TypeWithProperties.PropertyAsType.Builder;
 
 namespace Globals.Reflection.TypeWithProperties
 {
@@ -13,6 +14,7 @@ namespace Globals.Reflection.TypeWithProperties
     {
         private List<(string name, string type)> inputValues;
         private List<Type> properties = new();
+        public Type completeType {  get; }
 
         public InputOutput(List<(string name, string type)> inputValues)
         {
@@ -29,41 +31,19 @@ namespace Globals.Reflection.TypeWithProperties
                 properties.Add(PropertyWithInotifyPropertyChanged.Genrate(type.name,type.type));
             }
 
+            var typeBuilder = new SimpleTypeBuilder()._typeBuilder;
 
+            foreach (var type in properties)
+            {
+                foreach (var property in type.GetProperties())
+                {
+                    SimplePropertyGenerator
+                        .CreateAutoImplementedProperty(typeBuilder, property.Name, property.PropertyType);
+                }
+            }
 
-
-
-
-            //StringBuilder sb = new StringBuilder();
-            //sb.AppendLine("Zestawienie właściwości wygenerowanych typów:");
-
-            //foreach (Type dynamicType in properties)
-            //{
-            //    sb.AppendLine($"Typ: {dynamicType.Name}");
-
-            //    // Pobieramy publiczne właściwości instancji
-            //    var props = dynamicType.GetProperties(
-            //        BindingFlags.Public | BindingFlags.Instance
-            //    );
-
-            //    if (props.Length == 0)
-            //    {
-            //        sb.AppendLine("  (brak właściwości)");
-            //    }
-            //    else
-            //    {
-            //        foreach (var prop in props)
-            //        {
-            //            sb.AppendLine(
-            //                $"  - Właściwość: {prop.Name}, " +
-            //                $"Typ: {prop.PropertyType.Name}"
-            //            );
-            //        }
-            //    }
-
-            //    sb.AppendLine(new string('-', 40)); // Separator
-            //}
-            //MessageBox.Show(sb.ToString());
+            Type resultingType = typeBuilder.CreateType();
+            completeType = resultingType;
 
             return completeType;
         }

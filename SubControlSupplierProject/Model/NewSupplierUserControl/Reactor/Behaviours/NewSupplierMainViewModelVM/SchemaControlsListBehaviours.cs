@@ -23,8 +23,7 @@ namespace SubControlSupplierProject.Model.NewSupplierUserControl.Reactor.Behavio
             {
                 Globals.Reflection.TypeWithProperties.InputOutput inputOutput =
                  new(mainViewModel.SchemaControlsList);
-                inputOutput.GetCompleteType();
-
+                Type completeType = inputOutput.GetCompleteType();
 
                 mainViewModel.ListChangedInvoke();
             };
