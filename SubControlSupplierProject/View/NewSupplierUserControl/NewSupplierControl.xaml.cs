@@ -39,6 +39,21 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
         public void NewSupplierMainViewModel_ListChanged(object sender, EventArgs e)
         {
+            foreach (var item in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+            {
+                if (item.PropertyType == typeof(ObservableCollection<string>))
+                {
+                    var newCollection = new ObservableCollection<string>();
+
+
+                    item.SetValue(
+                        newSupplierMainViewModel.DynamicInstanceOfreflectedProperties,
+                        newCollection
+                    );
+                }
+            }
+
+
             int rowCount = newSupplierMainViewModel.SchemaControlsList.Count();
 
             for (int i = 0; i < rowCount; i++)
@@ -114,14 +129,36 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                     }
                 }
 
-                if (control is ComboBox)
+                if (control is ComboBox box)
                 {
                     Button button = new Button();
                     button.Content = "ok";
                     Grid.SetColumn(button, 2);
                     button.Click += (s, e) =>
                     {
+                        var prop = newSupplierMainViewModel
+                            .ReflectedProperties
+                            .GetProperties()
+                            .FirstOrDefault(x => x.Name == box.Name);
 
+                        if (prop == null)
+                        {
+                            MessageBox.Show("Nie znaleziono właściwości o nazwie: " + box.Name);
+                            return;
+                        }
+
+                        var collection = prop.GetValue(
+                            newSupplierMainViewModel.DynamicInstanceOfreflectedProperties
+                        ) as ObservableCollection<string>;
+
+                        if (collection != null)
+                        {
+                            collection.Add("Nowy element");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Collection is null");
+                        }
                     };
                     gridForRow.Children.Add(button);
                 }
