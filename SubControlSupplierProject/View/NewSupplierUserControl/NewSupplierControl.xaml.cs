@@ -39,28 +39,28 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
         public void NewSupplierMainViewModel_ListChanged(object sender, EventArgs e)
         {
-            object instance = newSupplierMainViewModel.DynamicInstanceOfreflectedProperties;
+            //object instance = newSupplierMainViewModel.DynamicInstanceOfreflectedProperties;
 
-            // Ustawianie wartości w każdej właściwości dynamicznej:
-            foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
-            {
-                if (property.PropertyType == typeof(ObservableCollection<string>))
-                {
-                    property.SetValue(
-                        instance,
-                        new ObservableCollection<string>() { "jeden", "dwa" }
-                    );
-                }
-                else if (property.PropertyType == typeof(string))
-                {
-                    property.SetValue(instance, "item");
-                }
-                else if (property.PropertyType == typeof(bool))
-                {
-                    property.SetValue(instance, true);
-                }
-                // Możesz dodać inne typy według potrzeb
-            }
+            //// Ustawianie wartości w każdej właściwości dynamicznej:
+            //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+            //{
+            //    if (property.PropertyType == typeof(ObservableCollection<string>))
+            //    {
+            //        property.SetValue(
+            //            instance,
+            //            new ObservableCollection<string>() { "jeden", "dwa" }
+            //        );
+            //    }
+            //    else if (property.PropertyType == typeof(string))
+            //    {
+            //        property.SetValue(instance, "item");
+            //    }
+            //    else if (property.PropertyType == typeof(bool))
+            //    {
+            //        property.SetValue(instance, true);
+            //    }
+            //    // Możesz dodać inne typy według potrzeb
+            //}
 
             //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
             //{
@@ -201,7 +201,7 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                         var binding = new Binding(property.Name)
                         {
                             Source = newSupplierMainViewModel.DynamicInstanceOfreflectedProperties,
-                            Mode = BindingMode.OneWay, // lub TwoWay – zależnie od potrzeb
+                            Mode = BindingMode.TwoWay, // lub TwoWay – zależnie od potrzeb
                             UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
                         };
 
@@ -287,12 +287,54 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
         private void UserControl_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Escape)
+            if (e.Key == Key.F1)
             {
+                object instance = newSupplierMainViewModel.DynamicInstanceOfreflectedProperties;
+
                 StringBuilder sb = new StringBuilder();
 
-                
+                foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
+                {
+                    if (property.PropertyType == typeof(ObservableCollection<string>))
+                    {
+                        StringBuilder stringBuilder = new StringBuilder();
 
+                        // Pobieramy wartość właściwości z obiektu 'instance'.
+                        // Metoda GetValue() zwraca 'object', więc rzutujemy na właściwy typ.
+                        var myCollection = property.GetValue(instance)
+                                           as ObservableCollection<string>;
+
+                        // Sprawdzamy, czy się udało
+                        if (myCollection != null)
+                        {
+                            // Tutaj możesz wykorzystać 'myCollection' i 'stringBuilder'
+                            // np. zbudować ciąg znaków z elementów kolekcji
+                            foreach (var item in myCollection)
+                            {
+                                stringBuilder.AppendLine(item);
+                            }
+
+                            // Ewentualnie dalsza logika...
+                        }
+                        sb.AppendLine(stringBuilder.ToString());
+                    }
+                    else if (property.PropertyType == typeof(string))
+                    {
+                        var value = property.GetValue(instance);
+                        if (value != null)
+                        {
+                            sb.AppendLine(value.ToString());
+                        }
+                        else
+                        {
+                            sb.AppendLine("wartość jest null");
+                        }
+                    }
+                    else if (property.PropertyType == typeof(bool))
+                    {
+                        sb.AppendLine(property.GetValue(instance).ToString());
+                    }
+                }
                 MessageBox.Show(sb.ToString());
             }
         }
