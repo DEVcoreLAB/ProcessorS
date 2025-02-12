@@ -39,114 +39,6 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
         public void NewSupplierMainViewModel_ListChanged(object sender, EventArgs e)
         {
-            //object instance = newSupplierMainViewModel.DynamicInstanceOfreflectedProperties;
-
-            //// Ustawianie wartości w każdej właściwości dynamicznej:
-            //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
-            //{
-            //    if (property.PropertyType == typeof(ObservableCollection<string>))
-            //    {
-            //        property.SetValue(
-            //            instance,
-            //            new ObservableCollection<string>() { "jeden", "dwa" }
-            //        );
-            //    }
-            //    else if (property.PropertyType == typeof(string))
-            //    {
-            //        property.SetValue(instance, "item");
-            //    }
-            //    else if (property.PropertyType == typeof(bool))
-            //    {
-            //        property.SetValue(instance, true);
-            //    }
-            //    // Możesz dodać inne typy według potrzeb
-            //}
-
-            //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
-            //{
-            //    if (property.PropertyType == typeof(ObservableCollection<string>))
-            //    {
-            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties,
-            //            new ObservableCollection<string>() { "jesde", "dwa" });
-            //    }
-            //    else if (property.PropertyType == typeof(string))
-            //    {
-            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties, "item");
-            //    }
-            //    else if (property.PropertyType == typeof(bool))
-            //    { 
-            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties, true);
-            //    }
-            //}
-
-
-            //////////////////////////////////////////////////////////////////
-            //StringBuilder builder = new StringBuilder();
-
-            //foreach (var item in newSupplierMainViewModel.ReflectedProperties.GetProperties())
-            //{
-            //    builder.AppendLine(item.Name + " " + item.PropertyType);
-
-            //}
-            //MessageBox.Show(builder.ToString());
-            //////////////////////////////////////////////////////////////////
-
-
-            //check observable
-            //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
-            //{
-            //    if (property.PropertyType == typeof(ObservableCollection<string>))
-            //    {
-            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties, 
-            //            new ObservableCollection<string>() { "jesde", "dwa" });
-            //    }
-            //    var currentValue = property.GetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties);
-
-            //    if (currentValue is IEnumerable enumerable)
-            //    { 
-            //        StringBuilder sb = new StringBuilder();
-            //        foreach (var item in enumerable)
-            //        {
-            //            sb.AppendLine(item.ToString());
-            //        }
-            //        MessageBox.Show(sb.ToString());
-            //    }
-            //}
-
-
-
-
-            ////check string
-            //foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
-            //{
-            //    // Interesują nas tylko właściwości typu string
-            //    if (property.PropertyType == typeof(string))
-            //    {
-            //        // Ustawiamy wartość "napis"
-            //        property.SetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties, "napis");
-
-            //        // Odczytujemy tę wartość z instancji
-            //        var currentValue = property.GetValue(newSupplierMainViewModel.DynamicInstanceOfreflectedProperties);
-
-            //        // Sprawdzamy, czy faktycznie jest to string i czy ma oczekiwaną treść
-            //        if (currentValue is string stringValue && stringValue == "napis")
-            //        {
-            //            // Tu możesz dodać kod potwierdzający powodzenie
-            //            // np. zapis do logu lub inna akcja
-            //            MessageBox.Show(currentValue.ToString());
-            //        }
-            //    }
-            //}
-
-
-
-
-
-
-
-
-
-            //MessageBox.Show("list changed");
             int rowCount = newSupplierMainViewModel.SchemaControlsList.Count();
 
             for (int i = 0; i < rowCount; i++)
@@ -160,7 +52,6 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
                 Grid gridForRow = new Grid();
 
-                // Definiujemy trzy kolumny: etykieta, kontrolka, opcjonalny przycisk
                 gridForRow.ColumnDefinitions.Add(
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 gridForRow.ColumnDefinitions.Add(
@@ -168,44 +59,33 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                 gridForRow.ColumnDefinitions.Add(
                     new ColumnDefinition { Width = new GridLength(50) });
 
-                // Dodajemy etykietę
                 Label lblSupplierName = new Label();
                 lblSupplierName.Content
                     = newSupplierMainViewModel.SchemaControlsList[i].controlName;
                 Grid.SetColumn(lblSupplierName, 0);
                 gridForRow.Children.Add(lblSupplierName);
 
-                // Tworzymy kontrolkę (TextBox, ComboBox, CheckBox itp.)
                 Control control = CheckForControlType(
                     newSupplierMainViewModel.SchemaControlsList[i].controlType);
 
-                //Kluczowe: nadajemy kontrolce Name = nazwa właściwości
                 control.Name
                     = newSupplierMainViewModel.SchemaControlsList[i].controlName.Replace(" ", "_");
 
-
-                ///////////////////////////////////////////////////////////////////////////////
-                // Dodajemy kontrolkę do siatki w kolumnie 1
                 Grid.SetColumn(control, 1);
                 gridForRow.Children.Add(control);
 
-                // Teraz łączymy kontrolkę z właściwością w obiekcie dynamicznym
-                // - Sprawdzamy, czy w ReflectedProperties istnieje właściwość
-                //   o nazwie równej control.Name
+                // binding
                 foreach (var property in newSupplierMainViewModel.ReflectedProperties.GetProperties())
                 {
                     if (property.Name == control.Name)
                     {
-                        // Tworzymy Binding, gdzie Path = nazwa właściwości,
-                        // a Source = instancja zawierająca te właściwości
                         var binding = new Binding(property.Name)
                         {
                             Source = newSupplierMainViewModel.DynamicInstanceOfreflectedProperties,
-                            Mode = BindingMode.TwoWay, // lub TwoWay – zależnie od potrzeb
+                            Mode = BindingMode.TwoWay, 
                             UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
                         };
 
-                        // Dopasowanie właściwości w kontrolce do typu danych
                         if (control is TextBox textBox)
                         {
                             BindingOperations.SetBinding(
@@ -216,17 +96,12 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                         }
                         else if (control is ComboBox comboBox)
                         {
-                            // Jeśli właściwość to np. ObservableCollection<string>,
-                            // wiążemy do ItemsSource
                             BindingOperations.SetBinding(
                                 comboBox,
                                 ComboBox.ItemsSourceProperty,
                                 binding
                             );
 
-                            // Jeśli chcesz też wiązać wybrany element, użyj 
-                            // osobnego Binding do SelectedItemProperty
-                            // ...
                         }
                         else if (control is CheckBox checkBox)
                         {
@@ -239,7 +114,6 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                     }
                 }
 
-                // Dodaj przycisk, jeżeli to np. ComboBox
                 if (control is ComboBox)
                 {
                     Button button = new Button();
@@ -247,12 +121,11 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                     Grid.SetColumn(button, 2);
                     button.Click += (s, e) =>
                     {
-                        // Logika przycisku
+
                     };
                     gridForRow.Children.Add(button);
                 }
 
-                // Dopasuj wygląd CheckBox
                 if (control is CheckBox)
                 {
                     control.VerticalAlignment = VerticalAlignment.Center;
@@ -260,8 +133,6 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
 
                 Grid.SetRow(gridForRow, i);
                 GridForData.Children.Add(gridForRow);
-                /////////////////////////////////////////////////////////////////////////
-
             }
         }
 
@@ -299,22 +170,15 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                     {
                         StringBuilder stringBuilder = new StringBuilder();
 
-                        // Pobieramy wartość właściwości z obiektu 'instance'.
-                        // Metoda GetValue() zwraca 'object', więc rzutujemy na właściwy typ.
                         var myCollection = property.GetValue(instance)
                                            as ObservableCollection<string>;
 
-                        // Sprawdzamy, czy się udało
                         if (myCollection != null)
                         {
-                            // Tutaj możesz wykorzystać 'myCollection' i 'stringBuilder'
-                            // np. zbudować ciąg znaków z elementów kolekcji
                             foreach (var item in myCollection)
                             {
                                 stringBuilder.AppendLine(item);
                             }
-
-                            // Ewentualnie dalsza logika...
                         }
                         sb.AppendLine(stringBuilder.ToString());
                     }
