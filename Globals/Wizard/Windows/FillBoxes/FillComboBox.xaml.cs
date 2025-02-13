@@ -28,7 +28,7 @@ namespace Globals.Wizard.Windows.FillBoxes
             InitializeComponent();
             this.DataContext = this;
             this.refData = refData;
-            LocalData = new ObservableCollection<DataGridRow>();
+            LocalData = new ObservableCollection<NewDataGridRow>();
             this.Owner = Application.Current.MainWindow;
 
             SaveButtonForeground = Globals.Graphics.SetProperButtonBackground.Set
@@ -37,6 +37,13 @@ namespace Globals.Wizard.Windows.FillBoxes
                    Globals.Graphics.Uris.SaveSettingsEnabled,
                    Globals.Graphics.Uris.SaveSettingsDisabled
                );
+
+            foreach (var item in refData)
+            {
+                var newRow = new NewDataGridRow();
+                newRow.value = item;
+                LocalData.Add(newRow);
+            }
         }
 
         private BitmapImage saveButtonForegroundar;
@@ -47,8 +54,8 @@ namespace Globals.Wizard.Windows.FillBoxes
         }
 
 
-        private ObservableCollection<DataGridRow> localData;
-        public ObservableCollection<DataGridRow> LocalData
+        private ObservableCollection<NewDataGridRow> localData;
+        public ObservableCollection<NewDataGridRow> LocalData
         {
             get { return localData; }
             set { localData = value; }
@@ -57,7 +64,8 @@ namespace Globals.Wizard.Windows.FillBoxes
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            foreach (DataGridRow row in LocalData)
+            refData.Clear();
+            foreach (NewDataGridRow row in LocalData)
             {
                 if (!string.IsNullOrEmpty(row.value))
                 {
@@ -68,7 +76,7 @@ namespace Globals.Wizard.Windows.FillBoxes
         }
     }
 
-    public class DataGridRow
+    public class NewDataGridRow
     {
         public string value { get; set; }
     }
