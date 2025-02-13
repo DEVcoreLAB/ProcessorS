@@ -132,7 +132,27 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                 if (control is ComboBox box)
                 {
                     Button button = new Button();
-                    button.Content = "ok";
+                    button.Height = 25;
+                    var bitmap = Globals.Graphics.SetProperButtonBackground.Set
+                        (
+                            true,
+                            Globals.Graphics.Uris.AddEnabled,
+                            Globals.Graphics.Uris.AddDisabled
+                        );
+
+                    var image = new Image
+                    {
+                        Source = bitmap,
+                        Width = 16,
+                        Height = 16,
+                        Margin = new Thickness(0, 0, 5, 0) // mały odstęp od tekstu
+                    };
+
+                    button.Content = image;
+
+                    button.Background = new SolidColorBrush( Colors.Transparent );
+                    button.BorderThickness = new Thickness(0);
+
                     Grid.SetColumn(button, 2);
                     button.Click += (s, e) =>
                     {
@@ -151,14 +171,11 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                             newSupplierMainViewModel.DynamicInstanceOfreflectedProperties
                         ) as ObservableCollection<string>;
 
-                        if (collection != null)
-                        {
-                            collection.Add($@"{DateTime.Now.TimeOfDay}");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Collection is null");
-                        }
+                        Globals.Wizard.Windows.FillBoxes.FillComboBox fillComboBox = 
+                            new Globals.Wizard.Windows.FillBoxes.FillComboBox(collection);
+                        fillComboBox.ShowDialog();
+
+                        
                     };
                     gridForRow.Children.Add(button);
                 }
