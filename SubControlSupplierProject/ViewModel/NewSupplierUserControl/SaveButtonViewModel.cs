@@ -23,5 +23,12 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
 			}
 		}
 
+		private bool nameValidationbPredict;
+		public bool NameValidationbPredict
+		{
+			get { return nameValidationbPredict; }
+			set { nameValidationbPredict = value; }
+		}
+
 	}
 }

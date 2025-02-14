@@ -17,7 +17,7 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl.Command.Sav
 
         public bool Check()
         {
-            if (string.IsNullOrEmpty(newSupplierMainViewModel.NewSupplierName))
+            if (string.IsNullOrEmpty(newSupplierMainViewModel.NewSupplierName) || !newSupplierMainViewModel.NameValidationbPredict)
             {
                 newSupplierMainViewModel.SaveNewSupplierButtonForeground = Globals.Graphics.SetProperButtonBackground.Set
                 (

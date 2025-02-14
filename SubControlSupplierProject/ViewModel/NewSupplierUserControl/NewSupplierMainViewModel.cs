@@ -33,6 +33,7 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
             SaveNewSupplierCommand = new RelayCommand(new SaveNewSupplierButtonAction(this).Execute, new SaveNewSupplierButtonPredict(this).Check);
             NewSupplierNameLabel = Langs.Lang.newSupplierName;
             NewSupplierNameForeground = new System.Windows.Media.SolidColorBrush(Colors.Black);
+            nameValidationbPredict = false;
         }
 
         public IEnumerable<string> existingSuppliers { get; set; }

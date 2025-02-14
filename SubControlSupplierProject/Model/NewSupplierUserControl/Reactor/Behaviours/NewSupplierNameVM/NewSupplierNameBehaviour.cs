@@ -28,11 +28,13 @@ namespace SubControlSupplierProject.Model.NewSupplierUserControl.Reactor.Behavio
                 {
                     mainViewModel.NewSupplierNameForeground =
                         new System.Windows.Media.SolidColorBrush(Colors.Red);
+                    mainViewModel.NameValidationbPredict = reservedResult._isNameInique;
                 }
                 else
                 {
                     mainViewModel.NewSupplierNameForeground =
                         new System.Windows.Media.SolidColorBrush(Colors.Black);
+                    mainViewModel.NameValidationbPredict = reservedResult._isNameInique;
                 }
             });
         }
