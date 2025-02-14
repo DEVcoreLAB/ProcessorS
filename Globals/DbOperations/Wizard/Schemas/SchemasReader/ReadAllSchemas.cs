@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Globals.DbOperations.Supplier.SupplierSchemasReader
+namespace Globals.DbOperations.Wizard.Schemas.SchemasReader
 {
     public class ReadAllSchemas
     {

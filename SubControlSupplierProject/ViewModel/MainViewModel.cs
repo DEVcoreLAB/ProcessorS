@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using Globals;
 using System.Net.WebSockets;
-using Globals.DbOperations.Supplier.SupplierSchemasReader;
 using SubControlSupplierProject.Model.NewSchemaUserControl;
 using System.Windows;
 using System.Collections.ObjectModel;
+using Globals.DbOperations.Wizard.Schemas.SchemasReader;
 
 namespace SubControlSupplierProject.ViewModel
 {

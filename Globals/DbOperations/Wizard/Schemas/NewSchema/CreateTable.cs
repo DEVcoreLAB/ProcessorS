@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Globals.DbOperations.Supplier.SupplierNewSchemaTable
+namespace Globals.DbOperations.Wizard.Schemas.NewSchema
 {
     public class CreateTable
     {
@@ -72,7 +72,7 @@ namespace Globals.DbOperations.Supplier.SupplierNewSchemaTable
                 }
             }
             catch (Exception ex)
-            {      
+            {
                 MessageBox.Show($"Error while create table new supplier schema '{_tableName}': {ex.Message}");
                 L4N.L4NDefault.Error($"Error while create table new supplier schema '{_tableName}': {ex.Message}");
             }
