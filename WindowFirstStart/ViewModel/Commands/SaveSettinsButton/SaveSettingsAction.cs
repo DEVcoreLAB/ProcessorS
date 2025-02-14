@@ -31,8 +31,10 @@ namespace WindowFirstStart.ViewModel.Commands.SaveSettinsButton
             Thread.CurrentThread.CurrentCulture = new CultureInfo($"{SettingCurrentLanguage.Default.CurrentLanguageCode}");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo($"{SettingCurrentLanguage.Default.CurrentLanguageCode}");
 
-            Globals.DbOperations.CresteNewDb.CreateDb createDb = new Globals.DbOperations.CresteNewDb.CreateDb();
-            createDb.Create(Globals.DbOperations.DbasesNames.DbNames.SupplierSchemas.ToString());
+            Globals.DbOperations.CresteNewDb.CreateDb createDB = new Globals.DbOperations.CresteNewDb.CreateDb();
+            createDB.Create(Globals.DbOperations.DbasesNames.DbNames.SupplierSchemas.ToString());
+            createDB.Create(Globals.DbOperations.DbasesNames.DbNames.SuppliersList.ToString());
+            
 
             Application.Current.MainWindow.Show();
 

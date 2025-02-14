@@ -8,6 +8,7 @@ namespace Globals.DbOperations.DbasesNames
 {
     public enum DbNames
     {
-        SupplierSchemas
+        SupplierSchemas,
+        SuppliersList
     }
 }
