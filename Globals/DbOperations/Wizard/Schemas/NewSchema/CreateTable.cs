@@ -1,4 +1,5 @@
-﻿using Globals.Logger.Log4N;
+﻿using Globals.DbOperations.DbasesNames;
+using Globals.Logger.Log4N;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Linq;
 
 namespace Globals.DbOperations.Wizard.Schemas.NewSchema
 {
@@ -13,18 +15,20 @@ namespace Globals.DbOperations.Wizard.Schemas.NewSchema
     {
         private readonly Dictionary<string, string> _schemaItems;
         private readonly string _tableName;
+        private readonly string _dbName;
 
-        public CreateTable(Dictionary<string, string> listOfItems, string tableName)
+        public CreateTable(Dictionary<string, string> listOfItems, string tableName, string dbName)
         {
             _schemaItems = listOfItems ?? throw new ArgumentNullException(nameof(listOfItems));
             _tableName = string.IsNullOrWhiteSpace(tableName)
                 ? throw new ArgumentException("Table name cannot be empty.", nameof(tableName))
                 : tableName;
+            _dbName = dbName;
         }
 
         public async Task Create()
         {
-            string databaseName = DbasesNames.DbNames.SupplierSchemas.ToString();
+            string databaseName = _dbName;
 
             string connectionString = Security.PasswordBoxControlHelper
                 .ReadFromFileSecuredStringToString
