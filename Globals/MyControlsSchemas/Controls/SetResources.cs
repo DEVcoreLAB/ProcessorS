@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Globals.MyControlsSchemas.Controls
 {
@@ -60,7 +61,6 @@ namespace Globals.MyControlsSchemas.Controls
             Style dataGridStyle = setCustomDataGrid.setControl.SetControlProperties(fontSize);
             Application.Current.Resources.Remove(typeof(System.Windows.Controls.DataGrid));
             Application.Current.Resources.Add(typeof(System.Windows.Controls.DataGrid), dataGridStyle);
-
         }
     }
 }

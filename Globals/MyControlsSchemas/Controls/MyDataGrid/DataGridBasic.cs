@@ -17,9 +17,6 @@ namespace Globals.MyControlsSchemas.Controls.MyDataGrid
             Style dataGridStyle = new Style(typeof(System.Windows.Controls.DataGrid));
 
             dataGridStyle.Setters.Add(new Setter(Control.FontSizeProperty, fontSize));
-            dataGridStyle.Setters.Add(new Setter(Control.FontWeightProperty, FontWeights.Bold));
-            
-
             return dataGridStyle;
         }
     }
