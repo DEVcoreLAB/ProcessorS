@@ -1,5 +1,6 @@
 ﻿using Globals.Model.Observer.Components;
 using Globals.ViewModel;
+using SubControlSupplierProject.ViewModel;
 using SubControlSupplierProject.ViewModel.NewSupplierUserControl;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace SubControlSupplierProject.Model.NewSupplierUserControl.Reactor.Behaviours.NewSupplierNameVM
 {
@@ -16,10 +18,23 @@ namespace SubControlSupplierProject.Model.NewSupplierUserControl.Reactor.Behavio
         {
             NewSupplierMainViewModel mainViewModel = viewModel as NewSupplierMainViewModel;
 
-            return () => 
+            return new Action(() =>
             {
-                MessageBox.Show("test");
-            };
+                Globals.DbOperations.Validation.TextValidation.NamesValidation namesValidation = new Globals.DbOperations.Validation.TextValidation.NamesValidation();
+                var reservedResult = namesValidation.Validate(mainViewModel.existingSuppliers, mainViewModel.NewSupplierName);
+
+
+                if (!reservedResult._isNameInique)
+                {
+                    mainViewModel.NewSupplierNameForeground =
+                        new System.Windows.Media.SolidColorBrush(Colors.Red);
+                }
+                else
+                {
+                    mainViewModel.NewSupplierNameForeground =
+                        new System.Windows.Media.SolidColorBrush(Colors.Black);
+                }
+            });
         }
     }
 }

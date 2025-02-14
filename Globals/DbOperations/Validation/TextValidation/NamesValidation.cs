@@ -48,7 +48,7 @@ namespace Globals.DbOperations.Validation.TextValidation
                 foreach (var item in listOfNames)
                 {
 
-                    if (item.Equals(currentName))
+                    if (item.ToLower().Equals(currentName.ToLower()))
                     {
                         color = new SolidColorBrush(Colors.Red);
                         isNameUnique = false;
