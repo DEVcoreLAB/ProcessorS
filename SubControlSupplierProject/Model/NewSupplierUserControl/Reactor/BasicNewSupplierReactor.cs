@@ -2,6 +2,7 @@
 using Globals.ViewModel;
 using SubControlSupplierProject.Model.NewSchemaUserControl.Reactors.Behaviours.NameOfNewItemVM;
 using SubControlSupplierProject.Model.NewSupplierUserControl.Reactor.Behaviours.NewSupplierMainViewModelVM;
+using SubControlSupplierProject.Model.NewSupplierUserControl.Reactor.Behaviours.NewSupplierNameVM;
 using SubControlSupplierProject.ViewModel;
 using SubControlSupplierProject.ViewModel.NewSupplierUserControl;
 using System;
@@ -25,6 +26,10 @@ namespace SubControlSupplierProject.Model.NewSupplierUserControl.Reactor
             if (newValue.Name == nameof(mainViewModel.SchemaControlsList))
             {
                 connector = new Connector(new SchemaControlsListBehaviours());
+            }
+            if (newValue.Name == nameof(mainViewModel.NewSupplierName))
+            {
+                connector = new Connector(new NewSupplierNameBehaviour());
             }
 
             if (connector != null)

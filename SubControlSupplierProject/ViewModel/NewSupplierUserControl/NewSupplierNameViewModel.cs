@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
 {
@@ -30,6 +31,17 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
 				newSupplierNameLabel = value;
 				OnPropertyChanged(nameof(NewSupplierNameLabel));
             }
+		}
+
+		private SolidColorBrush newSupplierNameForeground;
+		public SolidColorBrush NewSupplierNameForeground
+		{
+			get { return newSupplierNameForeground; }
+			set 
+			{ 
+				newSupplierNameForeground = value;
+				OnPropertyChanged(nameof(NewSupplierNameForeground));
+			}
 		}
 
 	}

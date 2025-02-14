@@ -22,7 +22,7 @@ namespace SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSchemasVM
                 if (schemaData != default)
                 {
                     var data = schemaData.Item2.Select(x => (x.Key, x.Value)).ToList();
-                    mainViewModel.OperationUserControl = new SubControlSupplierProject.View.NewSupplierUserControl.NewSupplierControl(data);
+                    mainViewModel.OperationUserControl = new SubControlSupplierProject.View.NewSupplierUserControl.NewSupplierControl(data,mainViewModel.ListOfSuppliers);
                 }
                 else
                 {

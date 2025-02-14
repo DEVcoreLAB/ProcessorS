@@ -26,7 +26,11 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
     {
         NewSupplierMainViewModel newSupplierMainViewModel;
 
-        public NewSupplierControl(List<(string nameOfControl, string typeOfControl)> selectedSchema)
+        public NewSupplierControl
+            (
+                List<(string nameOfControl, string typeOfControl)> selectedSchema,
+                ObservableCollection<string> existingSpuupliers
+            )
         {
             InitializeComponent();
 
@@ -34,6 +38,7 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
             this.DataContext = newSupplierMainViewModel;
 
             newSupplierMainViewModel.SchemaControlsList = selectedSchema;
+            newSupplierMainViewModel.existingSuppliers = existingSpuupliers;
             newSupplierMainViewModel.ListChanged += NewSupplierMainViewModel_ListChanged;
         }
 
@@ -252,6 +257,15 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                     {
                         sb.AppendLine(property.GetValue(instance).ToString());
                     }
+                }
+                MessageBox.Show(sb.ToString());
+            }
+            else if (e.Key == Key.F2)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var item in newSupplierMainViewModel.existingSuppliers)
+                {
+                    sb.AppendLine(item);
                 }
                 MessageBox.Show(sb.ToString());
             }

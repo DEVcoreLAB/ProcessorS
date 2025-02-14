@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
 {
@@ -31,8 +32,10 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl
 
             SaveNewSupplierCommand = new RelayCommand(new SaveNewSupplierButtonAction(this).Execute, new SaveNewSupplierButtonPredict(this).Check);
             NewSupplierNameLabel = Langs.Lang.newSupplierName;
-
+            NewSupplierNameForeground = new System.Windows.Media.SolidColorBrush(Colors.Black);
         }
+
+        public IEnumerable<string> existingSuppliers { get; set; }
 
         private List<(string controlName,string controlType)> schemaControlsList;
         public List<(string controlName,string controlType)> SchemaControlsList

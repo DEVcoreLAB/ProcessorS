@@ -52,6 +52,7 @@
                     Grid.Column="1"
                     Margin="5,0,5,0"
                     Text="{Binding NewSupplierName, UpdateSourceTrigger=PropertyChanged}"
+                    Foreground="{Binding NewSupplierNameForeground}"
                     Padding="5,0,0,0"
                     />
             </Grid>
