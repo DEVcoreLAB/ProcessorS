@@ -1,4 +1,5 @@
 ﻿using Globals.MyDialogsAndWindows.MyMessagebox;
+using SubControlSupplierProject.ViewModel.NewSchemaUserControl;
 using SubControlSupplierProject.ViewModel.NewSupplierUserControl;
 using System;
 using System.Collections;
@@ -268,6 +269,17 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
                     sb.AppendLine(item);
                 }
                 MessageBox.Show(sb.ToString());
+            }
+        }
+
+        private void NewSuuplierName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(newSupplierMainViewModel.NewSupplierName))
+            {
+                if (!char.IsLetter(newSupplierMainViewModel.NewSupplierName[0]))
+                {
+                    newSupplierMainViewModel.NewSupplierName = newSupplierMainViewModel.NewSupplierName.Remove(0, 1);
+                }
             }
         }
     }
