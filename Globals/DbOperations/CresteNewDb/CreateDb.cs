@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 using System.Windows;
 using Windows.System;
 using Microsoft.Data.SqlClient;
+using Globals.DbOperations.DbasesNames;
 
 namespace Globals.DbOperations.CresteNewDb
 {
     public class CreateDb
     {
-        public async Task Create(string nameOfNewDb)
+        public async Task Create(DbNames nameOfNewDb)
         {
             // Connection string to connect to the master database
             string connectionString =

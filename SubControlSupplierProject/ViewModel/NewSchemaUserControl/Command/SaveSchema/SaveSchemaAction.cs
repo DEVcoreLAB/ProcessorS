@@ -28,7 +28,7 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
                 new Globals.DbOperations.Wizard.Schemas.NewSchema.CreateTable
                 (NewSchemaMainViewModel.ItemsToSaveDictionary, 
                 NewSchemaMainViewModel.NameOfNewSchema,
-                Globals.DbOperations.DbasesNames.DbNames.SupplierSchemas.ToString());
+                Globals.DbOperations.DbasesNames.DbNames.SupplierSchemas);
             await createTable.Create();
 
 

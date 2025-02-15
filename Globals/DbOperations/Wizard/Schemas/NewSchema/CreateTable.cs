@@ -17,13 +17,13 @@ namespace Globals.DbOperations.Wizard.Schemas.NewSchema
         private readonly string _tableName;
         private readonly string _dbName;
 
-        public CreateTable(Dictionary<string, string> listOfItems, string tableName, string dbName)
+        public CreateTable(Dictionary<string, string> listOfItems, string tableName, DbNames dbName)
         {
             _schemaItems = listOfItems ?? throw new ArgumentNullException(nameof(listOfItems));
             _tableName = string.IsNullOrWhiteSpace(tableName)
                 ? throw new ArgumentException("Table name cannot be empty.", nameof(tableName))
                 : tableName;
-            _dbName = dbName;
+            _dbName = dbName.ToString();
         }
 
         public async Task Create()
