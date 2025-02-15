@@ -1,4 +1,6 @@
-﻿using SubControlSupplierProject.View.NewSupplierUserControl;
+﻿using Globals.DbOperations.DbasesNames;
+using Globals.DbOperations.Wizard.TableViaSchema;
+using SubControlSupplierProject.View.NewSupplierUserControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +23,12 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl.Command.Sav
 
         public void Execute(object? parameter)
         {
-           
+            SaveToTable saveToTable = new SaveToTable
+                (newSupplierMainViewModel.ReflectedProperties, 
+                newSupplierMainViewModel.DynamicInstanceOfreflectedProperties);
+            saveToTable.Save
+                (newSupplierMainViewModel.NewSupplierName,
+                DbNames.SuppliersList);
         }
     }
 }
