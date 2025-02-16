@@ -110,7 +110,7 @@ namespace Globals.DbOperations.Wizard.TableViaSchema
                             await using (var cmd = new SqlCommand(insertMainListQuery, connection))
                             {
                                 cmd.Parameters.AddWithValue("@propName", property.Name);
-                                cmd.Parameters.AddWithValue("@dataType", "List<string>");
+                                cmd.Parameters.AddWithValue("@dataType", Globals.DbOperations.InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString());
                                 mainId = Convert.ToInt32(cmd.ExecuteScalar());
                             }
 
@@ -162,7 +162,7 @@ namespace Globals.DbOperations.Wizard.TableViaSchema
                             await using (var cmd = new SqlCommand(insertBoolQuery, connection))
                             {
                                 cmd.Parameters.AddWithValue("@propName", property.Name);
-                                cmd.Parameters.AddWithValue("@dataType", "bool");
+                                cmd.Parameters.AddWithValue("@dataType", Globals.DbOperations.InvariantTypeOfControls.ControlTypes.CheckBoxControl.ToString());
                                 cmd.Parameters.AddWithValue("@boolValue", boolValue);
                                 await cmd.ExecuteNonQueryAsync();
                             }
@@ -182,7 +182,7 @@ namespace Globals.DbOperations.Wizard.TableViaSchema
                             await using (var cmd = new SqlCommand(insertBoolQuery, connection))
                             {
                                 cmd.Parameters.AddWithValue("@propName", property.Name);
-                                cmd.Parameters.AddWithValue("@dataType", "string");
+                                cmd.Parameters.AddWithValue("@dataType", Globals.DbOperations.InvariantTypeOfControls.ControlTypes.TextBoxControl.ToString());
                                 cmd.Parameters.AddWithValue("@Note", stringValue);
                                 await cmd.ExecuteNonQueryAsync();
                             }
