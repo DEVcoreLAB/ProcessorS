@@ -36,16 +36,7 @@ namespace SubControlSupplierProject.View.NewSchemaUserControl
         {
             if (e.Key == Key.F1)
             {
-                //StringBuilder sb = new StringBuilder();
-
-                //foreach (var item in newSchemaMainViewModel.ItemsToSaveDictionary)
-                //{
-                //    sb.AppendLine($@"{item.Key} {item.Value}");
-                //}
-
-                //MessageBox.Show(sb.ToString());
-
-                MessageBox.Show(newSchemaMainViewModel.ListOfSchemasNames.Count().ToString());
+                MessageBox.Show(newSchemaMainViewModel.NameOfNewItem);
             }
         }
 
@@ -53,10 +44,7 @@ namespace SubControlSupplierProject.View.NewSchemaUserControl
         {
             if (!string.IsNullOrEmpty(newSchemaMainViewModel.NameOfNewItem))
             {
-                if (!char.IsLetter(newSchemaMainViewModel.NameOfNewItem[0]))
-                {
-                    newSchemaMainViewModel.NameOfNewItem = newSchemaMainViewModel.NameOfNewItem.Remove(0, 1);
-                }
+                Globals.DbOperations.Validation.ForWindowDirectly.RestrictedChars.Check(sender);
             }
         }
 
@@ -64,10 +52,7 @@ namespace SubControlSupplierProject.View.NewSchemaUserControl
         {
             if (!string.IsNullOrEmpty(newSchemaMainViewModel.NameOfNewSchema))
             {
-                if (!char.IsLetter(newSchemaMainViewModel.NameOfNewSchema[0]))
-                {
-                    newSchemaMainViewModel.NameOfNewSchema = newSchemaMainViewModel.NameOfNewSchema.Remove(0, 1);
-                }
+                Globals.DbOperations.Validation.ForWindowDirectly.RestrictedChars.Check(sender);
             }
         }
     }
