@@ -23,7 +23,7 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl.Command.Sav
 
         public void Execute(object? parameter)
         {
-            _ = RunSaveMethod(); 
+           _ = RunSaveMethod(); 
         }
 
         private async Task RunSaveMethod()
