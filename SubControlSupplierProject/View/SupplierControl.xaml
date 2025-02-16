@@ -137,6 +137,7 @@
                     BorderBrush="Gray"
                     BorderThickness="1"
                     ItemsSource="{Binding ViewListOfSuppliers}"
+                    SelectedValue="{Binding ListOfSuppliersSelectedValue}"
                     />
             </Grid>
         </Border>

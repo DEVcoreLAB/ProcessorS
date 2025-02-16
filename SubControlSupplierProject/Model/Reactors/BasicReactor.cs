@@ -2,6 +2,7 @@
 using Globals.Model.Observer.Components;
 using Globals.ViewModel;
 using SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSchemasVM;
+using SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSuppliersVM;
 using SubControlSupplierProject.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,10 @@ namespace SubControlSupplierProject.Model.Reactors
             if (newValue.Name == nameof(mainViewModel.SelectedSchemaValue))
             {
                 connector = new Connector(new SelectedSchemaValueBehaviur());
+            }
+            if (newValue.Name == nameof(mainViewModel.ListOfSuppliersSelectedValue))
+            {
+                connector = new Connector(new ListOfSuppliersSelectedValueBehaviour());
             }
 
             if (connector != null)

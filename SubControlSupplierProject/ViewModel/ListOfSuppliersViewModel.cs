@@ -33,6 +33,17 @@ namespace SubControlSupplierProject.ViewModel
             }
 		}
 
+		private string listOfSuppliersSelectedValue;
+		public string ListOfSuppliersSelectedValue
+		{
+			get { return listOfSuppliersSelectedValue; }
+			set 
+			{ 
+				listOfSuppliersSelectedValue = value;
+				OnPropertyChanged(nameof(ListOfSuppliersSelectedValue));
+			}
+		}
+
 
 	}
 }
