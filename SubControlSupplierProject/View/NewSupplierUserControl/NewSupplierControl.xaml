@@ -67,7 +67,7 @@
                 Background="Transparent"
                 BorderThickness="0"
                 Command="{Binding SaveNewSupplierCommand}"
-                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}}"
                 >
                 <Image 
                     Source="{Binding SaveNewSupplierButtonForeground, 

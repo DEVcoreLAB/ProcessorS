@@ -21,9 +21,14 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl.Command.Sav
             this.newSupplierMainViewModel = newSupplierMainViewModel;
         }
 
-        public void Execute(object? parameter)
+        public async void Execute(object? parameter)
         {
-           _ = RunSaveMethod(); 
+            NewSupplierControl newSupplierControl = parameter as NewSupplierControl;
+            await RunSaveMethod();
+
+            newSupplierMainViewModel.NewSupplierName = null;
+
+            newSupplierControl.Content = null;
         }
 
         private async Task RunSaveMethod()

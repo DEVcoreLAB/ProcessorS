@@ -31,17 +31,11 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
                 Globals.DbOperations.DbasesNames.DbNames.SupplierSchemas);
             await createTable.Create();
 
-
-
-
             List<(string, Dictionary<string, string>)> newSchema = new List<(string, Dictionary<string, string>)>();
             newSchema.Add((NewSchemaMainViewModel.NameOfNewSchema, NewSchemaMainViewModel.ItemsToSaveDictionary));
 
             ReturnNewSchema returnNewSchema = new ReturnNewSchema();
             returnNewSchema.ReturnNewSchemaMethod(newSchema);
-
-
-
 
             NewSchemaMainViewModel.ItemsToSaveDictionary.Clear();
             NewSchemaMainViewModel.NameOfNewSchema = null;
@@ -49,10 +43,10 @@ namespace SubControlSupplierProject.ViewModel.NewSchemaUserControl.Command.SaveS
             newSchemaControl.GridForItems.Children.Clear();
             new SaveSchemaPredict(NewSchemaMainViewModel).Check();
 
-           
             NewSchemaMainViewModel.NameOfNewItem = null;
             NewSchemaMainViewModel.SelectedTypeOfNewItem = null;
 
+            newSchemaControl.Content = null;
         }
     }
 }

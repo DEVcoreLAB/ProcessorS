@@ -18,11 +18,19 @@ namespace SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSchemasVM
 
             return new Action(() =>
             {
+                if (mainViewModel.SelectedSchemaValue == null)
+                { 
+                    return;
+                }
+
                 var schemaData = mainViewModel.CompleteSchemasData.FirstOrDefault(x => x.Item1 == mainViewModel.SelectedSchemaValue);
                 if (schemaData != default)
                 {
                     var data = schemaData.Item2.Select(x => (x.Key, x.Value)).ToList();
-                    mainViewModel.OperationUserControl = new SubControlSupplierProject.View.NewSupplierUserControl.NewSupplierControl(data,mainViewModel.ListOfSuppliers);
+                    mainViewModel.OperationUserControl = 
+                        new SubControlSupplierProject.View.NewSupplierUserControl.NewSupplierControl
+                            (data,mainViewModel.ListOfSuppliers);
+                    mainViewModel.SelectedSchemaValue = null;
                 }
                 else
                 {
