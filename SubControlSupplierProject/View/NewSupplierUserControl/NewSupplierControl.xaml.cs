@@ -276,10 +276,7 @@ namespace SubControlSupplierProject.View.NewSupplierUserControl
         {
             if (!string.IsNullOrEmpty(newSupplierMainViewModel.NewSupplierName))
             {
-                if (!char.IsLetter(newSupplierMainViewModel.NewSupplierName[0]))
-                {
-                    newSupplierMainViewModel.NewSupplierName = newSupplierMainViewModel.NewSupplierName.Remove(0, 1);
-                }
+                Globals.DbOperations.Validation.ForWindowDirectly.RestrictedChars.Check(sender);
             }
         }
     }

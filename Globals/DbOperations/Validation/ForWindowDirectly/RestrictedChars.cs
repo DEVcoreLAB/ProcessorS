@@ -20,10 +20,17 @@ namespace Globals.DbOperations.Validation.ForWindowDirectly
                 {
                     sender.Text = sender.Text.Remove(0, 1);
                 }
-                else if (sender.Text.Contains('_'))
+
+                var sb = new StringBuilder();
+                foreach (char item in sender.Text)
                 {
-                    sender.Text = sender.Text.Replace("_", "");
+                    if (char.IsLetterOrDigit(item) || char.IsWhiteSpace(item))
+                    {
+                        sb.Append(item);
+                    }
                 }
+                sender.Text = sb.ToString();
+
                 sender.CaretIndex = sender.Text.Length;
             }
         }
