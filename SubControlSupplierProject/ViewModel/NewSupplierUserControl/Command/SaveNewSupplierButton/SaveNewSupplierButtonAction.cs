@@ -23,12 +23,19 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl.Command.Sav
 
         public void Execute(object? parameter)
         {
+            _ = RunSaveMethod(); 
+        }
+
+        private async Task RunSaveMethod()
+        {
             SaveToTable saveToTable = new SaveToTable
-                (newSupplierMainViewModel.ReflectedProperties, 
-                newSupplierMainViewModel.DynamicInstanceOfreflectedProperties);
-            saveToTable.Save
-                (newSupplierMainViewModel.NewSupplierName,
-                DbNames.SuppliersList);
+              (newSupplierMainViewModel.ReflectedProperties,
+              newSupplierMainViewModel.DynamicInstanceOfreflectedProperties);
+            await saveToTable.Save
+                (Globals.Security.PasswordBoxControlHelper.ReadFromFileSecuredStringToString.UnprotectString(Globals.SettingFiles.ConnString.Default.ConnectionString),
+                DbNames.SuppliersList,
+                newSupplierMainViewModel.NewSupplierName
+                );
         }
     }
 }
