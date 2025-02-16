@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
 
-namespace Globals.DbOperations.Wizard.TableViaSchema
+namespace Globals.DbOperations.Wizard.ItemViaSchema.NewItem
 {
     public class SaveToTable
     {
@@ -32,11 +32,11 @@ namespace Globals.DbOperations.Wizard.TableViaSchema
                 {
                     await Application.Current.Dispatcher.InvokeAsync(() =>
                     {
-                        MessageBox.Show($"Null input data exception in: {this.GetType().Name}", "Error",
+                        MessageBox.Show($"Null input data exception in: {GetType().Name}", "Error",
                                         MessageBoxButton.OK, MessageBoxImage.Error);
                     });
 
-                    L4N.L4NDefault.Error($"Null input data exception in: {this.GetType().Name}");
+                    L4N.L4NDefault.Error($"Null input data exception in: {GetType().Name}");
                     return;
                 }
 
@@ -110,7 +110,7 @@ namespace Globals.DbOperations.Wizard.TableViaSchema
                             await using (var cmd = new SqlCommand(insertMainListQuery, connection))
                             {
                                 cmd.Parameters.AddWithValue("@propName", property.Name);
-                                cmd.Parameters.AddWithValue("@dataType", Globals.DbOperations.InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString());
+                                cmd.Parameters.AddWithValue("@dataType", InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString());
                                 mainId = Convert.ToInt32(cmd.ExecuteScalar());
                             }
 
@@ -162,7 +162,7 @@ namespace Globals.DbOperations.Wizard.TableViaSchema
                             await using (var cmd = new SqlCommand(insertBoolQuery, connection))
                             {
                                 cmd.Parameters.AddWithValue("@propName", property.Name);
-                                cmd.Parameters.AddWithValue("@dataType", Globals.DbOperations.InvariantTypeOfControls.ControlTypes.CheckBoxControl.ToString());
+                                cmd.Parameters.AddWithValue("@dataType", InvariantTypeOfControls.ControlTypes.CheckBoxControl.ToString());
                                 cmd.Parameters.AddWithValue("@boolValue", boolValue);
                                 await cmd.ExecuteNonQueryAsync();
                             }
@@ -182,7 +182,7 @@ namespace Globals.DbOperations.Wizard.TableViaSchema
                             await using (var cmd = new SqlCommand(insertBoolQuery, connection))
                             {
                                 cmd.Parameters.AddWithValue("@propName", property.Name);
-                                cmd.Parameters.AddWithValue("@dataType", Globals.DbOperations.InvariantTypeOfControls.ControlTypes.TextBoxControl.ToString());
+                                cmd.Parameters.AddWithValue("@dataType", InvariantTypeOfControls.ControlTypes.TextBoxControl.ToString());
                                 cmd.Parameters.AddWithValue("@Note", stringValue);
                                 await cmd.ExecuteNonQueryAsync();
                             }
@@ -200,7 +200,7 @@ namespace Globals.DbOperations.Wizard.TableViaSchema
                                     MessageBoxButton.OK, MessageBoxImage.Error);
                 });
 
-                L4N.L4NDefault.Error($"error in: {ex}       {this.GetType().Name}");
+                L4N.L4NDefault.Error($"error in: {ex}       {GetType().Name}");
             }
         }
     }

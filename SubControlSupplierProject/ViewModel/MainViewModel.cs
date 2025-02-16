@@ -14,6 +14,7 @@ using SubControlSupplierProject.Model.NewSchemaUserControl;
 using System.Windows;
 using System.Collections.ObjectModel;
 using Globals.DbOperations.Wizard.Schemas.SchemasReader;
+using Globals.DbOperations.Wizard.ItemViaSchema.ItemsReader;
 
 namespace SubControlSupplierProject.ViewModel
 {
@@ -52,16 +53,15 @@ namespace SubControlSupplierProject.ViewModel
                 RefreshSchemas();
             };
 
-            ListOfSuppliers = new ObservableCollection<string>()
-                {
-                    "Kamix",
-                    "Font end developers",
-                    "Kojijama",
-                    "End points",
-                    "Forsaken",
-                };
+            ListOfSuppliers = new ObservableCollection<string>();
 
             ViewListOfSuppliers = CollectionViewSource.GetDefaultView(ListOfSuppliers);
+
+            NewSupplierUserControl.Command.SaveNewSupplierButton.SaveCompleteEvent.SaveNewSupplierCompleteEvent += (s, e) =>
+            {
+                RefreshSuppliers();
+            };
+            RefreshSuppliers();
         }
 
         public async void RefreshSchemas()
@@ -72,6 +72,20 @@ namespace SubControlSupplierProject.ViewModel
             foreach (var schema in CompleteSchemasData)
             {
                 ListOfSchemas.Add(schema.Item1);
+            }
+        }
+
+        public async void RefreshSuppliers()
+        {
+            ListOfSuppliers.Clear();
+            ReadAllItems readAllItems = new ReadAllItems();
+            var temp = await readAllItems.ReadItemNamesAsync();
+            foreach (var item in temp)
+            {
+                if (!item.Contains('_'))
+                {
+                    ListOfSuppliers.Add(item);
+                }
             }
         }
     }

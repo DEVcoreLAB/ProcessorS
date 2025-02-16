@@ -1,5 +1,5 @@
 ﻿using Globals.DbOperations.DbasesNames;
-using Globals.DbOperations.Wizard.TableViaSchema;
+using Globals.DbOperations.Wizard.ItemViaSchema.NewItem;
 using SubControlSupplierProject.View.NewSupplierUserControl;
 using System;
 using System.Collections.Generic;
@@ -29,6 +29,9 @@ namespace SubControlSupplierProject.ViewModel.NewSupplierUserControl.Command.Sav
             newSupplierMainViewModel.NewSupplierName = null;
 
             newSupplierControl.Content = null;
+
+            SaveCompleteEvent saveCompleteEvent = new SaveCompleteEvent();
+            saveCompleteEvent.EvetRun();
         }
 
         private async Task RunSaveMethod()
