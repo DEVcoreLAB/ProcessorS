@@ -54,17 +54,17 @@ namespace Globals.DbOperations.Wizard.ItemViaSchema.NewItem
 
                     // create main datatable if not exist
                     string createMainTableQuery = $@"
-                    IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = '{nameOfTable}')
-                    BEGIN
-                    CREATE TABLE [{nameOfTable}] (
-                    ID INT IDENTITY(1,1) PRIMARY KEY,
-                    PropertyName NVARCHAR(256) NOT NULL,
-                    DataType NVARCHAR(256) NOT NULL,
-                    BoolValue BIT NULL,
-                    Note NVARCHAR(256) NULL,
-                    ListGroupID INT NULL
-                    )
-                    END";
+                        IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = '{nameOfTable}')
+                        BEGIN
+                        CREATE TABLE [{nameOfTable}] (
+                        ID INT IDENTITY(1,1) PRIMARY KEY,
+                        PropertyName NVARCHAR(256) NOT NULL,
+                        DataType NVARCHAR(256) NOT NULL,
+                        BoolValue BIT NULL,
+                        Note NVARCHAR(256) NULL,
+                        ListGroupID INT NULL
+                        )
+                        END";
 
                     await using (var cmd = new SqlCommand(createMainTableQuery, connection))
                     {
@@ -78,47 +78,48 @@ namespace Globals.DbOperations.Wizard.ItemViaSchema.NewItem
                         #region observableCollection<string>Type
                         if (property.PropertyType == typeof(ObservableCollection<string>))
                         {
-                            // name of additional table NameOfTable_NameOfProperty
+                            // name of additional table NameOfTable_NazwaWłaściwości
                             string listTableName = $"{nameOfTable}_{property.Name}";
 
-                            // create this additional table
+                            // creating additional table with key to main table
                             string createListTableQuery = $@"
-                                    IF NOT EXISTS 
-                                    (SELECT * FROM sys.tables WHERE name = '{listTableName}')
-                                    BEGIN
-                                    CREATE TABLE [{listTableName}] (
-                                    ID INT IDENTITY(1,1) PRIMARY KEY,
-                                    ListGroupID INT NOT NULL,
-                                    ListItem NVARCHAR(256) NOT NULL
-                                    )
-                                    END";
+                                IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = '{listTableName}')
+                                BEGIN
+                                CREATE TABLE [{listTableName}] (
+                                ID INT IDENTITY(1,1) PRIMARY KEY,
+                                ListGroupID INT NOT NULL,
+                                ListItem NVARCHAR(256) NOT NULL,
+                                CONSTRAINT FK_{listTableName}_{nameOfTable}
+                                FOREIGN KEY (ListGroupID) REFERENCES [{nameOfTable}](ID)
+                                )
+                                END";
 
                             await using (var cmd = new SqlCommand(createListTableQuery, connection))
                             {
                                 await cmd.ExecuteNonQueryAsync();
                             }
 
-                            //  insert a row into the main table and retrieve the generated ID
+                            // inserting record to main table and retrive previously generated id
                             string insertMainListQuery = $@"
-                                    INSERT INTO [{nameOfTable}] 
-                                    (PropertyName, DataType, BoolValue, Note, ListGroupID)
-                                    VALUES
-                                    (@propName, @dataType, NULL, NULL, NULL);
-                                    SELECT SCOPE_IDENTITY();";
+                                INSERT INTO [{nameOfTable}] (PropertyName, DataType, BoolValue, Note, ListGroupID)
+                                VALUES (@propName, @dataType, NULL, NULL, NULL);
+                                SELECT SCOPE_IDENTITY();";
 
                             int mainId;
                             await using (var cmd = new SqlCommand(insertMainListQuery, connection))
                             {
                                 cmd.Parameters.AddWithValue("@propName", property.Name);
-                                cmd.Parameters.AddWithValue("@dataType", InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString());
+                                cmd.Parameters.AddWithValue(
+                                    "@dataType",
+                                    InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString());
                                 mainId = Convert.ToInt32(cmd.ExecuteScalar());
                             }
 
-                            // update a row in the main table by setting ListGroupID to the value of the primary key
+                            // update record in main table, set ListGroupID to value generated id
                             string updateMainQuery = $@"
-                                    UPDATE [{nameOfDataBase}].dbo.[{nameOfTable}]
-                                    SET ListGroupID = @mainId
-                                    WHERE ID = @mainId";
+                                UPDATE [{nameOfDataBase}].dbo.[{nameOfTable}]
+                                SET ListGroupID = @mainId
+                                WHERE ID = @mainId";
 
                             await using (var cmd = new SqlCommand(updateMainQuery, connection))
                             {
@@ -126,17 +127,16 @@ namespace Globals.DbOperations.Wizard.ItemViaSchema.NewItem
                                 await cmd.ExecuteNonQueryAsync();
                             }
 
-                            // retrieve the list items and, for each one, insert a row into the additional table
-                            ObservableCollection<string> listValues = property.GetValue(_dataObject) as ObservableCollection<string>;
+                            // retrieve elements from list and insert every one to additional table
+                            ObservableCollection<string> listValues =
+                                property.GetValue(_dataObject) as ObservableCollection<string>;
                             if (listValues != null)
                             {
                                 foreach (var item in listValues)
                                 {
                                     string insertListItemQuery = $@"
-                                            INSERT INTO [{listTableName}] 
-                                            (ListGroupID, ListItem)
-                                            VALUES
-                                            (@groupId, @listItem)";
+                                        INSERT INTO [{listTableName}] (ListGroupID, ListItem)
+                                        VALUES (@groupId, @listItem)";
 
                                     await using (var cmd = new SqlCommand(insertListItemQuery, connection))
                                     {
