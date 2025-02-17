@@ -1,5 +1,6 @@
 ﻿using Globals.Model.Observer.Components;
 using Globals.ViewModel;
+using SubControlSupplierProject.View.ViewSupplierUserControl;
 using SubControlSupplierProject.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -17,8 +18,14 @@ namespace SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSuppliersVM
             MainViewModel mainViewModel = viewModel as MainViewModel;
 
             return new Action(() => 
-            { 
-                MessageBox.Show(mainViewModel.ListOfSuppliersSelectedValue);
+            {
+                if (mainViewModel.ListOfSuppliersSelectedValue == null)
+                { 
+                    return;
+                }
+
+                mainViewModel.OperationUserControl = new ViewSupplierControl();
+                mainViewModel.ListOfSuppliersSelectedValue = null;
             });
         }
     }
