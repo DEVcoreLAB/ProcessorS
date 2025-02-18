@@ -1,4 +1,6 @@
-﻿using SubControlSupplierProject.ViewModel.ViewSupplierUserControl;
+﻿using Globals.Model.Observer;
+using SubControlSupplierProject.Model.ViewSupplierUserControl.Reactors;
+using SubControlSupplierProject.ViewModel.ViewSupplierUserControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,9 @@ namespace SubControlSupplierProject.Model.ViewSupplierUserControl
         public ViewSupplierMainModel(ViewSupplierMainViewModel viewSupplierMainViewModel)
         {
             this.viewSupplierMainViewModel = viewSupplierMainViewModel;
+
+            BasicReactor basicReactor = new BasicReactor();
+            new TObserver<ViewSupplierMainViewModel, BasicReactor>(viewSupplierMainViewModel, basicReactor);
         }
     }
 }

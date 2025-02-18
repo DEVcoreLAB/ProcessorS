@@ -23,11 +23,13 @@ namespace SubControlSupplierProject.View.ViewSupplierUserControl
     {
         ViewSupplierMainViewModel viewSupplierMainViewModel; 
 
-        public ViewSupplierControl()
+        public ViewSupplierControl(string selectedSupplier)
         {
             InitializeComponent();
             viewSupplierMainViewModel = new ViewSupplierMainViewModel();
             this.DataContext = viewSupplierMainViewModel;
+
+            viewSupplierMainViewModel.SelectedSupplierBaseTableName = selectedSupplier;
         }
     }
 }

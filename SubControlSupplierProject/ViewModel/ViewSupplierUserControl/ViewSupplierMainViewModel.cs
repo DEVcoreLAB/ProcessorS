@@ -16,5 +16,17 @@ namespace SubControlSupplierProject.ViewModel.ViewSupplierUserControl
         {
             viewSupplierMainModel = new ViewSupplierMainModel(this);
         }
+
+        private string selectedSupplierBaseTableName;
+        public string SelectedSupplierBaseTableName
+        {
+            get { return selectedSupplierBaseTableName; }
+            set 
+            { 
+                selectedSupplierBaseTableName = value; 
+                OnPropertyChanged(nameof(SelectedSupplierBaseTableName));
+            }
+        }
+
     }
 }

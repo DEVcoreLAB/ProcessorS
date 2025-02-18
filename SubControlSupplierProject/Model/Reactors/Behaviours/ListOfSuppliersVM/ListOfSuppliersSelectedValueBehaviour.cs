@@ -24,7 +24,7 @@ namespace SubControlSupplierProject.Model.Reactors.Behaviours.ListOfSuppliersVM
                     return;
                 }
 
-                mainViewModel.OperationUserControl = new ViewSupplierControl();
+                mainViewModel.OperationUserControl = new ViewSupplierControl(mainViewModel.ListOfSuppliersSelectedValue);
                 mainViewModel.ListOfSuppliersSelectedValue = null;
             });
         }
