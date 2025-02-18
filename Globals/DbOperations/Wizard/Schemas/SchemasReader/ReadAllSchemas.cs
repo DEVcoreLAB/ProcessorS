@@ -22,9 +22,15 @@ namespace Globals.DbOperations.Wizard.Schemas.SchemasReader
                 .UnprotectString(SettingFiles.ConnString.Default.ConnectionString);
 
             string getTablesQuery = $@"
-            SELECT TABLE_NAME
-            FROM [{databaseName}].INFORMATION_SCHEMA.TABLES
-            WHERE TABLE_TYPE = 'BASE TABLE'";
+                SELECT t.TABLE_NAME
+                FROM [{databaseName}].INFORMATION_SCHEMA.TABLES AS t
+                INNER JOIN [{databaseName}].sys.tables st
+                ON t.TABLE_NAME = st.name
+                WHERE t.TABLE_TYPE = 'BASE TABLE'
+                AND st.is_ms_shipped = 0
+                AND st.type_desc = 'USER_TABLE'
+                AND t.TABLE_NAME <> 'sysdiagrams'
+                ";
 
             try
             {
