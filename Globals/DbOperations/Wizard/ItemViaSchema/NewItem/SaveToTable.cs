@@ -108,7 +108,7 @@ namespace Globals.DbOperations.Wizard.ItemViaSchema.NewItem
                             int mainId;
                             await using (var cmd = new SqlCommand(insertMainListQuery, connection))
                             {
-                                cmd.Parameters.AddWithValue("@propName", property.Name);
+                                cmd.Parameters.AddWithValue("@propName", property.Name.Replace('_',' '));
                                 cmd.Parameters.AddWithValue(
                                     "@dataType",
                                     InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString());
@@ -161,7 +161,7 @@ namespace Globals.DbOperations.Wizard.ItemViaSchema.NewItem
 
                             await using (var cmd = new SqlCommand(insertBoolQuery, connection))
                             {
-                                cmd.Parameters.AddWithValue("@propName", property.Name);
+                                cmd.Parameters.AddWithValue("@propName", property.Name.Replace('_',' '));
                                 cmd.Parameters.AddWithValue("@dataType", InvariantTypeOfControls.ControlTypes.CheckBoxControl.ToString());
                                 cmd.Parameters.AddWithValue("@boolValue", boolValue);
                                 await cmd.ExecuteNonQueryAsync();
@@ -181,7 +181,7 @@ namespace Globals.DbOperations.Wizard.ItemViaSchema.NewItem
 
                             await using (var cmd = new SqlCommand(insertBoolQuery, connection))
                             {
-                                cmd.Parameters.AddWithValue("@propName", property.Name);
+                                cmd.Parameters.AddWithValue("@propName", property.Name.Replace('_', ' '));
                                 cmd.Parameters.AddWithValue("@dataType", InvariantTypeOfControls.ControlTypes.TextBoxControl.ToString());
                                 cmd.Parameters.AddWithValue("@Note", stringValue);
                                 await cmd.ExecuteNonQueryAsync();
