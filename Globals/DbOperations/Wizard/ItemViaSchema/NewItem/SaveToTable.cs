@@ -89,7 +89,7 @@ namespace Globals.DbOperations.Wizard.ItemViaSchema.NewItem
                                 ID INT IDENTITY(1,1) PRIMARY KEY,
                                 ListGroupID INT NOT NULL,
                                 ListItem NVARCHAR(256) NOT NULL,
-                                CONSTRAINT FK_{listTableName}_{nameOfTable}
+                                CONSTRAINT [FK_{listTableName}_{nameOfTable}]
                                 FOREIGN KEY (ListGroupID) REFERENCES [{nameOfTable}](ID)
                                 )
                                 END";
