@@ -1,7 +1,9 @@
-﻿using Globals.ViewModel;
+﻿using Globals.DbOperations.Wizard.ItemRader;
+using Globals.ViewModel;
 using SubControlSupplierProject.Model.ViewSupplierUserControl;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,18 @@ namespace SubControlSupplierProject.ViewModel.ViewSupplierUserControl
                 OnPropertyChanged(nameof(SelectedSupplierBaseTableName));
             }
         }
+
+        private ObservableCollection<CollectionTableSchema> allDataCollection;
+        public ObservableCollection<CollectionTableSchema> AllDataCollection
+        {
+            get { return allDataCollection; }
+            set 
+            {
+                allDataCollection = value;
+                OnPropertyChanged(nameof(AllDataCollection));
+            }
+        }
+
 
     }
 }

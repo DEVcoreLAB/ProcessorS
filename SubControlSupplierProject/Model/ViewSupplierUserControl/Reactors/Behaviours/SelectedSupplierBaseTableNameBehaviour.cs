@@ -18,7 +18,13 @@ namespace SubControlSupplierProject.Model.ViewSupplierUserControl.Reactors.Behav
 
             return new Action(() => 
             {
-                MessageBox.Show("selected name changed");
+                Globals.DbOperations.Wizard.ItemRader.BasicReader basicReader = new
+                    (
+                        Globals.Security.PasswordBoxControlHelper.ReadFromFileSecuredStringToString.UnprotectString(Globals.SettingFiles.ConnString.Default.ConnectionString),
+                        Globals.DbOperations.DbasesNames.DbNames.SuppliersList.ToString(),
+                        viewSupplierMainViewModel.SelectedSupplierBaseTableName
+                    );
+                viewSupplierMainViewModel.AllDataCollection = basicReader.Read();
             });
         }
     }
