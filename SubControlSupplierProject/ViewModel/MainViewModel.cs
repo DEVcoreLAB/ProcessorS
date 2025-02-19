@@ -14,7 +14,7 @@ using SubControlSupplierProject.Model.NewSchemaUserControl;
 using System.Windows;
 using System.Collections.ObjectModel;
 using Globals.DbOperations.Wizard.Schemas.SchemasReader;
-using Globals.DbOperations.Wizard.ItemViaSchema.ItemsReader;
+using Globals.DbOperations.Wizard.ItemViaSchema.ItemsNamesOnlyReader;
 
 namespace SubControlSupplierProject.ViewModel
 {

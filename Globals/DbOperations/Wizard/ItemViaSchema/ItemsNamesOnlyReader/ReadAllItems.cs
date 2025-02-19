@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Globals.DbOperations.Wizard.ItemViaSchema.ItemsReader
+namespace Globals.DbOperations.Wizard.ItemViaSchema.ItemsNamesOnlyReader
 {
     public class ReadAllItems
     {
