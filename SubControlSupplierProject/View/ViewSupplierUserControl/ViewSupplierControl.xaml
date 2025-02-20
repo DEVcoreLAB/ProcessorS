@@ -12,6 +12,10 @@
         x:Name="MainGrid"
         Background="Gray"
         >
-            
+        <Grid
+            x:Name="GridForData"
+            >
+        </Grid>
+
     </Grid>
 </UserControl>
