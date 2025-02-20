@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SubControlSupplierProject.ViewModel.ViewSupplierUserControl
 {
@@ -37,7 +38,7 @@ namespace SubControlSupplierProject.ViewModel.ViewSupplierUserControl
             set 
             {
                 allDataCollection = value;
-                OnPropertyChanged(nameof(AllDataCollection));
+                OnPropertyChanged(nameof(AllDataCollection));  
             }
         }
 

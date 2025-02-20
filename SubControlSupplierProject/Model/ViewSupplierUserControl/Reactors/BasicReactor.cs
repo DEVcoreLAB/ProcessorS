@@ -25,6 +25,10 @@ namespace SubControlSupplierProject.Model.ViewSupplierUserControl.Reactors
             {
                 connector = new Connector(new SelectedSupplierBaseTableNameBehaviour());
             }
+            if (newValue.Name == nameof(viewSupplierMainViewModel.AllDataCollection))
+            {
+                connector = new Connector(new AllDataCollectionBehaviour());
+            }
 
             if (connector != null)
             {

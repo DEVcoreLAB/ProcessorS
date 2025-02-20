@@ -1,4 +1,5 @@
-﻿using SubControlSupplierProject.ViewModel.ViewSupplierUserControl;
+﻿using SubControlSupplierProject.Model.ViewSupplierUserControl.Reactors.Behaviours;
+using SubControlSupplierProject.ViewModel.ViewSupplierUserControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,13 @@ namespace SubControlSupplierProject.View.ViewSupplierUserControl
             this.DataContext = viewSupplierMainViewModel;
 
             viewSupplierMainViewModel.SelectedSupplierBaseTableName = selectedSupplier;
+
+            AllDataCollectionBehaviour.AllDataChanged += AllDataCollectionBehaviour_AllDataChanged;
+        }
+
+        private void AllDataCollectionBehaviour_AllDataChanged(object? sender, EventArgs e)
+        {
+            
         }
     }
 }
