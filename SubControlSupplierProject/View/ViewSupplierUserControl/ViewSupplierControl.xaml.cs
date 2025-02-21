@@ -45,13 +45,12 @@ namespace SubControlSupplierProject.View.ViewSupplierUserControl
             {
                 RowDefinition rowDefinition = new RowDefinition
                 {
-                    Height = GridLength.Auto
+                    Height = GridLength.Auto,
+                    Tag = $"RowDefinition_{i}"
                 };
-                rowDefinition.Tag = $"RowDefinition_{i}";
                 GridForData.RowDefinitions.Add(rowDefinition);
 
                 Grid gridForRow = new Grid();
-
                 gridForRow.ColumnDefinitions.Add(
                     new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
                 gridForRow.ColumnDefinitions.Add(
@@ -59,93 +58,82 @@ namespace SubControlSupplierProject.View.ViewSupplierUserControl
                 gridForRow.ColumnDefinitions.Add(
                     new ColumnDefinition { Width = new GridLength(50) });
 
-                Label lblSupplierName = new Label();
-                lblSupplierName.Content
-                    = viewSupplierMainViewModel.AllDataCollection[i].propertyName;
+                Label lblSupplierName = new Label
+                {
+                    Content = viewSupplierMainViewModel.AllDataCollection[i].propertyName
+                };
                 Grid.SetColumn(lblSupplierName, 0);
                 gridForRow.Children.Add(lblSupplierName);
 
                 Control control = CheckForControlType(
-                viewSupplierMainViewModel.AllDataCollection[i].controlTypename);
-
-                control.Name
-                    = viewSupplierMainViewModel.AllDataCollection[i].propertyName.Replace(' ','_');
-
+                    viewSupplierMainViewModel.AllDataCollection[i].controlTypename);
+                control.Name = viewSupplierMainViewModel.AllDataCollection[i].propertyName
+                    .Replace(' ', '_');
                 Grid.SetColumn(control, 1);
+
+                if (viewSupplierMainViewModel.AllDataCollection[i].controlTypename ==
+                    Globals.DbOperations.InvariantTypeOfControls.ControlTypes.ComboBoxControl
+                        .ToString())
+                {
+                    var comboBox = control as ComboBox;
+                    if (comboBox != null)
+                    {
+                        var comboBoxBinding = new Binding(
+                            nameof(Globals.DbOperations.Wizard.ItemRader.CollectionTableSchema.
+                                stringsCollection))
+                        {
+                            Source = viewSupplierMainViewModel.AllDataCollection[i],
+                            Mode = BindingMode.TwoWay,
+                            UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                        };
+
+                        BindingOperations.SetBinding(comboBox,
+                            ComboBox.ItemsSourceProperty, comboBoxBinding);
+                    }
+                }
+                else if (viewSupplierMainViewModel.AllDataCollection[i].controlTypename ==
+                    Globals.DbOperations.InvariantTypeOfControls.ControlTypes.TextBoxControl
+                        .ToString())
+                {
+                    var textBox = control as TextBox;
+                    if (textBox != null)
+                    {
+                        var textBoxBinding = new Binding(
+                            nameof(Globals.DbOperations.Wizard.ItemRader.CollectionTableSchema.
+                                stringValue))
+                        {
+                            Source = viewSupplierMainViewModel.AllDataCollection[i],
+                            Mode = BindingMode.TwoWay,
+                            UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                        };
+
+                        BindingOperations.SetBinding(textBox, TextBox.TextProperty,
+                            textBoxBinding);
+                    }
+                }
+                else if (viewSupplierMainViewModel.AllDataCollection[i].controlTypename ==
+                    Globals.DbOperations.InvariantTypeOfControls.ControlTypes.CheckBoxControl
+                        .ToString())
+                {
+                    var checkBox = control as CheckBox;
+                    if (checkBox != null)
+                    {
+                        checkBox.VerticalAlignment = VerticalAlignment.Center;
+                        var checkBoxBinding = new Binding(
+                            nameof(Globals.DbOperations.Wizard.ItemRader.CollectionTableSchema.
+                                boolValue))
+                        {
+                            Source = viewSupplierMainViewModel.AllDataCollection[i],
+                            Mode = BindingMode.TwoWay,
+                            UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
+                        };
+
+                        BindingOperations.SetBinding(checkBox,
+                            CheckBox.IsCheckedProperty, checkBoxBinding);
+                    }
+                }
+
                 gridForRow.Children.Add(control);
-
-
-                if (viewSupplierMainViewModel.AllDataCollection[i].controlTypename == 
-                    Globals.DbOperations.InvariantTypeOfControls.ControlTypes.ComboBoxControl.ToString())
-                {
-                    var comboBox = new ComboBox();
-
-                    // set path for property name "stringsCollection"
-                    var comboBoxBinding = new Binding("stringsCollection")
-                    {
-                        Source = viewSupplierMainViewModel.AllDataCollection[i],
-                        Mode = BindingMode.TwoWay,
-                        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                    };
-
-                    BindingOperations.SetBinding(
-                        comboBox,
-                        ComboBox.ItemsSourceProperty,
-                        comboBoxBinding
-                    );
-
-                    Grid.SetColumn(comboBox, 1);
-                    gridForRow.Children.Add(comboBox);
-                }
-                else if (viewSupplierMainViewModel.AllDataCollection[i].controlTypename ==
-                    Globals.DbOperations.InvariantTypeOfControls.ControlTypes.TextBoxControl.ToString())
-                {
-                    var textBox = new TextBox();
-
-                    var textBoxBinding = new Binding("stringValue")
-                    {
-                        Source = viewSupplierMainViewModel.AllDataCollection[i],
-                        Mode = BindingMode.TwoWay,
-                        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                    };
-
-                    BindingOperations.SetBinding(
-                        textBox,
-                        TextBox.TextProperty,
-                        textBoxBinding
-                    );
-
-                    Grid.SetColumn(textBox, 1);
-                    gridForRow.Children.Add(textBox);
-                }
-                else if (viewSupplierMainViewModel.AllDataCollection[i].controlTypename ==
-                    Globals.DbOperations.InvariantTypeOfControls.ControlTypes.CheckBoxControl.ToString())
-                {
-                    var checkBox = new CheckBox();
-
-                    var checkBoxBinding = new Binding("boolValue")
-                    {
-                        Source = viewSupplierMainViewModel.AllDataCollection[i],
-                        Mode = BindingMode.TwoWay,
-                        UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged
-                    };
-
-                    BindingOperations.SetBinding(
-                        checkBox,
-                        CheckBox.IsCheckedProperty,
-                        checkBoxBinding
-                    );
-
-                    Grid.SetColumn(checkBox, 1);
-                    gridForRow.Children.Add(checkBox);
-                }
-
-
-                if (control is CheckBox)
-                {
-                    control.VerticalAlignment = VerticalAlignment.Center;
-                }
-
                 Grid.SetRow(gridForRow, i);
                 GridForData.Children.Add(gridForRow);
             }

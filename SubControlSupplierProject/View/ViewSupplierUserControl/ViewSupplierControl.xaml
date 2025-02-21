@@ -10,7 +10,7 @@
              >
     <Grid
         x:Name="MainGrid"
-        Background="Gray"
+        Background="White"
         >
         <Grid
             x:Name="GridForData"
