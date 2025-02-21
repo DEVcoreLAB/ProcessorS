@@ -96,6 +96,7 @@ namespace SubControlSupplierProject.View.ViewSupplierUserControl
                         .ToString())
                 {
                     var textBox = control as TextBox;
+                    textBox.IsReadOnly = true;
                     if (textBox != null)
                     {
                         var textBoxBinding = new Binding(
